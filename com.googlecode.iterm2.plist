@@ -27,7 +27,7 @@
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>CopySelection</key>
-	<true/>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Monokai</key>
@@ -507,11 +507,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1287 552 796 473 0 0 2560 1440 </string>
+	<string>1287 413 796 473 0 0 2560 1440 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>230 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 570 377 0 0 2560 1417 </string>
+	<string>0 4 585 377 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>317 1006 650 427 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -6493,7 +6493,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/amw/code/dotfiles</string>
+	<string>/Users/amw/Code/dotfiles</string>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -6513,7 +6513,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-06-20T13:29:25Z</date>
+	<date>2017-06-21T13:29:27Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
