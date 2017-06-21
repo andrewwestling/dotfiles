@@ -35,6 +35,17 @@ Use the `bash_profile` from this repository by replacing the local `~/.bash_prof
 [[ -s "$HOME/Code/dotfiles/bash_profile" ]] && source "$HOME/Code/dotfiles/bash_profile"
 ```
 
+## Git
+
+Use the `gitconfig` from this repository by replacing the local `~/.gitconfig` file with this:
+
+```bash
+# ~/.gitconfig
+
+[include]
+  path = /Users/amw/Code/dotfiles/gitconfig
+```
+
 ## pip
 
 Install these packages with `pip install`:
