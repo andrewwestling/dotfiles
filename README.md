@@ -43,7 +43,7 @@ Use the `gitconfig` from this repository by replacing the local `~/.gitconfig` f
 # ~/.gitconfig
 
 [include]
-  path = /Users/amw/Code/dotfiles/gitconfig
+  path = ~/Code/dotfiles/gitconfig
 ```
 
 ## pip
