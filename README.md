@@ -68,3 +68,19 @@ _Get AWS Access Key ID/Secret from elsewhere and use `aws configure` to set up t
 ```bash
 $ aws configure
 ```
+
+## Sublime Text
+
+- Install [Sublime Text 3](https://www.sublimetext.com/)
+- Install [Package Control](https://packagecontrol.io/installation)
+- Create symlinks to the settings files in this repository:
+
+```bash
+# Preferences
+$ rm ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+$ ln -s ~/Code/dotfiles/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+
+# Package Control
+$ rm ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
+$ ln -s ~/Code/dotfiles/Package\ Control.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
+```
