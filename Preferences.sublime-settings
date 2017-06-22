@@ -1,0 +1,41 @@
+{
+  "always_show_minimap_viewport": true,
+  "auto_close_tags": false,
+  "bold_folder_labels": true,
+  "color_scheme": "Packages/User/SublimeLinter/Monokai Extended Origin (SL).tmTheme",
+  "draw_white_space": "all",
+  "file_exclude_patterns":
+  [
+    "app/scripts/modules/templates.js",
+    ".DS_Store",
+    "*.pyc",
+    "*.map"
+  ],
+  "folder_exclude_patterns":
+  [
+    ".git",
+    ".sass-cache",
+    ".settings",
+    "dist",
+    "staticfiles",
+    "node_modules",
+    "bower_components",
+    "build",
+    ".tmp"
+  ],
+  "font_size": 14,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "indent_guide_options":
+  [
+    "draw_normal",
+    "draw_active"
+  ],
+  "overlay_scroll_bars": "enabled",
+  "show_full_path": true,
+  "tab_size": 2,
+  "theme": "Boxy Monokai.sublime-theme",
+  "translate_tabs_to_spaces": true
+}

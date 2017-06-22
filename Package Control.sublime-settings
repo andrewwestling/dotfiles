@@ -1,0 +1,22 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Boxy Theme",
+		"Color Highlighter",
+		"Djaneiro",
+		"HTML-CSS-JS Prettify",
+		"Jade",
+		"LESS",
+		"Monokai Extended",
+		"Package Control",
+		"Sass",
+		"SublimeLinter",
+		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-contrib-standard",
+		"SublimeLinter-jshint"
+	]
+}
