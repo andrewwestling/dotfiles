@@ -46,6 +46,16 @@ Use the `gitconfig` from this repository by replacing the local `~/.gitconfig` f
   path = ~/Code/dotfiles/gitconfig
 ```
 
+## npm
+
+Install these packages globally with `npm install -g`:
+
+- bower
+- eslint
+- gulp
+- jshint
+- standard
+
 ## pip
 
 Install these packages with `pip install`:
