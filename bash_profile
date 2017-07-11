@@ -10,6 +10,9 @@ fi
 # thefuck
 eval $(thefuck --alias)
 
+# Yarn
+export PATH="$PATH:$(yarn global bin)"
+
 ################################################################################
 # Shortcuts
 alias chrome="open -a 'Google Chrome'"

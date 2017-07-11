@@ -24,6 +24,7 @@ Install these packages with `brew install`:
 - node
 - python
 - thefuck
+- yarn
 
 ## Bash
 
