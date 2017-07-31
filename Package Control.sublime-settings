@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Better CoffeeScript",
 		"Boxy Theme",
 		"Color Highlighter",
 		"Djaneiro",
