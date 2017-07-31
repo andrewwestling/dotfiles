@@ -16,7 +16,6 @@ export PATH="$PATH:$(yarn global bin)"
 ################################################################################
 # Shortcuts
 alias chrome="open -a 'Google Chrome'"
-alias github="open -a 'GitHub Desktop'"
 alias subl="open -a 'Sublime Text'"
 alias dcp="docker-compose"
 ################################################################################
