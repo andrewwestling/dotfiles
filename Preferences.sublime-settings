@@ -9,7 +9,8 @@
 		"app/scripts/modules/templates.js",
 		".DS_Store",
 		"*.pyc",
-		"*.map"
+		"*.map",
+		"app-built.js"
 	],
 	"folder_exclude_patterns":
 	[
