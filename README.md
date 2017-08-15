@@ -65,11 +65,12 @@ Install these packages with `pip install`:
 
 ## Credentials
 
-### Kryptonite (SSH Keys)
+### Kryptonite (SSH / GPG Keys)
 
 ```bash
 $ curl https://krypt.co/kr | sh
 $ kr pair
+$ kr codesign
 ```
 
 ### AWS
