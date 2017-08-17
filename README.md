@@ -26,6 +26,16 @@ Install these packages with `brew install`:
 - thefuck
 - yarn
 
+### Quick Look Plugins
+
+These plugins add extra functionality to the macOS [Quick Look](https://support.apple.com/kb/PH25575?locale=en_US) feature. This list comes from [sindresorhus/quick-look-plugins](https://github.com/sindresorhus/quick-look-plugins).
+
+Install all with this command:
+
+```bash
+$ brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+```
+
 ## Bash
 
 Use the `bash_profile` from this repository by replacing the local `~/.bash_profile` file with this:
