@@ -509,15 +509,15 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>521 412 400 129 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>970 786 620 392 0 0 2560 1440 </string>
+	<string>650 588 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>1329 835 599 459 0 0 2560 1440 </string>
+	<string>1329 835 606 469 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>629 566 937 464 0 0 2560 1440 </string>
+	<string>630 589 796 473 0 0 2560 1440 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>230 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 1920 1173 0 0 2560 1440 </string>
+	<string>0 0 2560 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>317 1006 650 427 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -5821,7 +5821,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-03T05:21:50Z</date>
+	<date>2017-10-10T12:44:19Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -5908,7 +5908,7 @@
 							<array>
 								<dict>
 									<key>Is Active</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Session</key>
 									<dict>
 										<key>Bookmark</key>
@@ -6092,6 +6092,21 @@
 											<false/>
 											<key>Background Image Location</key>
 											<string></string>
+											<key>Badge Color</key>
+											<dict>
+												<key>Alpha Component</key>
+												<real>1</real>
+												<key>Blue Component</key>
+												<real>0.15056121349334717</real>
+												<key>Color Space</key>
+												<string>Calibrated</string>
+												<key>Green Component</key>
+												<real>0.15055863559246063</real>
+												<key>Red Component</key>
+												<real>0.15056313574314117</real>
+											</dict>
+											<key>Badge Text</key>
+											<string></string>
 											<key>Blend</key>
 											<real>0.30000001192092896</real>
 											<key>Blink Allowed</key>
@@ -6165,7 +6180,7 @@
 												<real>0.99871987104415894</real>
 											</dict>
 											<key>Guid</key>
-											<string>1ED97F73-6DF7-4185-B7FB-463D715EB33F</string>
+											<string>B2DC5E1C-A755-49CF-A8EB-F6A8CA87B903</string>
 											<key>Hide After Opening</key>
 											<false/>
 											<key>Horizontal Spacing</key>
@@ -6682,10 +6697,8 @@
 										<key>Session Default Name</key>
 										<string>developer-rig</string>
 										<key>Session GUID</key>
-										<string>7A77EC55-339D-42B3-A4EF-B275CF602DB2</string>
+										<string>84C51CFC-D4A9-4559-ABCE-E2D4C351BC3D</string>
 										<key>Session Name</key>
-										<string>developer-rig</string>
-										<key>Session Window Title</key>
 										<string>developer-rig</string>
 										<key>Shell Integration Ever Used</key>
 										<false/>
@@ -6970,7 +6983,7 @@
 														<real>0.99871987104415894</real>
 													</dict>
 													<key>Guid</key>
-													<string>6FF564FB-D1C9-4B2B-B07D-9F4F2E0E659F</string>
+													<string>B0EB8FF4-8F57-447F-98AE-930FDDC42045</string>
 													<key>Hide After Opening</key>
 													<false/>
 													<key>Horizontal Spacing</key>
@@ -7487,7 +7500,7 @@
 												<key>Session Default Name</key>
 												<string>architizer-website</string>
 												<key>Session GUID</key>
-												<string>63FDFC87-3C69-486E-8E48-5C1CDDD316D1</string>
+												<string>E40F830A-ED55-4D30-9117-48E9B4D3106B</string>
 												<key>Session Name</key>
 												<string>architizer-website</string>
 												<key>Shell Integration Ever Used</key>
@@ -7770,7 +7783,7 @@
 														<real>0.99871987104415894</real>
 													</dict>
 													<key>Guid</key>
-													<string>9A172BA7-D2FE-4A07-A985-BB2C4CC9576C</string>
+													<string>08C5C006-DEEC-495F-9EE2-53DEE3A5931A</string>
 													<key>Hide After Opening</key>
 													<false/>
 													<key>Horizontal Spacing</key>
@@ -8287,7 +8300,7 @@
 												<key>Session Default Name</key>
 												<string>architizer-website</string>
 												<key>Session GUID</key>
-												<string>CCAEA6A6-BF1D-491D-AAFF-043C564BAC2F</string>
+												<string>EB67EF14-6B5A-4192-9811-A3CD6F327CA3</string>
 												<key>Session Name</key>
 												<string>architizer-website</string>
 												<key>Session Window Title</key>
@@ -8592,7 +8605,7 @@
 														<real>0.99871987104415894</real>
 													</dict>
 													<key>Guid</key>
-													<string>CF405BF8-5B1B-425A-A009-43B685B46589</string>
+													<string>F8159354-5F28-4CAE-B2D3-DD0342788B5B</string>
 													<key>Hide After Opening</key>
 													<false/>
 													<key>Horizontal Spacing</key>
@@ -9109,7 +9122,7 @@
 												<key>Session Default Name</key>
 												<string>design-kit</string>
 												<key>Session GUID</key>
-												<string>FB795465-EAAC-4786-8609-BB2D6AA0BD03</string>
+												<string>D2A8F84A-D529-4507-889A-248D867A83CF</string>
 												<key>Session Name</key>
 												<string>design-kit</string>
 												<key>Shell Integration Ever Used</key>
@@ -9392,7 +9405,7 @@
 														<real>0.99871987104415894</real>
 													</dict>
 													<key>Guid</key>
-													<string>40E45290-9313-4830-82D8-816627E694C7</string>
+													<string>D65AABB6-BED2-4F4C-A45E-6FF3186EC82D</string>
 													<key>Hide After Opening</key>
 													<false/>
 													<key>Horizontal Spacing</key>
@@ -9909,7 +9922,7 @@
 												<key>Session Default Name</key>
 												<string>design-kit</string>
 												<key>Session GUID</key>
-												<string>E9181EFA-4083-4AA2-B72D-A1A513FCEF14</string>
+												<string>E0CF7A0F-393D-4F8F-AEE1-23DA1DDE5153</string>
 												<key>Session Name</key>
 												<string>design-kit</string>
 												<key>Session Window Title</key>
@@ -10211,7 +10224,7 @@
 												<real>0.99871987104415894</real>
 											</dict>
 											<key>Guid</key>
-											<string>7FE1BCCB-135F-4172-8E28-2711A461CB83</string>
+											<string>15706B04-E4DB-40D4-97D6-1A3415E8EE10</string>
 											<key>Hide After Opening</key>
 											<false/>
 											<key>Horizontal Spacing</key>
@@ -10728,7 +10741,7 @@
 										<key>Session Default Name</key>
 										<string>application</string>
 										<key>Session GUID</key>
-										<string>025302E8-5DAD-4DBB-B379-F61106D1C417</string>
+										<string>4A1D45DB-10F8-4500-9652-7E79FF37CAAB</string>
 										<key>Session Name</key>
 										<string>application</string>
 										<key>Shell Integration Ever Used</key>
@@ -11014,7 +11027,7 @@
 														<real>0.99871987104415894</real>
 													</dict>
 													<key>Guid</key>
-													<string>5D210BBF-6E3B-4C18-89B4-B5BCE9A01420</string>
+													<string>224B309F-10A4-4D99-99AE-D8EBE7860ED9</string>
 													<key>Hide After Opening</key>
 													<false/>
 													<key>Horizontal Spacing</key>
@@ -11531,7 +11544,7 @@
 												<key>Session Default Name</key>
 												<string>infrastructure</string>
 												<key>Session GUID</key>
-												<string>88532560-E116-4D01-B29B-17C9A66028F6</string>
+												<string>B0B4CCEE-03D4-4439-8DF8-756D14FA12CC</string>
 												<key>Session Name</key>
 												<string>infrastructure</string>
 												<key>Shell Integration Ever Used</key>
@@ -11557,7 +11570,7 @@
 										</dict>
 										<dict>
 											<key>Is Active</key>
-											<integer>1</integer>
+											<integer>0</integer>
 											<key>Session</key>
 											<dict>
 												<key>Bookmark</key>
@@ -11814,7 +11827,7 @@
 														<real>0.99871987104415894</real>
 													</dict>
 													<key>Guid</key>
-													<string>646A091C-76AA-4580-91F0-26DECFA6932E</string>
+													<string>063021AA-0186-40E4-9724-9A06ECEA2B38</string>
 													<key>Hide After Opening</key>
 													<false/>
 													<key>Horizontal Spacing</key>
@@ -12331,7 +12344,7 @@
 												<key>Session Default Name</key>
 												<string>search-tools</string>
 												<key>Session GUID</key>
-												<string>B3D71A9C-FA39-4114-8B22-1114170C1139</string>
+												<string>E30DE136-B81E-4EA9-A4CD-DDDEBBB8D0D3</string>
 												<key>Session Name</key>
 												<string>search-tools</string>
 												<key>Shell Integration Ever Used</key>
@@ -13278,7 +13291,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.2</string>
+	<string>3.1.3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
