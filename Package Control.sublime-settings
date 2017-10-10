@@ -20,6 +20,7 @@
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-contrib-standard",
+		"SublimeLinter-flake8",
 		"SublimeLinter-jshint"
 	]
 }
