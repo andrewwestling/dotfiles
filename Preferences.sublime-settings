@@ -10,7 +10,8 @@
 		".DS_Store",
 		"*.pyc",
 		"*.map",
-		"app-built.js"
+		"app-built.js",
+		"main.css"
 	],
 	"folder_exclude_patterns":
 	[
