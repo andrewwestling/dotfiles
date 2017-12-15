@@ -512,23 +512,23 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>547 341 606 456 0 0 1920 1177 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
-	<string>12 644 735 382 0 0 2560 1417 </string>
+	<string>12 659 735 382 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>521 412 400 129 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 786 620 392 0 0 2560 1440 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>1329 896 606 469 0 0 2560 1417 </string>
+	<string>1329 896 606 469 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1311 388 796 473 0 0 2560 1440 </string>
+	<string>1311 349 796 473 0 0 2560 1440 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>230 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 6 1273 979 0 0 2560 1417 </string>
+	<string>0 0 2560 1417 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>68 286 665 452 0 0 2560 1417 </string>
+	<string>4 995 1273 418 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>4 7 953 809 0 0 1920 1177 </string>
+	<string>7 369 665 452 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>313 998 650 427 0 0 2560 1440 </string>
 	<key>New Bookmarks</key>
@@ -7801,7 +7801,7 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>infrastructure</string>
+			<string>utils</string>
 			<key>Non Ascii Font</key>
 			<string>Menlo-Regular 14</string>
 			<key>Non-ASCII Anti Aliased</key>
@@ -7981,7 +7981,7 @@
 			<key>Window Type</key>
 			<integer>1</integer>
 			<key>Working Directory</key>
-			<string>~/Code/architizer/infrastructure</string>
+			<string>~/Code/architizer/utils</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -9571,7 +9571,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-04T05:15:36Z</date>
+	<date>2017-12-14T14:47:22Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -10419,7 +10419,7 @@
 													<key>Window Type</key>
 													<integer>1</integer>
 													<key>Working Directory</key>
-													<string>/Users/amw/Code/architizer/developer-rig</string>
+													<string>~/Code/architizer/developer-rig</string>
 												</dict>
 												<key>Bookmark Name</key>
 												<string>developer-rig</string>
@@ -10448,7 +10448,7 @@
 												<key>Session Default Name</key>
 												<string>RUN: developer-rig</string>
 												<key>Session GUID</key>
-												<string>93580D5F-4363-43CE-8DCF-67BF4FDF5B67</string>
+												<string>0C900C02-60F0-40A7-838E-D4D27B9787CA</string>
 												<key>Session Name</key>
 												<string>RUN: developer-rig</string>
 												<key>Shell Integration Ever Used</key>
@@ -11232,7 +11232,7 @@
 													<key>Window Type</key>
 													<integer>1</integer>
 													<key>Working Directory</key>
-													<string>/Users/amw/Code/architizer/developer-rig</string>
+													<string>~/Code/architizer/developer-rig</string>
 												</dict>
 												<key>Bookmark Name</key>
 												<string>developer-rig</string>
@@ -11261,7 +11261,7 @@
 												<key>Session Default Name</key>
 												<string>developer-rig</string>
 												<key>Session GUID</key>
-												<string>448B4926-175D-4A86-812E-02B599C29914</string>
+												<string>70A06F60-D45D-4AF6-AC77-E87075F7871F</string>
 												<key>Session Name</key>
 												<string>developer-rig</string>
 												<key>Session Window Title</key>
@@ -11309,7 +11309,7 @@
 									<array>
 										<dict>
 											<key>Is Active</key>
-											<integer>1</integer>
+											<integer>0</integer>
 											<key>Session</key>
 											<dict>
 												<key>Bookmark</key>
@@ -12054,7 +12054,7 @@
 													<key>Window Type</key>
 													<integer>1</integer>
 													<key>Working Directory</key>
-													<string>/Users/amw/Code/architizer/architizer-website</string>
+													<string>~/Code/architizer/architizer-website</string>
 												</dict>
 												<key>Bookmark Name</key>
 												<string>architizer-website</string>
@@ -12083,7 +12083,7 @@
 												<key>Session Default Name</key>
 												<string>WATCH: architizer-website</string>
 												<key>Session GUID</key>
-												<string>CAB06414-031F-4C90-B596-6F5B8D1DD0FC</string>
+												<string>9D63271F-F4C5-4425-88C6-B95616A0C49C</string>
 												<key>Session Name</key>
 												<string>WATCH: architizer-website</string>
 												<key>Shell Integration Ever Used</key>
@@ -12854,7 +12854,7 @@
 													<key>Window Type</key>
 													<integer>1</integer>
 													<key>Working Directory</key>
-													<string>/Users/amw/Code/architizer/architizer-website</string>
+													<string>~/Code/architizer/architizer-website</string>
 												</dict>
 												<key>Bookmark Name</key>
 												<string>architizer-website</string>
@@ -12883,7 +12883,7 @@
 												<key>Session Default Name</key>
 												<string>architizer-website</string>
 												<key>Session GUID</key>
-												<string>BD16C152-4EFA-42DB-8947-E2C050C81F60</string>
+												<string>3974A3F4-3CB5-43F7-8F69-33D0413412E3</string>
 												<key>Session Name</key>
 												<string>architizer-website</string>
 												<key>Session Window Title</key>
@@ -13676,7 +13676,7 @@
 													<key>Window Type</key>
 													<integer>1</integer>
 													<key>Working Directory</key>
-													<string>/Users/amw/Code/architizer/design-kit</string>
+													<string>~/Code/architizer/design-kit</string>
 												</dict>
 												<key>Bookmark Name</key>
 												<string>design-kit</string>
@@ -13705,7 +13705,7 @@
 												<key>Session Default Name</key>
 												<string>WATCH: design-kit</string>
 												<key>Session GUID</key>
-												<string>01003A39-3427-413B-984D-259C7EC0D6A5</string>
+												<string>5DFCD25F-84A0-4A7A-8A60-2DC5BB3AD371</string>
 												<key>Session Name</key>
 												<string>WATCH: design-kit</string>
 												<key>Shell Integration Ever Used</key>
@@ -14476,7 +14476,7 @@
 													<key>Window Type</key>
 													<integer>1</integer>
 													<key>Working Directory</key>
-													<string>/Users/amw/Code/architizer/design-kit</string>
+													<string>~/Code/architizer/design-kit</string>
 												</dict>
 												<key>Bookmark Name</key>
 												<string>design-kit</string>
@@ -14505,7 +14505,7 @@
 												<key>Session Default Name</key>
 												<string>design-kit</string>
 												<key>Session GUID</key>
-												<string>57353C79-36F7-4155-AA87-DCA6C71F294A</string>
+												<string>3A4DFB3E-74E5-4C38-9C32-69F81EC7E8ED</string>
 												<key>Session Name</key>
 												<string>design-kit</string>
 												<key>Session Window Title</key>
@@ -15298,7 +15298,7 @@
 													<key>Window Type</key>
 													<integer>1</integer>
 													<key>Working Directory</key>
-													<string>/Users/amw/Code/architizer/application/static</string>
+													<string>~/Code/architizer/application/static</string>
 												</dict>
 												<key>Bookmark Name</key>
 												<string>application/static</string>
@@ -15327,7 +15327,7 @@
 												<key>Session Default Name</key>
 												<string>WATCH: application/static</string>
 												<key>Session GUID</key>
-												<string>AC3AA711-9F2A-47EA-A0F2-4EFEFFE649E8</string>
+												<string>2AEB6149-6EBC-4E62-B4B4-4208AC932134</string>
 												<key>Session Name</key>
 												<string>WATCH: application/static</string>
 												<key>Shell Integration Ever Used</key>
@@ -16098,7 +16098,7 @@
 													<key>Window Type</key>
 													<integer>1</integer>
 													<key>Working Directory</key>
-													<string>/Users/amw/Code/architizer/application</string>
+													<string>~/Code/architizer/application</string>
 												</dict>
 												<key>Bookmark Name</key>
 												<string>application</string>
@@ -16127,7 +16127,7 @@
 												<key>Session Default Name</key>
 												<string>application</string>
 												<key>Session GUID</key>
-												<string>1EBE809B-43A6-45E5-B19F-C90E482DF516</string>
+												<string>981F8D4D-ED58-499E-8E52-4414371E48D8</string>
 												<key>Session Name</key>
 												<string>application</string>
 												<key>Session Window Title</key>
@@ -16175,7 +16175,7 @@
 									<array>
 										<dict>
 											<key>Is Active</key>
-											<integer>0</integer>
+											<integer>1</integer>
 											<key>Session</key>
 											<dict>
 												<key>Bookmark</key>
@@ -16740,7 +16740,7 @@
 													<key>Mouse Reporting</key>
 													<true/>
 													<key>Name</key>
-													<string>infrastructure</string>
+													<string>utils</string>
 													<key>Non Ascii Font</key>
 													<string>Menlo-Regular 14</string>
 													<key>Non-ASCII Anti Aliased</key>
@@ -16920,10 +16920,10 @@
 													<key>Window Type</key>
 													<integer>1</integer>
 													<key>Working Directory</key>
-													<string>/Users/amw/Code/architizer/infrastructure</string>
+													<string>~/Code/architizer/utils</string>
 												</dict>
 												<key>Bookmark Name</key>
-												<string>infrastructure</string>
+												<string>utils</string>
 												<key>Columns</key>
 												<integer>142</integer>
 												<key>Commands</key>
@@ -16933,7 +16933,7 @@
 												<key>Environment</key>
 												<dict>
 													<key>PWD</key>
-													<string>/Users/amw/Code/architizer/infrastructure</string>
+													<string>~/Code/architizer/utils</string>
 												</dict>
 												<key>Hosts</key>
 												<array/>
@@ -16947,19 +16947,19 @@
 												<key>Rows</key>
 												<integer>9</integer>
 												<key>Session Default Name</key>
-												<string>infrastructure</string>
+												<string>utils</string>
 												<key>Session GUID</key>
-												<string>29AE09E5-969F-4237-8018-474469C24632</string>
+												<string>64179DC7-76D9-431D-BBA1-9D989D88FE2E</string>
 												<key>Session Name</key>
-												<string>infrastructure</string>
+												<string>utils</string>
 												<key>Session Window Title</key>
-												<string>infrastructure</string>
+												<string>utils</string>
 												<key>Shell Integration Ever Used</key>
 												<false/>
 												<key>Substitutions</key>
 												<dict/>
 												<key>Working Directory</key>
-												<string>/Users/amw/Code/architizer/infrastructure</string>
+												<string>/Users/amw/Code/architizer/utils</string>
 											</dict>
 											<key>View Type</key>
 											<string>SessionView</string>
@@ -16968,7 +16968,7 @@
 												<key>height</key>
 												<real>185</real>
 												<key>width</key>
-												<real>1151</real>
+												<real>1149</real>
 												<key>x</key>
 												<real>0.0</real>
 												<key>y</key>
@@ -17720,12 +17720,12 @@
 													<key>Window Type</key>
 													<integer>1</integer>
 													<key>Working Directory</key>
-													<string>/Users/amw/Code/architizer/search-tools</string>
+													<string>~/Code/architizer/search-tools</string>
 												</dict>
 												<key>Bookmark Name</key>
 												<string>search-tools</string>
 												<key>Columns</key>
-												<integer>174</integer>
+												<integer>175</integer>
 												<key>Commands</key>
 												<array/>
 												<key>Directories</key>
@@ -17749,7 +17749,7 @@
 												<key>Session Default Name</key>
 												<string>search-tools</string>
 												<key>Session GUID</key>
-												<string>786B16F9-78EF-4312-A9D8-7DC54554CCFF</string>
+												<string>77B6F1E9-00A6-43FB-84EB-406C66D6FC45</string>
 												<key>Session Name</key>
 												<string>search-tools</string>
 												<key>Session Window Title</key>
@@ -17768,9 +17768,9 @@
 												<key>height</key>
 												<real>185</real>
 												<key>width</key>
-												<real>1408</real>
+												<real>1410</real>
 												<key>x</key>
-												<real>1152</real>
+												<real>1150</real>
 												<key>y</key>
 												<real>0.0</real>
 											</dict>
