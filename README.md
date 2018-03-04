@@ -17,8 +17,10 @@ $ brew install \
 bash-completion \
 bash-git-prompt \
 git \
+go \
 node \
 python \
+rbenv \
 thefuck \
 yarn \
 ```
@@ -95,6 +97,14 @@ Use the `gitconfig` from this repository by replacing the local `~/.gitconfig` f
 
 [include]
   path = ~/Code/dotfiles/gitconfig
+```
+
+## Go
+
+Create a folder for Go code:
+
+```bash
+mkdir ~/go
 ```
 
 ## npm

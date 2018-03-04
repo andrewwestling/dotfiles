@@ -7,11 +7,18 @@ if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
+# rbenv
+eval "$(rbenv init -)"
+
 # thefuck
 eval $(thefuck --alias)
 
 # Yarn
 export PATH="$PATH:$(yarn global bin)"
+
+# Go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 ################################################################################
 # Shortcuts
