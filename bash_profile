@@ -25,4 +25,5 @@ export PATH=$PATH:$GOPATH/bin
 alias chrome="open -a 'Google Chrome'"
 alias subl="open -a 'Sublime Text'"
 alias dcp="docker-compose"
+alias lsm="source ~/.virtualenvs/lifestack.me/bin/activate && cd ~/Code/lifestack.me"
 ################################################################################
