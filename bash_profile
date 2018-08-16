@@ -1,3 +1,6 @@
+# Homebrew
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
 # bash-completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
