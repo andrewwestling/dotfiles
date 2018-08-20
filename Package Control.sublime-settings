@@ -5,11 +5,13 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"Babel",
 		"Better CoffeeScript",
 		"Boxy Theme",
 		"Color Highlighter",
 		"Djaneiro",
+		"Handlebars",
 		"HTML-CSS-JS Prettify",
 		"Jade",
 		"JSX",
@@ -18,9 +20,7 @@
 		"Package Control",
 		"Sass",
 		"SublimeLinter",
-		"SublimeLinter-contrib-eslint",
-		"SublimeLinter-contrib-standard",
-		"SublimeLinter-flake8",
-		"SublimeLinter-jshint"
+		"SublimeLinter-eslint",
+		"SublimeLinter-flake8"
 	]
 }
