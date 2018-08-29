@@ -11,16 +11,21 @@
 		"Boxy Theme",
 		"Color Highlighter",
 		"Djaneiro",
+		"Git blame",
+		"GitGutter",
 		"Handlebars",
 		"HTML-CSS-JS Prettify",
 		"Jade",
 		"JSX",
 		"LESS",
+		"Markdown Extended",
 		"Monokai Extended",
 		"Package Control",
+		"Rainglow",
 		"Sass",
 		"SublimeLinter",
 		"SublimeLinter-eslint",
-		"SublimeLinter-flake8"
+		"SublimeLinter-flake8",
+		"TypeScript"
 	]
 }
