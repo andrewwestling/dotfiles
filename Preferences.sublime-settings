@@ -18,13 +18,14 @@
 		".git",
 		".sass-cache",
 		".settings",
-		"dist",
 		"staticfiles",
 		"node_modules",
 		"bower_components",
 		"build",
+		"terraform",
 		"tmp"
 	],
+	"follow_symlinks": true,
 	"font_size": 14,
 	"ignored_packages":
 	[
