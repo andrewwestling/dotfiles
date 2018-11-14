@@ -18,6 +18,7 @@
 		".git",
 		".sass-cache",
 		".settings",
+		"dist",
 		"staticfiles",
 		"node_modules",
 		"bower_components",
