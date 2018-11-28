@@ -14,14 +14,38 @@ Install these packages with `brew install`:
 
 ```bash
 $ brew install \
+autoconf \
+awscli \
 bash-completion \
 bash-git-prompt \
+gdbm \
+gettext \
 git \
 go \
+icu4c \
+kops \
+kubernetes-cli \
+kubetail \
+libidn2 \
+libunistring \
+md5sha1sum \
+mkcert \
 node \
+nspr \
+nss \
+nvm \
+openssl \
+pkg-config \
+postgresql \
 python \
 rbenv \
+readline \
+ruby-build \
+sops \
+sqlite \
 thefuck \
+wget \
+xz \
 yarn \
 ```
 
@@ -34,17 +58,22 @@ Install other macOS apps with `brew cask install`:
 ```bash
 $ brew cask install \
 1password \
+authy \
 bartender \
+chromedriver \
 docker \
 dropbox \
-fanny \
-github-desktop \
-google-chrome \
+github \
 iterm2 \
 karabiner-elements \
+recordit \
 sizeup \
+slack \
 spotify \
 sublime-text \
+tableplus \
+visual-studio-code \
+workflowy \
 yujitach-menumeters \
 ```
 
