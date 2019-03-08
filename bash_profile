@@ -29,4 +29,5 @@ alias chrome="open -a 'Google Chrome'"
 alias subl="open -a 'Sublime Text'"
 alias dcp="docker-compose"
 alias lsm="source ~/.virtualenvs/lifestack.me/bin/activate && cd ~/Code/lifestack.me"
+alias fix-better-hostname="sudo scutil --set HostName NYRXHV2F && sudo scutil --set LocalHostName NYRXHV2F && sudo scutil --set ComputerName NYRXHV2F"
 ################################################################################
