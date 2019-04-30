@@ -46,7 +46,6 @@ sqlite \
 thefuck \
 wget \
 xz \
-yarn \
 ```
 
 ### Cask

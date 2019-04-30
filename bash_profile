@@ -16,9 +16,6 @@ eval "$(rbenv init -)"
 # thefuck
 eval $(thefuck --alias)
 
-# Yarn
-export PATH="$PATH:$(yarn global bin)"
-
 # Go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
