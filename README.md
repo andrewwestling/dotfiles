@@ -43,7 +43,6 @@ readline \
 ruby-build \
 sops \
 sqlite \
-thefuck \
 wget \
 xz \
 ```
@@ -66,13 +65,11 @@ github \
 iterm2 \
 karabiner-elements \
 recordit \
-sizeup \
 slack \
+spectacle \
 spotify \
 sublime-text \
-tableplus \
 visual-studio-code \
-workflowy \
 yujitach-menumeters \
 ```
 

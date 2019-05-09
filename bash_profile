@@ -13,8 +13,6 @@ fi
 # rbenv
 eval "$(rbenv init -)"
 
-# thefuck
-eval $(thefuck --alias)
 
 # Go
 export GOPATH=$HOME/go
