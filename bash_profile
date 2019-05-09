@@ -26,10 +26,3 @@ alias chrome="open -a 'Google Chrome'"
 alias subl="open -a 'Sublime Text'"
 alias lsm="source ~/.virtualenvs/lifestack.me/bin/activate && cd ~/Code/lifestack.me"
 ################################################################################
-
-
-################################################################################
-# Better Mortgage MBP
-alias fix-better-hostname="sudo scutil --set HostName NYRXHV2F && sudo scutil --set LocalHostName NYRXHV2F && sudo scutil --set ComputerName NYRXHV2F"
-export PIP_INDEX_URL=https://${ARTIFACTORY_USER}:${ARTIFACTORY_PASSWORD}@artifactory.bettermg.com/artifactory/api/pypi/pypi/simple
-################################################################################
