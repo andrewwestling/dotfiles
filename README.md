@@ -37,7 +37,7 @@ nvm \
 openssl \
 pkg-config \
 postgresql \
-python \
+pyenv \
 rbenv \
 readline \
 ruby-build \
@@ -45,6 +45,7 @@ sops \
 sqlite \
 wget \
 xz \
+zlib \
 ```
 
 ### Cask
@@ -130,6 +131,16 @@ Create a folder for Go code:
 
 ```bash
 mkdir ~/go
+```
+
+## Python
+
+Use `pyenv` to install and use the correct Python versions:
+
+```bash
+pyenv install 3.6.8
+pyenv global 3.6.8
+python --version # should return Python 3.6.8; if it isn't, something is wrong
 ```
 
 ## npm

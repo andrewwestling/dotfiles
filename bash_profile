@@ -1,5 +1,5 @@
-# Homebrew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+# PATH things (Homebrew, pyenv)
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.pyenv/bin
 
 # bash-completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
@@ -13,6 +13,8 @@ fi
 # rbenv
 eval "$(rbenv init -)"
 
+# pyenv
+eval "$(pyenv init -)"
 
 # Go
 export GOPATH=$HOME/go
