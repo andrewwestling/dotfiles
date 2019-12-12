@@ -1,5 +1,5 @@
 # PATH things (Homebrew, pyenv)
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.pyenv/bin
+export PATH=$HOME/.pyenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # bash-completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
@@ -15,6 +15,10 @@ eval "$(rbenv init -)"
 
 # pyenv
 eval "$(pyenv init -)"
+
+# zlib for pyenv
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
 
 # Go
 export GOPATH=$HOME/go
