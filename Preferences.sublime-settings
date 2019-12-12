@@ -1,8 +1,6 @@
 {
-	"always_show_minimap_viewport": true,
 	"auto_close_tags": false,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
@@ -26,16 +24,10 @@
 		"node_modules",
 		"bower_components",
 		"build",
-		"terraform",
 		"tmp"
 	],
 	"follow_symlinks": true,
 	"font_size": 14,
-	"ignored_packages":
-	[
-		"Sass",
-		"Vintage"
-	],
 	"indent_guide_options":
 	[
 		"draw_normal",
