@@ -4,48 +4,23 @@ These are my configuration files and notes for setting up a new Mac.
 
 ## Homebrew
 
-```bash
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```zsh
+% /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ### Packages
 
 Install these packages with `brew install`:
 
-```bash
-$ brew install \
-autoconf \
+```zsh
+% brew install \
 awscli \
-bash-completion \
-bash-git-prompt \
-gdbm \
-gettext \
-git \
-go \
-icu4c \
-kops \
-kubernetes-cli \
-kubetail \
-libidn2 \
-libunistring \
-md5sha1sum \
-mkcert \
-node \
-nspr \
-nss \
 nvm \
-openssl \
-pkg-config \
 postgresql \
 pyenv \
 rbenv \
-readline \
 ruby-build \
-sops \
-sqlite \
-wget \
-xz \
-zlib \
+zsh-git-prompt \
 ```
 
 ### Cask
@@ -54,47 +29,28 @@ zlib \
 
 Install other macOS apps with `brew cask install`:
 
-```bash
-$ brew cask install \
+```zsh
+% brew cask install \
 1password \
 authy \
-bartender \
-chromedriver \
 docker \
-dropbox \
 github \
 iterm2 \
-karabiner-elements \
-recordit \
-slack \
+menumeters \
 spectacle \
 spotify \
 sublime-text \
-visual-studio-code \
-yujitach-menumeters \
 ```
 
-#### Quick Look Plugins
+For Logitech mouse drivers:
 
-These plugins add extra functionality to the macOS [Quick Look](https://support.apple.com/kb/PH25575?locale=en_US) feature. This list comes from [sindresorhus/quick-look-plugins](https://github.com/sindresorhus/quick-look-plugins).
+```zsh
+% brew tap homebrew/cask-drivers
 
-Install all with this command:
+% brew cask install logitech-options
 
-```bash
-$ brew cask install \
-betterzipql \
-qlcolorcode \
-qlimagesize \
-qlmarkdown \
-qlprettypatch \
-qlstephen \
-qlvideo \
-quicklook-csv \
-quicklook-json \
-quicklookase \
-suspicious-package \
-webpquicklook \
 ```
+Then configure the side buttons to Desktop Left/Right
 
 ## iTerm2
 
@@ -104,63 +60,49 @@ webpquicklook \
 
 ![iTerm Preferences Location](https://user-images.githubusercontent.com/3157928/27269576-12ec5ca4-5486-11e7-839f-a6ef5ac4a978.png)
 
-## Bash
 
-Use the `bash_profile` from this repository by replacing the local `~/.bash_profile` file with this:
+## oh-my-zsh
 
-```bash
-# ~/.bash_profile
+```zsh
+$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
-[[ -s "$HOME/Code/dotfiles/bash_profile" ]] && source "$HOME/Code/dotfiles/bash_profile"
+## zsh
+
+Include the `zshrc` from this repository by adding this to the local `~/.zshrc`:
+
+```zsh
+# ~/.zshrc
+
+[[ -s "$HOME/Code/dotfiles/zshrc" ]] && source "$HOME/Code/dotfiles/zshrc"
 ```
 
 ## Git
 
 Use the `gitconfig` from this repository by replacing the local `~/.gitconfig` file with this:
 
-```bash
+```zsh
 # ~/.gitconfig
 
 [include]
   path = ~/Code/dotfiles/gitconfig
 ```
 
-## Go
-
-Create a folder for Go code:
-
-```bash
-mkdir ~/go
-```
-
 ## Python
 
 Use `pyenv` to install and use the correct Python versions:
 
-```bash
+```zsh
 pyenv install 3.6.8
 pyenv global 3.6.8
 python --version # should return Python 3.6.8; if it isn't, something is wrong
-```
-
-## npm
-
-Install these packages globally with `npm install -g`:
-
-```bash
-$ npm install -g \
-bower \
-eslint \
-gulp \
-jshint \
-standard \
 ```
 
 ## pip
 
 Install these packages with `pip install`:
 
-```bash
+```zsh
 $ pip install \
 awscli \
 ```
@@ -169,7 +111,7 @@ awscli \
 
 ### Kryptonite (SSH / GPG Keys)
 
-```bash
+```zsh
 $ curl https://krypt.co/kr | sh
 $ kr pair
 $ kr codesign
@@ -179,7 +121,7 @@ $ kr codesign
 
 _Get AWS Access Key ID/Secret from elsewhere and use `aws configure` to set up the AWS CLI_
 
-```bash
+```zsh
 $ aws configure
 ```
 
@@ -189,12 +131,12 @@ $ aws configure
 - Install [Package Control](https://packagecontrol.io/installation)
 - Create symlinks to the settings files in this repository:
 
-```bash
+```zsh
 # Preferences
-$ rm ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
-$ ln -s ~/Code/dotfiles/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+% rm ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+% ln -s ~/Code/dotfiles/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
 
 # Package Control
-$ rm ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
-$ ln -s ~/Code/dotfiles/Package\ Control.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
+% rm ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
+% ln -s ~/Code/dotfiles/Package\ Control.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
 ```
