@@ -21,3 +21,5 @@
   gpgSign = true
 [tag]
   forceSignAnnotated = true
+[pager]
+  branch = false
