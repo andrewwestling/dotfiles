@@ -54,11 +54,13 @@ Install other macOS apps with `brew cask install`:
 authy \
 docker \
 github \
+google-chrome \
 iterm2 \
 menumeters \
 spectacle \
 spotify \
-sublime-text \
+visual-studio-code \
+whatsapp \
 ```
 
 For Logitech mouse drivers:
