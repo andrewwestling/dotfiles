@@ -1,0 +1,14 @@
+{
+    "editor.renderWhitespace": "all",
+    "files.insertFinalNewline": true,
+    "editor.fontSize": 14,
+    "window.title": "${activeEditorFull}${separator}${rootName}",
+    "editor.tabSize": 2,
+    "editor.trimAutoWhitespace": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnPaste": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "workbench.colorTheme": "Monokai",
+    "editor.minimap.enabled": false
+}
