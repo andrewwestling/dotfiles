@@ -8,6 +8,24 @@ These are my configuration files and notes for setting up a new Mac.
 % /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+## Mackup
+
+> ℹ️ Need to create this file for mackup settings `~/.mackup.cfg`
+
+```
+[storage]
+engine = file_system
+path = Code/dotfiles/
+```
+
+Run
+
+```
+brew install mackup
+
+mackup restore
+```
+
 ### Packages
 
 Install these packages with `brew install`:
@@ -15,6 +33,7 @@ Install these packages with `brew install`:
 ```zsh
 % brew install \
 awscli \
+mackup \   #should I do this here? or before?
 nvm \
 postgresql \
 pyenv \
@@ -50,9 +69,11 @@ For Logitech mouse drivers:
 % brew cask install logitech-options
 
 ```
-Then configure the side buttons to Desktop Left/Right
+Then after setting up 1Password, sign in with Logitech Account Sync (settings should be stored there for mouse)
 
 ## iTerm2
+
+> ℹ️ Should be able to deprecate this with mackup
 
 - Run the `brew cask install` command above to install iTerm2.
 - Clone this repository into `~/Code`.
@@ -63,11 +84,15 @@ Then configure the side buttons to Desktop Left/Right
 
 ## oh-my-zsh
 
+> ℹ️ Should be able to deprecate this with mackup
+
 ```zsh
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## zsh
+
+> ℹ️ Should be able to deprecate this with mackup
 
 Include the `zshrc` from this repository by adding this to the local `~/.zshrc`:
 
@@ -78,6 +103,8 @@ Include the `zshrc` from this repository by adding this to the local `~/.zshrc`:
 ```
 
 ## Git
+
+> ℹ️ Should be able to deprecate this with mackup
 
 Use the `gitconfig` from this repository by replacing the local `~/.gitconfig` file with this:
 
@@ -100,6 +127,8 @@ python --version # should return Python 3.6.8; if it isn't, something is wrong
 
 ## pip
 
+> ℹ️ Should be able to deprecate this with mackup
+
 Install these packages with `pip install`:
 
 ```zsh
@@ -110,6 +139,8 @@ awscli \
 ## Credentials
 
 ### Kryptonite (SSH / GPG Keys)
+
+> ℹ️ I should come up with a different strategy for this; maybe deprecate Kryptonite as SSH situation
 
 ```zsh
 $ curl https://krypt.co/kr | sh
@@ -126,6 +157,8 @@ $ aws configure
 ```
 
 ## Sublime Text
+
+> ⛔️ Deprecate this but also mackup can handle this
 
 - Run the `brew cask install` command above to install Sublime Text 3.
 - Install [Package Control](https://packagecontrol.io/installation)
