@@ -6,6 +6,8 @@ Do the following in order:
 1. Install Homebrew
 1. Install `oh-my-zsh`
 1. Install brew packages / casks
+1. Set up 1Password
+1. Sign into iCloud
 1. Restore `mackup`
 1. Set up Kryptonite
 1. Set up `pyenv`
@@ -67,6 +69,15 @@ For Logitech mouse drivers:
 ```
 Then after setting up 1Password, sign in with Logitech Account Sync (settings should be stored there for mouse)
 
+## 1Password
+
+Set up using the camera / phone thing
+
+## iCloud
+
+Sign into iCloud now that 1Password is set up
+
+> TODO: Automate macOS setup for which iCloud features are enabled
 
 ## Mackup
 
