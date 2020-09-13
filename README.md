@@ -115,7 +115,7 @@ python --version # should return Python 3.6.8; if it isn't, something is wrong
 Install these packages with `pip install`:
 
 ```zsh
-$ pip install \
+% pip install \
 awscli \
 ```
 
