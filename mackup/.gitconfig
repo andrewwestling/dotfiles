@@ -1,16 +1,21 @@
-[include]
-  path = ~/Code/dotfiles/gitconfig
+[url "https://"]
+  insteadOf = git://
+[user]
+  name = Andrew Westling
+  email = a@andrewwestling.com
+[push]
+  default = simple
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[alias]
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [gpg]
 	program = /usr/local/bin/krgpg
 [commit]
 	gpgSign = true
 [tag]
 	forceSignAnnotated = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[user]
-	name = Andrew M Westling
-	email = a@andrewwestling.com

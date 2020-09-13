@@ -1,4 +1,9 @@
-[[ -s "$HOME/Code/dotfiles/zshrc" ]] && source "$HOME/Code/dotfiles/zshrc"
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
+# Aliases
+alias chrome="open -a 'Google Chrome'"
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -101,3 +106,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Added by Krypton
+export GPG_TTY=$(tty)
