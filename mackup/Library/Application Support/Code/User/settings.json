@@ -9,7 +9,6 @@
     "editor.formatOnPaste": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.snippetSuggestions": "top",
-    "workbench.colorTheme": "Monokai",
     "editor.minimap.enabled": false,
     "git.autofetch": true
 }
