@@ -195,6 +195,30 @@
         "options": {
           "full_name": "logitech-options"
         }
+      },
+      "discord": {
+        "version": "0.0.259",
+        "options": {
+          "full_name": "discord"
+        }
+      },
+      "sublime-text": {
+        "version": "3.211",
+        "options": {
+          "full_name": "sublime-text"
+        }
+      },
+      "zoomus": {
+        "version": "5.2.45131.0907",
+        "options": {
+          "full_name": "zoomus"
+        }
+      },
+      "bartender": {
+        "version": "3.1.23",
+        "options": {
+          "full_name": "bartender"
+        }
       }
     },
     "tap": {
