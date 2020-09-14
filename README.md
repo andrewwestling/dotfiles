@@ -4,9 +4,8 @@ These are my configuration files and notes for setting up a new Mac.
 
 Do the following in order:
 1. Clone this repo
-1. Install Homebrew
 1. Install `oh-my-zsh`
-1. Install brew packages / casks
+1. Install Homebrew and packages
 1. Set up 1Password
 1. Sign into iCloud
 1. Restore `mackup`
@@ -16,12 +15,7 @@ Do the following in order:
 
 ## Clone this repo
 ```zsh
-% mkdir ~/Code && git clone https://github.com/expandrew/dotfiles
-```
-
-## Homebrew
-```zsh
-% /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+% mkdir ~/Code && git clone https://github.com/expandrew/dotfiles ~/Code
 ```
 
 ## oh-my-zsh
@@ -29,39 +23,10 @@ Do the following in order:
 % sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-### Packages
-Install these packages with `brew install`:
-
+## Homebrew
 ```zsh
-% brew install \
-awscli \
-mackup \
-nvm \
-postgresql \
-pyenv \
-rbenv \
-ruby-build \
-zsh-git-prompt \
-```
-
-### Casks
-Install other macOS apps with `brew cask install`:
-
-```zsh
-% brew tap homebrew/cask-drivers # for logitech-options
-% brew cask install \
-1password \
-authy \
-docker \
-github \
-google-chrome \
-iterm2 \
-menumeters \
-logitech-options \
-spectacle \
-spotify \
-visual-studio-code \
-whatsapp \
+% /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+% cd ~/code/dotfiles && brew bundle # install everything from Brewfile
 ```
 
 ## 1Password
