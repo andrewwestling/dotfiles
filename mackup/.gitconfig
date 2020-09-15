@@ -1,7 +1,5 @@
 [url "https://"]
   insteadOf = git://
-[core]
-  excludesfile = gitignore
 [user]
   name = Andrew Westling
   email = a@andrewwestling.com
@@ -16,10 +14,8 @@
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [gpg]
-  program = /usr/local/bin/krgpg
+	program = /usr/local/bin/krgpg
 [commit]
-  gpgSign = true
+	gpgSign = true
 [tag]
-  forceSignAnnotated = true
-[pager]
-  branch = false
+	forceSignAnnotated = true
