@@ -30,10 +30,13 @@ Do the following in order:
 ```
 
 ## 1Password
-Set up using the camera / phone thing
+Set up using the camera / phone thing via mobile app.
 
 ## iCloud
-Sign into iCloud now that 1Password is set up
+Sign into iCloud now that 1Password is set up. Disable all the stuff except these:
+- Notes
+- Find My Mac
+- Home
 
 ## Mackup
 Restore app settings from mackup
