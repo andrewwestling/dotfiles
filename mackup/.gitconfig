@@ -19,3 +19,5 @@
 	gpgSign = true
 [tag]
 	forceSignAnnotated = true
+[core]
+	excludesfile = ~/.gitignore
