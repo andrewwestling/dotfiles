@@ -42,7 +42,12 @@ Sign into iCloud now that 1Password is set up. Disable all the stuff except thes
 Restore app settings from mackup
 
 ```zsh
-% cp ~/code/dotfiles/mackup/.mackup.cfg ~/  # Copy the configuration to the home directory because I don't use the default
+# Copy the configuration to the home directory because I don't use the default
+% cp ~/code/dotfiles/mackup/.mackup.cfg ~/
+
+# Copy the custom config directory for custom apps
+% cp -r ~/code/dotfiles/mackup/.mackup ~/.mackup
+
 % mackup restore
 ```
 
