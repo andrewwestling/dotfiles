@@ -219,6 +219,12 @@
         "options": {
           "full_name": "bartender"
         }
+      },
+      "rocket": {
+        "version": "1.7.4,69",
+        "options": {
+          "full_name": "rocket"
+        }
       }
     },
     "tap": {
