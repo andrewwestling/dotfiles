@@ -1,25 +1,26 @@
 {
-    "editor.renderWhitespace": "all",
-    "files.insertFinalNewline": true,
-    "editor.fontSize": 14,
-    "window.title": "${activeEditorFull}${separator}${rootName}",
-    "editor.tabSize": 2,
-    "editor.trimAutoWhitespace": true,
-    "files.trimTrailingWhitespace": true,
-    "editor.formatOnPaste": true,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.snippetSuggestions": "top",
-    "editor.minimap.enabled": false,
-    "git.autofetch": true,
-    "[css]": {
-        "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "window.zoomLevel": 0,
-    "editor.formatOnSave": true
+  "editor.renderWhitespace": "all",
+  "files.insertFinalNewline": true,
+  "editor.fontSize": 14,
+  "window.title": "${activeEditorFull}${separator}${rootName}",
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnPaste": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.snippetSuggestions": "top",
+  "editor.minimap.enabled": false,
+  "git.autofetch": true,
+  "[css]": {
+    "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 0,
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Visual Studio Dark"
 }
