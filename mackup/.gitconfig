@@ -21,3 +21,5 @@
 	forceSignAnnotated = true
 [core]
 	excludesfile = ~/.gitignore
+[pager]
+	branch = false
