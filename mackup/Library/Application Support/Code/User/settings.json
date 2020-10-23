@@ -23,5 +23,7 @@
   "window.zoomLevel": 0,
   "editor.formatOnSave": true,
   "workbench.colorTheme": "Monokai",
-  "editor.find.addExtraSpaceOnTop": false
+  "editor.find.addExtraSpaceOnTop": false,
+  "breadcrumbs.enabled": false,
+  "workbench.activityBar.visible": false
 }
