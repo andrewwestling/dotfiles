@@ -2,53 +2,53 @@
   "entries": {
     "brew": {
       "awscli": {
-        "version": "2.0.56",
+        "version": "2.0.48",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.56.catalina.bottle.tar.gz",
-              "sha256": "2208ab5d95330760932cb33031a442f323f3af82265d365b88a7667bad0166c9"
+              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.48.catalina.bottle.tar.gz",
+              "sha256": "e2568d1fd54df10a00bb3722038bd19f510c7f01bcbed889ff77b6f74d5abb7f"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.56.mojave.bottle.tar.gz",
-              "sha256": "c2934f8ae4c6f9e6fc2dfb9ba8908a25fa755e87bf0b768072571d3eadcc9fae"
+              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.48.mojave.bottle.tar.gz",
+              "sha256": "f045f77e8e74167c1b27daca4bf1a3e96e8446990f70112c43b4448acc369c9d"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.56.high_sierra.bottle.tar.gz",
-              "sha256": "c194c1cd3583b059771c2e18fe4581b60c28ff6eedabf2dfb1ff47e57eb52b39"
+              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.48.high_sierra.bottle.tar.gz",
+              "sha256": "907821d5d4cad35c2a1f54a5ab0ce90a8e97e9bd1831bd8ac2784f9f359afe28"
             }
           }
         }
       },
       "mackup": {
-        "version": "0.8.29_1",
+        "version": "0.8.29",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/mackup-0.8.29_1.catalina.bottle.tar.gz",
-              "sha256": "b76ef684413cff5aa37666202ee84a0e42c7db942689ddf6d815a1f3b48352a1"
+              "url": "https://homebrew.bintray.com/bottles/mackup-0.8.29.catalina.bottle.tar.gz",
+              "sha256": "be195c66e0330cd8cbc4bef06e8be0d919d613774870de537af8b6ef81d22ad2"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/mackup-0.8.29_1.mojave.bottle.tar.gz",
-              "sha256": "e2a3b323ac3b0d57ae3962d996b959ebdec5008db19a9495343f5987542ba5a8"
+              "url": "https://homebrew.bintray.com/bottles/mackup-0.8.29.mojave.bottle.tar.gz",
+              "sha256": "8ee4dc679e9c944d3407febb22b7b0cb59fc2cd45308ffaf637ff0e11bb26604"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/mackup-0.8.29_1.high_sierra.bottle.tar.gz",
-              "sha256": "c8043863b82bf5acd733c235e64005782ec26e516c66477527fde373819535d8"
+              "url": "https://homebrew.bintray.com/bottles/mackup-0.8.29.high_sierra.bottle.tar.gz",
+              "sha256": "da0ee240b7e1b3626becaea6b66673a58a9c0ec803e6e5da4e4f95672a51879b"
             }
           }
         }
       },
       "nvm": {
-        "version": "0.36.0",
+        "version": "0.35.3",
         "bottle": false
       },
       "postgresql": {
-        "version": "12.4",
+        "version": "12.2",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
@@ -69,22 +69,22 @@
         }
       },
       "pyenv": {
-        "version": "1.2.21",
+        "version": "1.2.20",
         "bottle": {
           "cellar": ":any",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/pyenv-1.2.21.catalina.bottle.tar.gz",
-              "sha256": "2f4c78fd8cce10de8e9fb48a43c7cd51003e7a87c3cba9e4c3942d72f331df58"
+              "url": "https://homebrew.bintray.com/bottles/pyenv-1.2.20.catalina.bottle.tar.gz",
+              "sha256": "74e2f3a7cf6513948cbac05f3af8f3f2ae7df825dfc21a91759963afbb398420"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/pyenv-1.2.21.mojave.bottle.tar.gz",
-              "sha256": "a3f8395adbc0644940fa03f41807fac246b997d10ae990f549e016699a2b7e51"
+              "url": "https://homebrew.bintray.com/bottles/pyenv-1.2.20.mojave.bottle.tar.gz",
+              "sha256": "ac4f0bdd6bba22dd590ce2b2e86ee51300c3bb708288bc26e6294e1035a38a03"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/pyenv-1.2.21.high_sierra.bottle.tar.gz",
-              "sha256": "d4a573a9116ee1f474e4a77517af5c9dfaefe5ebb9cf7f26d2cc9ac872fe1155"
+              "url": "https://homebrew.bintray.com/bottles/pyenv-1.2.20.high_sierra.bottle.tar.gz",
+              "sha256": "608b5e27568abc7c326c0bb066cf6d188c829362dd0dff718a04a44e9082f82a"
             }
           }
         }
@@ -115,7 +115,7 @@
         }
       },
       "ruby-build": {
-        "version": "20201005",
+        "version": "20200819",
         "bottle": false
       },
       "zsh-git-prompt": {
@@ -125,61 +125,61 @@
     },
     "cask": {
       "1password": {
-        "version": "7.6",
+        "version": "7.3",
         "options": {
           "full_name": "1password"
         }
       },
       "authy": {
-        "version": "1.8.2",
+        "version": "1.7.0",
         "options": {
           "full_name": "authy"
         }
       },
       "bartender": {
-        "version": "3.1.23",
+        "version": "3.0.64",
         "options": {
           "full_name": "bartender"
         }
       },
       "docker": {
-        "version": "2.3.0.3,45519",
+        "version": "2.0.0.3-ce-mac81,31259",
         "options": {
           "full_name": "docker"
         }
       },
       "github": {
-        "version": "2.5.3-f26bc4fa",
+        "version": "1.6.6-70f9bea5",
         "options": {
           "full_name": "github"
         }
       },
       "iterm2": {
-        "version": "3.3.12",
+        "version": "3.2.9",
         "options": {
           "full_name": "iterm2"
         }
       },
       "menumeters": {
-        "version": "2.0.7",
+        "version": "2.0.0",
         "options": {
           "full_name": "menumeters"
         }
       },
       "monitorcontrol": {
-        "version": "2.1.0",
+        "version": "2.0.0",
         "options": {
           "full_name": "monitorcontrol"
         }
       },
       "rectangle": {
-        "version": "0.35",
+        "version": "0.32",
         "options": {
           "full_name": "rectangle"
         }
       },
       "rocket": {
-        "version": "1.7.4,69",
+        "version": "1.5,53:1553802737",
         "options": {
           "full_name": "rocket"
         }
@@ -191,39 +191,63 @@
         }
       },
       "sublime-text": {
-        "version": "3.211",
+        "version": "3.207",
         "options": {
           "full_name": "sublime-text"
         }
       },
       "visual-studio-code": {
-        "version": "1.48.1",
+        "version": "1.34.0,a622c65b2c713c890fcf4fbf07cf34049d5fe758",
         "options": {
           "full_name": "visual-studio-code"
         }
       },
       "logitech-options": {
-        "version": "8.20.233",
+        "version": "8.30.293",
         "options": {
           "full_name": "logitech-options"
+        }
+      },
+      "google-chrome": {
+        "version": "74.0.3729.169",
+        "options": {
+          "full_name": "google-chrome"
+        }
+      },
+      "discord": {
+        "version": "0.0.259",
+        "options": {
+          "full_name": "discord"
+        }
+      },
+      "whatsapp": {
+        "version": "2.2035.15",
+        "options": {
+          "full_name": "whatsapp"
+        }
+      },
+      "zoomus": {
+        "version": "5.2.45131.0907",
+        "options": {
+          "full_name": "zoomus"
         }
       }
     },
     "tap": {
       "homebrew/cask-drivers": {
-        "revision": "9d68ef9781bf885200606499134486aac0577ae1"
+        "revision": "ee487f2c14a5f88887889cff2b9ffc31fe37a50e"
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.5.6",
+        "HOMEBREW_VERSION": "2.5.0-dirty",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "fb8936a446bce7e105ed08d766f77dab4acbeaf7",
-        "CLT": "12.0.31.1",
-        "Xcode": "12.0",
-        "macOS": "10.15.6"
+        "Homebrew/homebrew-core": "8ec04410c472f75441a968883f7b1aae329bc2e8",
+        "CLT": "1103.0.32.62",
+        "Xcode": "12.0.1",
+        "macOS": "10.15.7"
       }
     }
   }
