@@ -121,6 +121,10 @@
       "zsh-git-prompt": {
         "version": "0.5",
         "bottle": false
+      },
+      "yarn": {
+        "version": "1.22.5",
+        "bottle": false
       }
     },
     "cask": {
@@ -231,6 +235,12 @@
         "options": {
           "full_name": "zoomus"
         }
+      },
+      "kap": {
+        "version": "3.3.2",
+        "options": {
+          "full_name": "kap"
+        }
       }
     },
     "tap": {
@@ -242,7 +252,7 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.5.0-dirty",
+        "HOMEBREW_VERSION": "2.7.0-100-gda0d7ef",
         "HOMEBREW_PREFIX": "/usr/local",
         "Homebrew/homebrew-core": "8ec04410c472f75441a968883f7b1aae329bc2e8",
         "CLT": "1103.0.32.62",

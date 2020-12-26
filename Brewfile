@@ -5,6 +5,7 @@ brew 'postgresql'
 brew 'pyenv'
 brew 'rbenv'
 brew 'ruby-build'
+brew 'yarn'
 brew 'zsh-git-prompt'
 
 cask '1password'
