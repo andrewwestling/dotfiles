@@ -25,5 +25,8 @@
   "workbench.colorTheme": "Monokai",
   "editor.find.addExtraSpaceOnTop": false,
   "breadcrumbs.enabled": false,
-  "workbench.activityBar.visible": false
+  "workbench.activityBar.visible": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
