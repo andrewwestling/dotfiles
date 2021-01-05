@@ -21,7 +21,6 @@ cask 'monitorcontrol'
 cask 'rectangle'
 cask 'rocket'
 cask 'spotify'
-cask 'sublime-text'
 cask 'visual-studio-code'
 
 tap 'homebrew/cask-drivers'
