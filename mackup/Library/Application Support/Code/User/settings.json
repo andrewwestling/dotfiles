@@ -12,7 +12,7 @@
   "editor.minimap.enabled": false,
   "git.autofetch": true,
   "[css]": {
-    "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -22,11 +22,63 @@
   },
   "window.zoomLevel": 0,
   "editor.formatOnSave": true,
-  "workbench.colorTheme": "Monokai",
   "editor.find.addExtraSpaceOnTop": false,
   "breadcrumbs.enabled": false,
   "workbench.activityBar.visible": false,
   "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontSize": 14,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editorAssociations": [],
+  "gitlens.menus": {
+    "editor": {
+      "blame": false,
+      "clipboard": true,
+      "compare": true,
+      "history": false,
+      "remote": false
+    },
+    "editorTab": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "explorer": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "scm": {
+      "authors": true
+    },
+    "scmGroupInline": {
+      "stash": true
+    },
+    "scmGroup": {
+      "compare": true,
+      "openClose": true,
+      "stash": true
+    },
+    "scmItem": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": false,
+      "stash": true
+    }
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "diffEditor.renderSideBySide": false,
+  "workbench.colorTheme": "Monokai",
+  "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
