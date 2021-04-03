@@ -1,39 +1,41 @@
 {
-  "editor.renderWhitespace": "all",
-  "files.insertFinalNewline": true,
-  "editor.fontSize": 14,
-  "window.title": "${activeEditorFull}${separator}${rootName}",
-  "editor.tabSize": 2,
-  "editor.trimAutoWhitespace": true,
-  "files.trimTrailingWhitespace": true,
-  "editor.formatOnPaste": true,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.snippetSuggestions": "top",
-  "editor.minimap.enabled": false,
-  "git.autofetch": true,
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[typescriptreact]": {
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "window.zoomLevel": 0,
-  "editor.formatOnSave": true,
-  "editor.find.addExtraSpaceOnTop": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "breadcrumbs.enabled": false,
-  "workbench.activityBar.visible": false,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.fontSize": 14,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "workbench.editorAssociations": [],
+  "diffEditor.renderSideBySide": false,
+  "editor.find.addExtraSpaceOnTop": false,
+  "editor.fontSize": 14,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.renderWhitespace": "all",
+  "editor.snippetSuggestions": "top",
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
   "gitlens.menus": {
     "editor": {
       "blame": false,
@@ -57,12 +59,12 @@
     "scm": {
       "authors": true
     },
-    "scmGroupInline": {
-      "stash": true
-    },
     "scmGroup": {
       "compare": true,
       "openClose": true,
+      "stash": true
+    },
+    "scmGroupInline": {
       "stash": true
     },
     "scmItem": {
@@ -73,12 +75,34 @@
       "stash": true
     }
   },
-  "workbench.startupEditor": "newUntitledFile",
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "diffEditor.renderSideBySide": false,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontSize": 14,
+  "window.title": "${activeEditorFull}${separator}${rootName}",
+  "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Monokai",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "workbench.startupEditor": "newUntitledFile",
+  "files.associations": {
+    "*.mdx": "mdx"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.minimap.enabled": false,
+  "colorize.languages": [
+    "javascript",
+    "typescript",
+    "css",
+    "sass",
+    "scss",
+    "less",
+    "postcss",
+    "sss",
+    "stylus",
+    "xml",
+    "svg"
+  ]
 }
