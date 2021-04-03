@@ -1,5 +1,6 @@
 brew 'awscli'
 brew 'mackup'
+brew 'mas'
 brew 'nvm'
 brew 'postgresql'
 brew 'pyenv'
@@ -31,3 +32,6 @@ cask 'zoom'
 
 tap 'homebrew/cask-drivers'
 cask 'logitech-options'
+
+mas 'Bear', id: 1091189122
+mas 'Hand Mirror', id: 1502839586
