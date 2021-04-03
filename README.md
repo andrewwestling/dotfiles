@@ -3,6 +3,7 @@
 These are my configuration files and notes for setting up a new Mac.
 
 Do the following in order:
+
 1. Clone this repo
 1. Install `oh-my-zsh`
 1. Install Homebrew and packages
@@ -14,31 +15,51 @@ Do the following in order:
 1. Set up AWS credentials
 
 ## Clone this repo
+
 ```zsh
 % mkdir ~/Code && git clone https://github.com/expandrew/dotfiles ~/Code
 ```
 
 ## oh-my-zsh
+
 ```zsh
 % sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## Homebrew
+
 ```zsh
 % /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 % cd ~/code/dotfiles && brew bundle # install everything from Brewfile
 ```
 
+### Brewfile
+
+This is how I update the Brewfile when I install/uninstall something:
+
+```zsh
+% cd ~/code/dotfiles
+% brew bundle dump -f
+# Then commit the changes to this repo, etc.
+```
+
+I just do this periodically and commit it, it's not automated but the command handles the file for me so I don't have to handwrite it
+
 ## 1Password
+
 Set up using the camera / phone thing via mobile app.
 
 ## iCloud
+
 Sign into iCloud now that 1Password is set up. Disable all the stuff except these:
+
+- iCloud Drive
 - Notes
 - Find My Mac
 - Home
 
 ## Mackup
+
 Restore app settings from mackup
 
 ```zsh
@@ -52,6 +73,7 @@ Restore app settings from mackup
 ```
 
 ## Kryptonite (SSH / GPG Keys)
+
 ```zsh
 % curl https://krypt.co/kr | sh
 % kr pair
@@ -59,6 +81,7 @@ Restore app settings from mackup
 ```
 
 ## Python
+
 Use `pyenv` to install and use the correct Python versions:
 
 ```zsh
@@ -68,6 +91,7 @@ Use `pyenv` to install and use the correct Python versions:
 ```
 
 ## pip
+
 Install these packages with `pip install`:
 
 ```zsh
@@ -76,6 +100,7 @@ awscli \
 ```
 
 ## AWS
+
 _Get AWS Access Key ID/Secret from elsewhere and use `aws configure` to set up the AWS CLI_
 
 ```zsh

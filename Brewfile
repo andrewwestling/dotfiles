@@ -1,37 +1,38 @@
-brew 'awscli'
-brew 'mackup'
-brew 'mas'
-brew 'nvm'
-brew 'postgresql'
-brew 'pyenv'
-brew 'rbenv'
-brew 'ruby-build'
-brew 'yarn'
-brew 'zsh-git-prompt'
-
-cask '1password'
-cask 'authy'
-cask 'bartender'
-cask 'discord'
-cask 'docker'
-cask 'firefox'
-cask 'github'
-cask 'google-chrome'
-cask 'iterm2'
-cask 'kap'
-cask 'moom'
-cask 'menumeters'
-cask 'monitorcontrol'
-cask 'rectangle'
-cask 'rocket'
-cask 'slack'
-cask 'spotify'
-cask 'whatsapp'
-cask 'visual-studio-code'
-cask 'zoom'
-
-tap 'homebrew/cask-drivers'
-cask 'logitech-options'
-
-mas 'Bear', id: 1091189122
-mas 'Hand Mirror', id: 1502839586
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+brew "awscli"
+brew "mackup"
+brew "mas"
+brew "nvm"
+brew "postgresql"
+brew "pyenv"
+brew "ruby-build"
+brew "rbenv"
+brew "yarn"
+brew "zsh-git-prompt"
+cask "1password"
+cask "authy"
+cask "bartender"
+cask "discord"
+cask "docker"
+cask "firefox"
+cask "github"
+cask "google-chrome"
+cask "iterm2"
+cask "kap"
+cask "logitech-options"
+cask "menumeters"
+cask "monitorcontrol"
+cask "moom"
+cask "rectangle"
+cask "rocket"
+cask "slack"
+cask "spotify"
+cask "visual-studio-code"
+cask "whatsapp"
+cask "zoom"
+mas "Bear", id: 1091189122
+mas "Hand Mirror", id: 1502839586
