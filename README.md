@@ -17,7 +17,7 @@ Do the following in order:
 ## Clone this repo
 
 ```zsh
-% mkdir ~/Code && git clone https://github.com/expandrew/dotfiles ~/Code
+% mkdir ~/Code && git clone https://github.com/expandrew/dotfiles ~/Code/dotfiles
 ```
 
 ## oh-my-zsh
