@@ -12,7 +12,7 @@ Do the following in order:
 1. Sign into iCloud
 1. Run `brew bundle` again to install Mac App Store apps
 1. Restore `mackup`
-1. Set up Kryptonite
+1. Set up Krypton
 1. Set up `pyenv`
 1. Set up AWS credentials
 
@@ -85,7 +85,7 @@ Restore app settings from mackup
 % mackup restore
 ```
 
-## Kryptonite (SSH / GPG Keys)
+## Krypton (SSH / GPG Keys)
 
 ```zsh
 % curl https://krypt.co/kr | sh
