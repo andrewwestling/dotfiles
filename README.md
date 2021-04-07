@@ -6,6 +6,7 @@ Do the following in order:
 
 1. Clone this repo
 1. Install `oh-my-zsh`
+1. Install Rosetta 2 (for M1 Macs)
 1. Install Homebrew and packages
 1. Set up 1Password
 1. Sign into iCloud
@@ -24,6 +25,12 @@ Do the following in order:
 
 ```zsh
 % sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+## Rosetta 2
+
+```zsh
+% sudo softwareupdate --install-rosetta
 ```
 
 ## Homebrew
