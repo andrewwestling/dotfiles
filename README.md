@@ -10,6 +10,7 @@ Do the following in order:
 1. Install Homebrew and packages
 1. Set up 1Password
 1. Sign into iCloud
+1. Run `brew bundle` again to install Mac App Store apps
 1. Restore `mackup`
 1. Set up Kryptonite
 1. Set up `pyenv`
@@ -41,6 +42,8 @@ Do the following in order:
 % cd ~/code/dotfiles && brew bundle # install everything from Brewfile
 ```
 
+Note: At this point, `brew bundle` will not complete successfully for Mac App Store apps via `mas` because I haven't signed into iCloud yet (dependency on 1Password step below). I need to re-run `brew bundle` again after 1Password and iCloud are set up.
+
 ### Brewfile
 
 This is how I update the Brewfile when I install/uninstall something:
@@ -65,6 +68,8 @@ Sign into iCloud now that 1Password is set up. Disable all the stuff except thes
 - Notes
 - Find My Mac
 - Home
+
+iCloud will also bring over my other Internet Accounts when I sign in. Go to the a@aw Google account and turn on "Contacts" sync (will ask me to sign into Google; grab password from 1Password and use security key for 2FA)
 
 ## Mackup
 
