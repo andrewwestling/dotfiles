@@ -30,6 +30,7 @@ Do the following in order:
 
 ```zsh
 % /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+% eval "$(/opt/homebrew/bin/brew shellenv)" ## get brew in the PATH for now (will be actually added when Mackup is restored)
 % cd ~/code/dotfiles && brew bundle # install everything from Brewfile
 ```
 
