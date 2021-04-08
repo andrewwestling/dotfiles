@@ -98,9 +98,9 @@ Restore app settings from mackup
 Use `pyenv` to install and use the correct Python versions:
 
 ```zsh
-% pyenv install 3.6.8
-% pyenv global 3.6.8
-% python --version # should return Python 3.6.8; if it isn't, something is wrong
+% pyenv install 3.9.2
+% pyenv global 3.9.2
+% python --version # should return Python 3.9.2; if it isn't, something is wrong
 ```
 
 ## pip
