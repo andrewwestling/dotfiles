@@ -11,7 +11,7 @@ brew "libffi"
 brew "mackup"
 brew "mas"
 brew "nvm"
-brew "postgresql"
+brew "postgresql", restart_service: true
 brew "pyenv"
 brew "ruby-build"
 brew "rbenv"
