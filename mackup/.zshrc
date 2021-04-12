@@ -10,6 +10,12 @@ export NVM_DIR="$HOME/.nvm"
 # pyenv
 eval "$(pyenv init -)"
 
+# rbenv
+[ -s "/opt/homebrew/bin/brew" ] && export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
+[ -s "/opt/homebrew/bin/brew" ] && export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
+[ -s "/opt/homebrew/bin/brew" ] && export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
+eval "$(rbenv init -)"
+
 # Aliases
 alias chrome="open -a 'Google Chrome'"
 

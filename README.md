@@ -14,6 +14,7 @@ Do the following in order:
 1. Restore `mackup`
 1. Set up Krypton
 1. Set up `pyenv`
+1. Set up `rbenv`
 1. Set up AWS credentials
 
 ## Clone this repo
@@ -110,6 +111,16 @@ Install these packages with `pip install`:
 ```zsh
 % pip install \
 awscli \
+```
+
+## Ruby
+
+Use `rbenv` to install and use the correct Ruby versions:
+
+```zsh
+% rbenv install 2.6.5 # if M1, try `% arch -arm64 rbenv install 2.6.5`
+% rbenv global 2.6.5
+% gem install bundler
 ```
 
 ## AWS
