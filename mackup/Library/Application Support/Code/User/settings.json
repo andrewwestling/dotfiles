@@ -104,5 +104,6 @@
     "stylus",
     "xml",
     "svg"
-  ]
+  ],
+  "terminal.integrated.scrollback": 10000
 }
