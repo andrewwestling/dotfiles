@@ -77,6 +77,14 @@ Sign into iCloud now that 1Password is set up. Disable all the stuff except thes
 
 iCloud will also bring over my other Internet Accounts when I sign in. Go to the a@aw Google account and turn on "Contacts" sync (will ask me to sign into Google; grab password from 1Password and use security key for 2FA)
 
+## Mac App Store
+
+After setting up 1Password and iCloud above, run the Homebrew install step again to install Mac App Store apps.
+
+```zsh
+% cd ~/code/dotfiles && brew bundle # The `mas` steps should complete now that we're signed into iCloud
+```
+
 ## Mackup
 
 Restore app settings from mackup
