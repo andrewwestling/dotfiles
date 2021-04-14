@@ -4,18 +4,18 @@ These are my configuration files and notes for setting up a new Mac.
 
 Do the following, in this order:
 
-1. Clone this repo
-1. Install `oh-my-zsh`
-1. Install Rosetta 2 (for M1 Macs)
-1. Install Homebrew and packages
-1. Set up 1Password
-1. Sign into iCloud
-1. Install Mac App Store apps
-1. Restore Mackup
-1. Set up Krypton
-1. Set up Python
-1. Set up Ruby
-1. Set up AWS credentials
+1. [Clone this repo](#clone-this-repo)
+1. [Install `oh-my-zsh`](#oh-my-zsh)
+1. [Install Rosetta 2](#rosetta-2) (for M1 Macs)
+1. [Install Homebrew and packages](#homebrew)
+1. [Set up 1Password](#1password)
+1. [Sign into iCloud](#icloud)
+1. [Install Mac App Store apps](#mac-app-store)
+1. [Restore Mackup](#mackup)
+1. [Set up Krypton](#krypton)
+1. [Set up Python](#python)
+1. [Set up Ruby](#ruby)
+1. [Set up AWS credentials](#aws)
 
 ## Clone this repo
 
