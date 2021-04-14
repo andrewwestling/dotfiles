@@ -2,7 +2,7 @@
 
 These are my configuration files and notes for setting up a new Mac.
 
-Do the following in order:
+Do the following, in this order:
 
 1. Clone this repo
 1. Install `oh-my-zsh`
@@ -10,11 +10,11 @@ Do the following in order:
 1. Install Homebrew and packages
 1. Set up 1Password
 1. Sign into iCloud
-1. Run `brew bundle` again to install Mac App Store apps
-1. Restore `mackup`
+1. Install Mac App Store apps
+1. Restore Mackup
 1. Set up Krypton
-1. Set up `pyenv`
-1. Set up `rbenv`
+1. Set up Python
+1. Set up Ruby
 1. Set up AWS credentials
 
 ## Clone this repo
@@ -38,24 +38,31 @@ Do the following in order:
 ## Homebrew
 
 ```zsh
+# Install Homebrew
 % /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-% eval "$(/opt/homebrew/bin/brew shellenv)" ## get brew in the PATH for now (will be actually added when Mackup is restored)
-% cd ~/code/dotfiles && brew bundle # install everything from Brewfile
+
+# Get `brew` in the PATH for now (this gets resolved for real when Mackup restores my .zshrc below)
+% eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Install everything from Brewfile, except Mac App Store apps - `mas` won't work yet, because I haven't signed into iCloud at this point - this has a dependency on 1Password step to get the password, so we'll re-run `brew bundle` again below after 1Password and iCloud are set up.
+% cd ~/code/dotfiles && brew bundle
 ```
 
-Note: At this point, `brew bundle` will not complete successfully for Mac App Store apps via `mas` because I haven't signed into iCloud yet (dependency on 1Password step below). I need to re-run `brew bundle` again after 1Password and iCloud are set up.
-
 ### Brewfile
+
+<details>
+<summary>Details for updating Brewfile</summary>
 
 This is how I update the Brewfile when I install/uninstall something:
 
 ```zsh
-% cd ~/code/dotfiles
-% brew bundle dump -f
+% cd ~/code/dotfiles && brew bundle dump -f
 # Then commit the changes to this repo, etc.
 ```
 
 I just do this periodically and commit it, it's not automated but the command handles the file for me so I don't have to handwrite it
+
+</details>
 
 ## 1Password
 
