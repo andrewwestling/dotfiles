@@ -122,8 +122,9 @@ Use `pyenv` to install and use the correct Python versions:
 Use `rbenv` to install and use the correct Ruby versions:
 
 ```zsh
-% rbenv install 2.6.5 # if M1, try `% arch -arm64 rbenv install 2.6.5`
+% rbenv install 2.6.5
 % rbenv global 2.6.5
+% rbenv rehash # Make executables available
 % gem install bundler
 ```
 
