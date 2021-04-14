@@ -2,20 +2,20 @@
 
 These are my configuration files and notes for setting up a new Mac.
 
-Do the following in order:
+Do the following, in this order:
 
-1. Clone this repo
-1. Install `oh-my-zsh`
-1. Install Rosetta 2 (for M1 Macs)
-1. Install Homebrew and packages
-1. Set up 1Password
-1. Sign into iCloud
-1. Run `brew bundle` again to install Mac App Store apps
-1. Restore `mackup`
-1. Set up Krypton
-1. Set up `pyenv`
-1. Set up `rbenv`
-1. Set up AWS credentials
+1. [Clone this repo](#clone-this-repo)
+1. [Install `oh-my-zsh`](#oh-my-zsh)
+1. [Install Rosetta 2](#rosetta-2) (for M1 Macs)
+1. [Install Homebrew and packages](#homebrew)
+1. [Set up 1Password](#1password)
+1. [Sign into iCloud](#icloud)
+1. [Install Mac App Store apps](#mac-app-store)
+1. [Restore Mackup](#mackup)
+1. [Set up Krypton](#krypton)
+1. [Set up Python](#python)
+1. [Set up Ruby](#ruby)
+1. [Set up AWS credentials](#aws)
 
 ## Clone this repo
 
@@ -38,24 +38,31 @@ Do the following in order:
 ## Homebrew
 
 ```zsh
+# Install Homebrew
 % /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-% eval "$(/opt/homebrew/bin/brew shellenv)" ## get brew in the PATH for now (will be actually added when Mackup is restored)
-% cd ~/code/dotfiles && brew bundle # install everything from Brewfile
+
+# Get `brew` in the PATH for now (this gets resolved for real when Mackup restores my .zshrc below)
+% eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Install everything from Brewfile, except Mac App Store apps - `mas` won't work yet, because I haven't signed into iCloud at this point - this has a dependency on 1Password step to get the password, so we'll re-run `brew bundle` again below after 1Password and iCloud are set up.
+% cd ~/code/dotfiles && brew bundle
 ```
 
-Note: At this point, `brew bundle` will not complete successfully for Mac App Store apps via `mas` because I haven't signed into iCloud yet (dependency on 1Password step below). I need to re-run `brew bundle` again after 1Password and iCloud are set up.
-
 ### Brewfile
+
+<details>
+<summary>Details for updating Brewfile</summary>
 
 This is how I update the Brewfile when I install/uninstall something:
 
 ```zsh
-% cd ~/code/dotfiles
-% brew bundle dump -f
+% cd ~/code/dotfiles && brew bundle dump -f
 # Then commit the changes to this repo, etc.
 ```
 
 I just do this periodically and commit it, it's not automated but the command handles the file for me so I don't have to handwrite it
+
+</details>
 
 ## 1Password
 
@@ -66,11 +73,23 @@ Set up using the camera / phone thing via mobile app.
 Sign into iCloud now that 1Password is set up. Disable all the stuff except these:
 
 - iCloud Drive
-- Notes
 - Find My Mac
-- Home
 
 iCloud will also bring over my other Internet Accounts when I sign in. Go to the a@aw Google account and turn on "Contacts" sync (will ask me to sign into Google; grab password from 1Password and use security key for 2FA)
+
+Set up a symlink for iCloud Drive at `~/iCloud`:
+
+```zsh
+% ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
+```
+
+## Mac App Store
+
+After setting up 1Password and iCloud above, run the Homebrew install step again to install Mac App Store apps.
+
+```zsh
+% cd ~/code/dotfiles && brew bundle # The `mas` steps should complete now that we're signed into iCloud
+```
 
 ## Mackup
 
@@ -104,22 +123,14 @@ Use `pyenv` to install and use the correct Python versions:
 % python --version # should return Python 3.9.2; if it isn't, something is wrong
 ```
 
-## pip
-
-Install these packages with `pip install`:
-
-```zsh
-% pip install \
-awscli \
-```
-
 ## Ruby
 
 Use `rbenv` to install and use the correct Ruby versions:
 
 ```zsh
-% rbenv install 2.6.5 # if M1, try `% arch -arm64 rbenv install 2.6.5`
+% rbenv install 2.6.5
 % rbenv global 2.6.5
+% rbenv rehash # Make executables available
 % gem install bundler
 ```
 
