@@ -48,6 +48,25 @@ Do the following, in this order:
 % cd ~/code/dotfiles && brew bundle
 ```
 
+### Multi-user setup
+
+<details>
+<summary>Details for using Homebrew with multiple accounts</summary>
+
+If there are multiple user accounts on the same Mac, I need to follow a few extra steps:
+
+1. Open System Preferences > Users & Groups
+1. Create a new group called `brew`; add all the users to it
+1. Run these steps:
+
+```zsh
+% sudo chgrp -R brew $(brew --prefix) # Change group to brew for Homebrew
+% sudo chmod -R g+w $(brew --prefix) # Allow group members to write inside this directory
+% brew doctor # Make sure everything is good
+```
+
+</details>
+
 ### Brewfile
 
 <details>
