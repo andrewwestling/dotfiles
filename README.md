@@ -104,15 +104,6 @@ Use `pyenv` to install and use the correct Python versions:
 % python --version # should return Python 3.9.2; if it isn't, something is wrong
 ```
 
-## pip
-
-Install these packages with `pip install`:
-
-```zsh
-% pip install \
-awscli \
-```
-
 ## Ruby
 
 Use `rbenv` to install and use the correct Ruby versions:
