@@ -65,6 +65,15 @@ If there are multiple user accounts on the same Mac, I need to follow a few extr
 % brew doctor # Make sure everything is good
 ```
 
+Even with this "shared group" setup, I still run into permissions issues sometimes when running `brew bundle`.
+
+Usually I can resolve it by changing ownership to the current user for the Homebrew folder:
+
+```zsh
+% sudo chown -R $USER $(brew --prefix)
+% brew bundle # Try installing again
+```
+
 </details>
 
 ### Brewfile
