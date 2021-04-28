@@ -23,6 +23,9 @@ eval "$(pyenv init -)"
 [ -s "/opt/homebrew/bin/brew" ] && export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
 eval "$(rbenv init -)"
 
+# Add Postgres.app CLI tools to path
+path+=('/Applications/Postgres.app/Contents/Versions/latest/bin')
+
 # Aliases
 alias chrome="open -a 'Google Chrome'"
 
