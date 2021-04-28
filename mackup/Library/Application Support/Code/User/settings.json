@@ -1,31 +1,12 @@
 {
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "breadcrumbs.enabled": false,
   "diffEditor.renderSideBySide": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.find.addExtraSpaceOnTop": false,
   "editor.fontSize": 14,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderWhitespace": "all",
   "editor.snippetSuggestions": "top",
@@ -77,33 +58,17 @@
   },
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontSize": 14,
+  "window.autoDetectColorScheme": true,
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Monokai",
+  "workbench.colorTheme": "GitHub Light Default",
   "workbench.editorAssociations": [
     {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
+      "filenamePattern": "*.ipynb",
+      "viewType": "jupyter.notebook.ipynb"
     }
   ],
-  "workbench.startupEditor": "newUntitledFile",
-  "files.associations": {
-    "*.mdx": "mdx"
-  },
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "editor.minimap.enabled": false,
-  "colorize.languages": [
-    "javascript",
-    "typescript",
-    "css",
-    "sass",
-    "scss",
-    "less",
-    "postcss",
-    "sss",
-    "stylus",
-    "xml",
-    "svg"
-  ],
-  "terminal.integrated.scrollback": 10000
+  "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "workbench.startupEditor": "newUntitledFile"
 }
