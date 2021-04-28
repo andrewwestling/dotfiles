@@ -152,11 +152,3 @@ Use `rbenv` to install and use the correct Ruby versions:
 % rbenv rehash # Make executables available
 % gem install bundler
 ```
-
-## AWS
-
-_Get AWS Access Key ID/Secret from elsewhere and use `aws configure` to set up the AWS CLI_
-
-```zsh
-% aws configure
-```
