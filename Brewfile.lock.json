@@ -475,6 +475,12 @@
         "options": {
           "full_name": "zoom"
         }
+      },
+      "around": {
+        "version": "0.48.15",
+        "options": {
+          "full_name": "around"
+        }
       }
     },
     "mas": {
