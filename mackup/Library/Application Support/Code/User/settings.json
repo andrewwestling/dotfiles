@@ -58,6 +58,7 @@
   },
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontSize": 14,
+  "terminal.integrated.scrollback": 10000,
   "window.autoDetectColorScheme": true,
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "workbench.activityBar.visible": false,
