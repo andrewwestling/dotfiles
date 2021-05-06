@@ -1,5 +1,18 @@
 {
   "breadcrumbs.enabled": false,
+  "colorize.languages": [
+    "css",
+    "less",
+    "postcss",
+    "sass",
+    "scss",
+    "sss",
+    "stylus",
+    "svg",
+    "tsx",
+    "typescript",
+    "xml"
+  ],
   "diffEditor.renderSideBySide": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.find.addExtraSpaceOnTop": false,
@@ -62,7 +75,7 @@
   "window.autoDetectColorScheme": true,
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.colorTheme": "GitHub Dark",
   "workbench.editorAssociations": [
     {
       "filenamePattern": "*.ipynb",
@@ -70,6 +83,6 @@
     }
   ],
   "workbench.preferredDarkColorTheme": "GitHub Dark Default",
-  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "workbench.preferredLightColorTheme": "GitHub Dark",
   "workbench.startupEditor": "newUntitledFile"
 }
