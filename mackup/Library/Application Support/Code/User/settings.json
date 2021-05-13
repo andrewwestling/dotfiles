@@ -72,17 +72,14 @@
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.scrollback": 10000,
-  "window.autoDetectColorScheme": true,
   "window.title": "${activeEditorFull}${separator}${rootName}",
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "Monokai",
   "workbench.editorAssociations": [
     {
       "filenamePattern": "*.ipynb",
       "viewType": "jupyter.notebook.ipynb"
     }
   ],
-  "workbench.preferredDarkColorTheme": "GitHub Dark Default",
-  "workbench.preferredLightColorTheme": "GitHub Dark",
   "workbench.startupEditor": "newUntitledFile"
 }
