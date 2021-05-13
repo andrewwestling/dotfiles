@@ -28,6 +28,7 @@ path+=('/Applications/Postgres.app/Contents/Versions/latest/bin')
 
 # Aliases
 alias chrome="open -a 'Google Chrome'"
+alias brewme="sudo chown -R $USER $(brew --prefix)"
 
 # Added by Krypton
 export GPG_TTY=$(tty)
