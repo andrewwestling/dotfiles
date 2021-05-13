@@ -46,3 +46,4 @@ cask "whatsapp"
 cask "zoom"
 mas "Bear", id: 1091189122
 mas "Hand Mirror", id: 1502839586
+mas "QuickShade", id: 931571202
