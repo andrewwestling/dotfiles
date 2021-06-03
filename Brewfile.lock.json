@@ -481,6 +481,12 @@
         "options": {
           "full_name": "around"
         }
+      },
+      "linear-linear": {
+        "version": "1.3.4",
+        "options": {
+          "full_name": "linear-linear"
+        }
       }
     },
     "mas": {
