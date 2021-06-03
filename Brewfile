@@ -47,5 +47,6 @@ cask "visual-studio-code"
 cask "whatsapp"
 cask "zoom"
 mas "Bear", id: 1091189122
+mas "GIPHY CAPTURE", id: 668208984
 mas "Hand Mirror", id: 1502839586
 mas "QuickShade", id: 931571202
