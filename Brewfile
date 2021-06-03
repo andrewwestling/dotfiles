@@ -10,6 +10,7 @@ brew "libffi"
 brew "readline"
 brew "mackup"
 brew "mas"
+brew "nginx", restart_service: true
 brew "node"
 brew "nvm"
 brew "postgresql", restart_service: true
