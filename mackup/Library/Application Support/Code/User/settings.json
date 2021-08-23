@@ -1,5 +1,4 @@
 {
-  "breadcrumbs.enabled": false,
   "colorize.languages": [
     "css",
     "less",
@@ -69,17 +68,18 @@
       "stash": true
     }
   },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "sortJSON.excludedFiles": [
+    "package.json"
+  ],
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.tabs.enabled": false,
   "window.title": "${activeEditorFull}${separator}${rootName}",
-  "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Monokai",
-  "workbench.editorAssociations": [
-    {
-      "filenamePattern": "*.ipynb",
-      "viewType": "jupyter.notebook.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
   "workbench.startupEditor": "newUntitledFile"
 }
