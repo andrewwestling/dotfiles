@@ -1,4 +1,73 @@
 {
+  "editor.formatOnPaste": true,
+  "sortJSON.excludedFiles": ["package.json"],
+  "editor.snippetSuggestions": "top",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
+  "editor.fontSize": 14,
+  "workbench.startupEditor": "newUntitledFile",
+  "terminal.external.osxExec": "iTerm.app",
+  "window.title": "${activeEditorFull}${separator}${rootName}",
+  "workbench.colorTheme": "Monokai",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "git.autofetch": true,
+  "terminal.integrated.scrollback": 10000,
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "files.insertFinalNewline": true,
+  "diffEditor.renderSideBySide": false,
+  "files.trimTrailingWhitespace": true,
+  "editor.renderWhitespace": "all",
+  "explorer.confirmDragAndDrop": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "terminal.integrated.tabs.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "gitlens.menus": {
+    "editor": {
+      "remote": false,
+      "clipboard": true,
+      "compare": true,
+      "blame": false,
+      "history": false
+    },
+    "scmGroup": {
+      "compare": true,
+      "openClose": true,
+      "stash": true
+    },
+    "scm": {
+      "authors": true
+    },
+    "explorer": {
+      "remote": true,
+      "clipboard": true,
+      "compare": true,
+      "history": true
+    },
+    "scmItem": {
+      "remote": false,
+      "stash": true,
+      "clipboard": true,
+      "compare": true,
+      "history": true
+    },
+    "scmGroupInline": {
+      "stash": true
+    },
+    "editorTab": {
+      "remote": true,
+      "clipboard": true,
+      "compare": true,
+      "history": true
+    }
+  },
+  "editor.minimap.enabled": false,
+  "terminal.integrated.fontSize": 14,
+  "editor.find.addExtraSpaceOnTop": false,
+  "explorer.confirmDelete": false,
+  "editor.accessibilitySupport": "off",
   "colorize.languages": [
     "css",
     "less",
@@ -11,75 +80,5 @@
     "tsx",
     "typescript",
     "xml"
-  ],
-  "diffEditor.renderSideBySide": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.find.addExtraSpaceOnTop": false,
-  "editor.fontSize": 14,
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.minimap.enabled": false,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.renderWhitespace": "all",
-  "editor.snippetSuggestions": "top",
-  "editor.tabSize": 2,
-  "editor.trimAutoWhitespace": true,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "git.autofetch": true,
-  "gitlens.menus": {
-    "editor": {
-      "blame": false,
-      "clipboard": true,
-      "compare": true,
-      "history": false,
-      "remote": false
-    },
-    "editorTab": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "explorer": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "scm": {
-      "authors": true
-    },
-    "scmGroup": {
-      "compare": true,
-      "openClose": true,
-      "stash": true
-    },
-    "scmGroupInline": {
-      "stash": true
-    },
-    "scmItem": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": false,
-      "stash": true
-    }
-  },
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "sortJSON.excludedFiles": [
-    "package.json"
-  ],
-  "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.scrollback": 10000,
-  "terminal.integrated.tabs.enabled": false,
-  "window.title": "${activeEditorFull}${separator}${rootName}",
-  "workbench.colorTheme": "Monokai",
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
-  "workbench.startupEditor": "newUntitledFile"
+  ]
 }
