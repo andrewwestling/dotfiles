@@ -1,3 +1,7 @@
+# fig
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+
 # zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_DISABLE_COMPFIX=true
@@ -35,3 +39,7 @@ alias brewme="sudo chown -R $USER $(brew --prefix)"
 
 # Added by Krypton
 export GPG_TTY=$(tty)
+
+# fig
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
