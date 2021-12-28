@@ -8,6 +8,7 @@ tap "homebrew/services"
 brew "openssl@1.1"
 brew "libffi"
 brew "readline"
+brew "python@3.9"
 brew "mackup"
 brew "mas"
 brew "nginx", restart_service: true
