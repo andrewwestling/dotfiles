@@ -17,6 +17,7 @@ brew "postgresql", restart_service: true
 brew "pyenv"
 brew "ruby-build"
 brew "rbenv"
+brew "syncthing", restart_service: true
 brew "yarn"
 brew "zsh-git-prompt"
 brew "heroku/brew/heroku"
