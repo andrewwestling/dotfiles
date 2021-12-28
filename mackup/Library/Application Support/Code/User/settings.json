@@ -1,74 +1,10 @@
 {
-  "editor.formatOnPaste": true,
-  "sortJSON.excludedFiles": ["package.json"],
-  "editor.snippetSuggestions": "top",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.formatOnSave": true,
-  "editor.fontSize": 14,
-  "workbench.startupEditor": "newUntitledFile",
-  "terminal.external.osxExec": "iTerm.app",
-  "window.title": "${activeEditorFull}${separator}${rootName}",
-  "workbench.colorTheme": "Monokai",
-  "editor.multiCursorModifier": "ctrlCmd",
-  "git.autofetch": true,
-  "terminal.integrated.scrollback": 10000,
-  "editor.tabSize": 2,
-  "editor.trimAutoWhitespace": true,
-  "files.insertFinalNewline": true,
-  "diffEditor.renderSideBySide": false,
-  "files.trimTrailingWhitespace": true,
-  "editor.renderWhitespace": "all",
-  "explorer.confirmDragAndDrop": false,
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
-  "terminal.integrated.tabs.enabled": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "gitlens.menus": {
-    "editor": {
-      "remote": false,
-      "clipboard": true,
-      "compare": true,
-      "blame": false,
-      "history": false
-    },
-    "scmGroup": {
-      "compare": true,
-      "openClose": true,
-      "stash": true
-    },
-    "scm": {
-      "authors": true
-    },
-    "explorer": {
-      "remote": true,
-      "clipboard": true,
-      "compare": true,
-      "history": true
-    },
-    "scmItem": {
-      "remote": false,
-      "stash": true,
-      "clipboard": true,
-      "compare": true,
-      "history": true
-    },
-    "scmGroupInline": {
-      "stash": true
-    },
-    "editorTab": {
-      "remote": true,
-      "clipboard": true,
-      "compare": true,
-      "history": true
-    }
-  },
-  "editor.minimap.enabled": false,
-  "terminal.integrated.fontSize": 14,
-  "editor.find.addExtraSpaceOnTop": false,
-  "explorer.confirmDelete": false,
-  "editor.accessibilitySupport": "off",
-  "colorize.languages": [
+  "editor.find.addExtraSpaceOnTop" : false,
+  "workbench.colorTheme" : "Monokai",
+  "editor.formatOnSave" : true,
+  "editor.snippetSuggestions" : "top",
+  "terminal.external.osxExec" : "iTerm.app",
+  "colorize.languages" : [
     "css",
     "less",
     "postcss",
@@ -80,5 +16,77 @@
     "tsx",
     "typescript",
     "xml"
-  ]
+  ],
+  "window.title" : "${activeEditorFull}${separator}${rootName}",
+  "terminal.integrated.tabs.enabled" : false,
+  "editor.tabSize" : 2,
+  "terminal.integrated.scrollback" : 10000,
+  "files.trimTrailingWhitespace" : true,
+  "editor.renderWhitespace" : "all",
+  "editor.defaultFormatter" : "esbenp.prettier-vscode",
+  "diffEditor.renderSideBySide" : false,
+  "javascript.updateImportsOnFileMove.enabled" : "always",
+  "editor.multiCursorModifier" : "ctrlCmd",
+  "workbench.startupEditor" : "newUntitledFile",
+  "gitlens.menus" : {
+    "editor" : {
+      "remote" : false,
+      "clipboard" : true,
+      "compare" : true,
+      "blame" : false,
+      "history" : false
+    },
+    "scmGroup" : {
+      "compare" : true,
+      "openClose" : true,
+      "stash" : true
+    },
+    "scm" : {
+      "authors" : true
+    },
+    "explorer" : {
+      "remote" : true,
+      "clipboard" : true,
+      "compare" : true,
+      "history" : true
+    },
+    "scmItem" : {
+      "remote" : false,
+      "history" : true,
+      "clipboard" : true,
+      "compare" : true,
+      "stash" : true
+    },
+    "scmGroupInline" : {
+      "stash" : true
+    },
+    "editorTab" : {
+      "remote" : true,
+      "clipboard" : true,
+      "compare" : true,
+      "history" : true
+    }
+  },
+  "editor.trimAutoWhitespace" : true,
+  "editor.accessibilitySupport" : "off",
+  "explorer.confirmDelete" : false,
+  "editor.fontSize" : 14,
+  "terminal.integrated.fontSize" : 14,
+  "editor.formatOnPaste" : true,
+  "workbench.editorAssociations" : {
+    "*.ipynb" : "jupyter.notebook.ipynb"
+  },
+  "sortJSON.excludedFiles" : [
+    "package.json"
+  ],
+  "git.autofetch" : true,
+  "files.insertFinalNewline" : true,
+  "editor.minimap.enabled" : false,
+  "explorer.confirmDragAndDrop": false,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.invisibleCharacters": false
 }

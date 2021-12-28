@@ -1,6 +1,6 @@
-# fig
+# fig (I uninstalled 20211228)
 # Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+# [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
 
 # zsh
 export ZSH="$HOME/.oh-my-zsh"
@@ -40,6 +40,10 @@ alias brewme="sudo chown -R $USER $(brew --prefix)"
 # Added by Krypton
 export GPG_TTY=$(tty)
 
-# fig
+# Thx @joebernardi
+alias killports="lsof -ti tcp:8080 | xargs kill && lsof -ti tcp:3001 | xargs kill"
+
+# fig (I uninstalled this 20211228)
 # Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+# [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+
