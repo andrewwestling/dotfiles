@@ -12,7 +12,7 @@ Do the following, in this order:
 1. [Sign into iCloud](#icloud)
 1. [Install Mac App Store apps](#mac-app-store)
 1. [Restore Mackup](#mackup)
-1. [Set up Krypton](#krypton)
+1. [Set up SSH](#ssh)
 1. [Set up Python](#python)
 1. [Set up Ruby](#ruby)
 1. [Set up AWS credentials](#aws)
@@ -133,13 +133,43 @@ Restore app settings from mackup
 % mackup restore
 ```
 
-## Krypton (SSH / GPG Keys)
+## SSH
+
+Set up SSH key.
+
+<details>
+<summary>Details for setting up SSH key</summary>
+
+### GitHub
+
+(These steps are borrowed from this article: [Generating a new SSH key and adding it to the ssh-agent - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent))
+
+Create a key and set the passphrase to the same as the login password for macOS:
 
 ```zsh
-% curl https://krypt.co/kr | sh
-% kr pair
-% kr codesign
+% ssh-keygen -t ed25519 -C "<my email address>"
 ```
+
+Add the key to SSH agent on macOS:
+
+```zsh
+% eval "$(ssh-agent -s)"
+% ssh-add -K ~/.ssh/id_ed25519
+```
+
+Copy the public key to the clipboard then go to [GitHub Settings > SSH and GPG keys](https://github.com/settings/keys) and add it:
+
+```zsh
+% pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+Test SSH connection to GitHub:
+
+```zsh
+% ssh -T git@github.com
+```
+
+</details>
 
 ## Python
 
