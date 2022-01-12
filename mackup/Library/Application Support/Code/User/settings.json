@@ -23,7 +23,6 @@
   "terminal.integrated.scrollback": 10000,
   "files.trimTrailingWhitespace": true,
   "editor.renderWhitespace": "all",
-  "editor.defaultFormatter" : "esbenp.prettier-vscode",
   "diffEditor.renderSideBySide": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.multiCursorModifier": "ctrlCmd",
@@ -81,11 +80,9 @@
   "files.insertFinalNewline": true,
   "editor.minimap.enabled": false,
   "explorer.confirmDragAndDrop": false,
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.unicodeHighlight.invisibleCharacters": false,
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "settingsSync.keybindingsPerPlatform": false
 }
