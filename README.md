@@ -11,6 +11,7 @@ Do the following, in this order:
 1. [Set computer name](#computer-name)
 1. [Set up 1Password](#1password)
 1. [Sign into iCloud](#icloud)
+1. [Sign into Fastmail](#fastmail)
 1. [Install Mac App Store apps](#mac-app-store)
 1. [Restore Mackup](#mackup)
 1. [Set up SSH](#ssh)
@@ -124,13 +125,17 @@ Sign into iCloud now that 1Password is set up. Disable all the stuff except thes
 - iCloud Drive
 - Find My Mac
 
-Keychain is supposed to bring over my other Internet Accounts. If it did, make sure a@aw Fastmail accounts are all enabled.
-
 Set up a symlink for iCloud Drive at `~/iCloud`:
 
 ```zsh
 ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
 ```
+
+## Fastmail
+
+Create a new App Password for Fastmail at [Settings > Password & Security > Third Party Apps > App Passwords > New App Password](https://www.fastmail.com/settings/security/devicekeys/new).
+
+Once it's created, download the profile with the link it provides, and open System Preferences > Profile and install it.
 
 ## Mac App Store
 
