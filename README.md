@@ -131,6 +131,11 @@ Set up a symlink for iCloud Drive at `~/iCloud`:
 ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
 ```
 
+Set up a symlink for Obsidian at `~/amw-obsidian`:
+
+```zsh
+ln -s ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/amw-obsidian ~/amw-obsidian
+```
 ## Fastmail
 
 Create a new App Password for Fastmail at [Settings > Password & Security > Third Party Apps > App Passwords > New App Password](https://www.fastmail.com/settings/security/devicekeys/new).
