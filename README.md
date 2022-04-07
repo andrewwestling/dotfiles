@@ -210,6 +210,16 @@ ssh -T git@github.com
 
 </details>
 
+## Node
+
+I currently install nvm with Homebrew but [that isn't the supported method for installing it](https://github.com/nvm-sh/nvm#important-notes), so this is one step I take to make my setup work with other tools (scripts that call nvm, for example).
+
+I make a symbolic link from the Homebrew nvm installation's `/opt/homebrew/opt/nvm/nvm.sh` file to the location where it is normally found at `~/.nvm/nvm.sh`:
+
+```zsh
+ln -s /opt/homebrew/opt/nvm/nvm.sh ~/.nvm/nvm.sh
+```
+
 ## Python
 
 Use `pyenv` to install and use the correct Python versions:
