@@ -136,6 +136,7 @@ Set up a symlink for Obsidian at `~/amw-obsidian`:
 ```zsh
 ln -s ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/amw-obsidian ~/amw-obsidian
 ```
+
 ## Fastmail
 
 Create a new App Password for Fastmail at [Settings > Password & Security > Third Party Apps > App Passwords > New App Password](https://www.fastmail.com/settings/security/devicekeys/new).
@@ -235,8 +236,8 @@ Use `pyenv` to install and use the correct Python versions:
 Use `rbenv` to install and use the correct Ruby versions:
 
 ```zsh
-% rbenv install 2.6.5
-% rbenv global 2.6.5
+% rbenv install 2.6.9
+% rbenv global 2.6.9
 % rbenv rehash # Make executables available
 % gem install bundler
 ```
