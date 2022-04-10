@@ -106,6 +106,8 @@ This is how I update the Brewfile when I install/uninstall something:
 
 I just do this periodically and commit it, it's not automated but the command handles the file for me so I don't have to handwrite it
 
+There's a VS Code task to do this in [tasks.json](.vscode/tasks.json).
+
 </details>
 
 ## Computer Name
