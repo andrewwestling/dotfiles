@@ -1,10 +1,10 @@
 <configuration version="35">
-    <folder id="amw-obsidian" label="amw-obsidian" path="/Users/andrew-monograph/Library/Mobile Documents/iCloud~md~obsidian/Documents/amw-obsidian" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="amw-obsidian" label="amw-obsidian" path="/Users/amw/Library/Mobile Documents/iCloud~md~obsidian/Documents/amw-obsidian" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="GJWIUXZ-NDEVH2E-XMYYZM6-XL7QZVI-GZUZAF5-QPRBUXF-NNQWP7J-ZMVZHAU" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="YKKMLVA-56YUGFN-PH6KDUY-CS2C2KB-PPZUQNJ-7SQA5V4-2FJO2TN-7LV3CAV" introducedBy="">
+        <device id="UL6XIIQ-UHHP66Z-YTE46N7-NDGOPPJ-JDDFRL2-NYBHFE2-OPPSDFM-KGBHXQF" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <minDiskFree unit="%">1</minDiskFree>
@@ -23,7 +23,7 @@
         <maxConflicts>10</maxConflicts>
         <disableSparseFiles>false</disableSparseFiles>
         <disableTempIndexes>false</disableTempIndexes>
-        <paused>true</paused>
+        <paused>false</paused>
         <weakHashThresholdPct>25</weakHashThresholdPct>
         <markerName>.stfolder</markerName>
         <copyOwnershipFromParent>false</copyOwnershipFromParent>
@@ -45,7 +45,7 @@
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
     </device>
-    <device id="YKKMLVA-56YUGFN-PH6KDUY-CS2C2KB-PPZUQNJ-7SQA5V4-2FJO2TN-7LV3CAV" name="AMW-MacBook-Air.lan" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+    <device id="UL6XIIQ-UHHP66Z-YTE46N7-NDGOPPJ-JDDFRL2-NYBHFE2-OPPSDFM-KGBHXQF" name="AMW-MBA.lan" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
@@ -56,10 +56,10 @@
         <remoteGUIPort>0</remoteGUIPort>
     </device>
     <gui enabled="true" tls="false" debugging="false">
-        <address>127.0.0.1:8384</address>
+        <address>0.0.0.0:8384</address>
         <user>amw</user>
-        <password>$2a$10$5RUJT6P4dBSI4A0TsP9vseQbfQWpQyg/3urWF9UCeih.SWcT4RLO2</password>
-        <apikey>HJgEid6ctnqEaKxEybMFX7YqNUbu7raX</apikey>
+        <password>$2a$10$d8WAbPmoRqFTBEi4Sqs3n.iuCYOLxgyvJ6HwGKaMdwjNGKEoEK5p2</password>
+        <apikey>GAocEa75rbbkhawKPvtbH9vCuWCa7meX</apikey>
         <theme>default</theme>
     </gui>
     <ldap></ldap>
@@ -80,9 +80,9 @@
         <natLeaseMinutes>60</natLeaseMinutes>
         <natRenewalMinutes>30</natRenewalMinutes>
         <natTimeoutSeconds>10</natTimeoutSeconds>
-        <urAccepted>-1</urAccepted>
+        <urAccepted>3</urAccepted>
         <urSeen>3</urSeen>
-        <urUniqueID></urUniqueID>
+        <urUniqueID>DnKF3Cty</urUniqueID>
         <urURL>https://data.syncthing.net/newdata</urURL>
         <urPostInsecurely>false</urPostInsecurely>
         <urInitialDelayS>1800</urInitialDelayS>
@@ -116,7 +116,7 @@
     <defaults>
         <folder id="" label="" path="~" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
             <filesystemType>basic</filesystemType>
-            <device id="YKKMLVA-56YUGFN-PH6KDUY-CS2C2KB-PPZUQNJ-7SQA5V4-2FJO2TN-7LV3CAV" introducedBy="">
+            <device id="UL6XIIQ-UHHP66Z-YTE46N7-NDGOPPJ-JDDFRL2-NYBHFE2-OPPSDFM-KGBHXQF" introducedBy="">
                 <encryptionPassword></encryptionPassword>
             </device>
             <minDiskFree unit="%">1</minDiskFree>
