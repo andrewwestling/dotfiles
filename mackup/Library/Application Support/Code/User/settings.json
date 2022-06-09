@@ -84,5 +84,11 @@
   "editor.unicodeHighlight.invisibleCharacters": false,
   "git.confirmSync": false,
   "settingsSync.keybindingsPerPlatform": false,
-  "terminal.integrated.tabs.enabled": false
+  "terminal.integrated.tabs.enabled": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

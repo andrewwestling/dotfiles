@@ -1,7 +1,3 @@
-# fig (I uninstalled 20211228)
-# Please make sure this block is at the start of this file.
-# [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-
 # zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_DISABLE_COMPFIX=true
@@ -12,23 +8,11 @@ source $ZSH/oh-my-zsh.sh
 # Homebrew
 [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)" # (Apple Silicon)
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm (Intel)
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm (Apple Silicon)
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion (Apple Silicon)
-
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-
-# rbenv
-[ -s "/opt/homebrew/bin/brew" ] && export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
-[ -s "/opt/homebrew/bin/brew" ] && export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
-[ -s "/opt/homebrew/bin/brew" ] && export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
-eval "$(rbenv init -)"
 
 # Add Postgres.app CLI tools to path
 path+=('/Applications/Postgres.app/Contents/Versions/latest/bin')
@@ -37,13 +21,5 @@ path+=('/Applications/Postgres.app/Contents/Versions/latest/bin')
 alias chrome="open -a 'Google Chrome'"
 alias brewme="sudo chown -R $USER $(brew --prefix)"
 
-# Added by Krypton
-export GPG_TTY=$(tty)
-
-# Thx @joebernardi
-alias killports="lsof -ti tcp:8080 | xargs kill && lsof -ti tcp:3001 | xargs kill"
-
-# fig (I uninstalled this 20211228)
-# Please make sure this block is at the end of this file.
-# [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-
+# asdf
+. /opt/homebrew/opt/asdf/asdf.sh
