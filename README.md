@@ -222,24 +222,3 @@ I make a symbolic link from the Homebrew nvm installation's `/opt/homebrew/opt/n
 ```zsh
 ln -s /opt/homebrew/opt/nvm/nvm.sh ~/.nvm/nvm.sh
 ```
-
-## Python
-
-Use `pyenv` to install and use the correct Python versions:
-
-```zsh
-% pyenv install 3.9.2
-% pyenv global 3.9.2
-% python --version # should return Python 3.9.2; if it isn't, something is wrong
-```
-
-## Ruby
-
-Use `rbenv` to install and use the correct Ruby versions:
-
-```zsh
-% rbenv install 2.6.9
-% rbenv global 2.6.9
-% rbenv rehash # Make executables available
-% gem install bundler
-```
