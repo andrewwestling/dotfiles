@@ -15,8 +15,7 @@ Do the following, in this order:
 1. [Install Mac App Store apps](#mac-app-store)
 1. [Restore Mackup](#mackup)
 1. [Set up SSH](#ssh)
-1. [Set up Python](#python)
-1. [Set up Ruby](#ruby)
+1. [Set up Node](#node)
 
 ## Clone this repo
 
