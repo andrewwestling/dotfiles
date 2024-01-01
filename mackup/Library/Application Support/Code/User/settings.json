@@ -72,7 +72,8 @@
   "terminal.integrated.fontSize": 14,
   "editor.formatOnPaste": true,
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
+    "*.ipynb": "jupyter.notebook.ipynb",
+    "git-rebase-todo": "gitlens.rebase"
   },
   "sortJSON.excludedFiles": ["package.json"],
   "git.autofetch": true,
@@ -84,7 +85,6 @@
   "editor.unicodeHighlight.invisibleCharacters": false,
   "git.confirmSync": false,
   "settingsSync.keybindingsPerPlatform": false,
-  "terminal.integrated.tabs.enabled": false,
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -101,5 +101,15 @@
   "scss.format.enable": false,
   "javascript.format.enable": false,
   "typescript.format.enable": false,
-  "css.format.enable": false
+  "css.format.enable": false,
+  "workbench.iconTheme": "vscode-icons",
+  "gitlens.rebaseEditor.ordering": "asc",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "vsicons.dontShowNewVersionMessage": true,
+  "[njk]": {
+    "editor.defaultFormatter": "eseom.nunjucks-template"
+  },
+  "terminal.integrated.tabs.enabled": false
 }
