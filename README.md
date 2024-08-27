@@ -119,12 +119,18 @@ Set up using the camera / phone thing via mobile app.
 
 ## iCloud
 
-Sign into iCloud now that 1Password is set up. Disable all the stuff except these:
+Sign into iCloud now that 1Password is set up. Use discretion for which "Apps using iCloud" to enable, but ensure the following are enabled:
 
 - Photos
-- Keychain
 - iCloud Drive
+- iCloud Mail
+- Passwords & Keychain
+- Messages in iCloud
 - Find My Mac
+- Reminders
+- Safari
+- Phone & FaceTime
+- Raycast
 
 Set up a symlink for iCloud Drive at `~/iCloud`:
 
@@ -176,41 +182,10 @@ mackup restore
 
 ## SSH
 
-Set up SSH key.
+Enable the 1Password [SSH Agent](https://developer.1password.com/docs/ssh/agent/):
 
-<details>
-<summary>Details for setting up SSH key</summary>
-
-### GitHub
-
-(These steps are borrowed from this article: [Generating a new SSH key and adding it to the ssh-agent - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent))
-
-Create a key and set the passphrase to the same as the login password for macOS:
-
-```zsh
-% ssh-keygen -t ed25519 -C "<my email address>"
-```
-
-Add the key to SSH agent on macOS:
-
-```zsh
-% eval "$(ssh-agent -s)"
-% ssh-add -K ~/.ssh/id_ed25519
-```
-
-Copy the public key to the clipboard then go to [GitHub Settings > SSH and GPG keys](https://github.com/settings/keys) and add it:
-
-```zsh
-pbcopy < ~/.ssh/id_ed25519.pub
-```
-
-Test SSH connection to GitHub:
-
-```zsh
-ssh -T git@github.com
-```
-
-</details>
+- Open the 1Password app and choose **1Password > Settings** from the menu bar, then select **Developer**.
+- Select **Set Up SSH Agent**
 
 ## Node
 
