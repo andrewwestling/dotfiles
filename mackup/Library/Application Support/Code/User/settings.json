@@ -1,6 +1,5 @@
 {
   "editor.find.addExtraSpaceOnTop": false,
-  "workbench.colorTheme": "Monokai",
   "editor.formatOnSave": true,
   "editor.snippetSuggestions": "top",
   "terminal.external.osxExec": "iTerm.app",
@@ -21,7 +20,7 @@
   "editor.tabSize": 2,
   "terminal.integrated.scrollback": 10000,
   "files.trimTrailingWhitespace": true,
-  "editor.renderWhitespace": "all",
+  "editor.renderWhitespace": "none",
   "diffEditor.renderSideBySide": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.multiCursorModifier": "ctrlCmd",
@@ -111,5 +110,8 @@
   "[njk]": {
     "editor.defaultFormatter": "eseom.nunjucks-template"
   },
-  "terminal.integrated.tabs.enabled": false
+  "terminal.integrated.tabs.enabled": false,
+  "workbench.colorTheme": "GitHub Dark Default",
+  "prisma.showPrismaDataPlatformNotification": false,
+  "github.copilot.editor.enableAutoCompletions": true
 }
