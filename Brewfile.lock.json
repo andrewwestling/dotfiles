@@ -2254,6 +2254,18 @@
         "options": {
           "full_name": "zoom"
         }
+      },
+      "1password-cli": {
+        "version": "2.30.0",
+        "options": {
+          "full_name": "1password-cli"
+        }
+      },
+      "keycastr": {
+        "version": "0.10.1",
+        "options": {
+          "full_name": "keycastr"
+        }
       }
     },
     "mas": {
