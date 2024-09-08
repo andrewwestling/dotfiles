@@ -6,14 +6,13 @@ Do the following, in this order:
 
 1. [Clone this repo](#clone-this-repo)
 1. [Install `oh-my-zsh`](#oh-my-zsh)
-1. [Install Rosetta 2](#rosetta-2) (for M1 Macs)
+1. [Install Rosetta 2](#rosetta-2) (for Apple Silicon Macs)
 1. [Install Homebrew and packages](#homebrew)
 1. [Set computer name](#computer-name)
 1. [Set up 1Password](#1password)
 1. [Sign into iCloud](#icloud)
 1. [Sign into Fastmail](#fastmail)
 1. [Install Mac App Store apps](#mac-app-store)
-1. [Restore Mackup](#mackup)
 1. [Set up SSH](#ssh)
 1. [Set up Node](#node)
 
@@ -31,11 +30,28 @@ Make directory and clone
 mkdir ~/Code && git clone https://github.com/expandrew/dotfiles ~/Code/dotfiles
 ```
 
+Copy git configuration
+
+```zsh
+cp ~/Code/dotfiles/.gitconfig ~/.gitconfig
+cp ~/Code/dotfiles/.gitignore ~/.gitignore
+```
+
+(There's a VS Code task to do this in [tasks.json](.vscode/tasks.json): **💻 Update Mac: git**)
+
 ## oh-my-zsh
 
 ```zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
+Copy zsh configuration
+
+```zsh
+cp ~/Code/dotfiles/.zshrc ~/.zshrc
+```
+
+(There's a VS Code task to do this in [tasks.json](.vscode/tasks.json): **💻 Update Mac: zshrc**)
 
 ## Rosetta 2
 
@@ -51,7 +67,7 @@ Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-Get `brew` in the PATH for now (this gets resolved for real when Mackup restores my .zshrc below)
+Get `brew` in the PATH for now:
 
 ```zsh
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -105,7 +121,7 @@ This is how I update the Brewfile when I install/uninstall something:
 
 I just do this periodically and commit it, it's not automated but the command handles the file for me so I don't have to handwrite it
 
-There's a VS Code task to do this in [tasks.json](.vscode/tasks.json).
+(There's a VS Code task to do this in [tasks.json](.vscode/tasks.json): **📝 Update Brewfile**)
 
 </details>
 
@@ -115,7 +131,7 @@ Set the computer name from System Preferences > Sharing.
 
 ## 1Password
 
-Set up using the camera / phone thing via mobile app.
+Set up using the camera/phone thing via mobile app. Use Yubikey for MFA.
 
 ## iCloud
 
@@ -138,12 +154,6 @@ Set up a symlink for iCloud Drive at `~/iCloud`:
 ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
 ```
 
-Set up a symlink for Obsidian at `~/amw-obsidian`:
-
-```zsh
-ln -s ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/amw-obsidian ~/amw-obsidian
-```
-
 ## Fastmail
 
 Create a new App Password for Fastmail at [Settings > Password & Security > Third Party Apps > App Passwords > New App Password](https://www.fastmail.com/settings/security/devicekeys/new).
@@ -156,28 +166,6 @@ After setting up 1Password and iCloud above, run the Homebrew install step again
 
 ```zsh
 cd ~/code/dotfiles && brew bundle # The `mas` steps should complete now that we're signed into iCloud
-```
-
-## Mackup
-
-Restore app settings from mackup
-
-Copy the configuration to the home directory because I don't use the default
-
-```zsh
-cp ~/code/dotfiles/mackup/.mackup.cfg ~/
-```
-
-Copy the custom config directory for custom apps
-
-```zsh
-cp -r ~/code/dotfiles/mackup/.mackup ~/.mackup
-```
-
-Restore all the settings
-
-```zsh
-mackup restore
 ```
 
 ## SSH
