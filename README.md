@@ -13,7 +13,6 @@ Do the following, in this order:
 1. [Sign into iCloud](#icloud)
 1. [Sign into Fastmail](#fastmail)
 1. [Install Mac App Store apps](#mac-app-store)
-1. [Restore Mackup](#mackup)
 1. [Set up SSH](#ssh)
 1. [Set up Node](#node)
 
@@ -51,7 +50,7 @@ Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-Get `brew` in the PATH for now (this gets resolved for real when Mackup restores my .zshrc below)
+Get `brew` in the PATH for now:
 
 ```zsh
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -156,28 +155,6 @@ After setting up 1Password and iCloud above, run the Homebrew install step again
 
 ```zsh
 cd ~/code/dotfiles && brew bundle # The `mas` steps should complete now that we're signed into iCloud
-```
-
-## Mackup
-
-Restore app settings from mackup
-
-Copy the configuration to the home directory because I don't use the default
-
-```zsh
-cp ~/code/dotfiles/mackup/.mackup.cfg ~/
-```
-
-Copy the custom config directory for custom apps
-
-```zsh
-cp -r ~/code/dotfiles/mackup/.mackup ~/.mackup
-```
-
-Restore all the settings
-
-```zsh
-mackup restore
 ```
 
 ## SSH

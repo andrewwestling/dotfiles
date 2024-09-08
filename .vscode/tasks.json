@@ -9,13 +9,6 @@
       "group": "build",
       "type": "shell",
       "command": "brew bundle dump -f"
-    },
-    {
-      "label": "Mackup Backup",
-      "detail": "Backup settings with Mackup",
-      "group": "build",
-      "type": "shell",
-      "command": "mackup backup"
     }
   ]
 }
