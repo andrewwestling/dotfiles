@@ -6,7 +6,7 @@ Do the following, in this order:
 
 1. [Clone this repo](#clone-this-repo)
 1. [Install `oh-my-zsh`](#oh-my-zsh)
-1. [Install Rosetta 2](#rosetta-2) (for M1 Macs)
+1. [Install Rosetta 2](#rosetta-2) (for Apple Silicon Macs)
 1. [Install Homebrew and packages](#homebrew)
 1. [Set computer name](#computer-name)
 1. [Set up 1Password](#1password)
@@ -131,7 +131,7 @@ Set the computer name from System Preferences > Sharing.
 
 ## 1Password
 
-Set up using the camera / phone thing via mobile app.
+Set up using the camera/phone thing via mobile app. Use Yubikey for MFA.
 
 ## iCloud
 
@@ -152,12 +152,6 @@ Set up a symlink for iCloud Drive at `~/iCloud`:
 
 ```zsh
 ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
-```
-
-Set up a symlink for Obsidian at `~/amw-obsidian`:
-
-```zsh
-ln -s ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/amw-obsidian ~/amw-obsidian
 ```
 
 ## Fastmail
