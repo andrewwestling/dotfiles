@@ -1,0 +1,25 @@
+[url "https://"]
+  insteadOf = git://
+[user]
+  name = Andrew Westling
+  email = a@andrewwestling.com
+[push]
+  default = simple
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[alias]
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false
+[core]
+	excludesfile = ~/.gitignore_global
+[pager]
+	branch = false
+[pull]
+	ff = only

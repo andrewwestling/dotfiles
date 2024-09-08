@@ -4,11 +4,39 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Update Brewfile",
+      "label": "📝 Update Brewfile",
       "detail": "Dump currently-installed Homebrew packages into Brewfile and remove entries that are not installed",
       "group": "build",
       "type": "shell",
       "command": "brew bundle dump -f"
+    },
+    {
+      "label": "📝 Update repo: git",
+      "detail": "Copy git configuration from local machine to dotfiles repo",
+      "group": "build",
+      "type": "shell",
+      "command": "cp ~/.gitconfig ~/Code/dotfiles/.gitconfig && cp ~/.gitignore_global ~/Code/dotfiles/.gitignore_global"
+    },
+    {
+      "label": "💻 Update Mac: git",
+      "detail": "Copy git configuration from dotfiles repo to local machine",
+      "group": "build",
+      "type": "shell",
+      "command": "cp ~/Code/dotfiles/.gitconfig ~/.gitconfig && cp ~/Code/dotfiles/.gitignore_global ~/.gitignore_global"
+    },
+    {
+      "label": "📝 Update repo: zshrc",
+      "detail": "Copy zsh configuration from local machine to dotfiles repo",
+      "group": "build",
+      "type": "shell",
+      "command": "cp ~/.zshrc ~/Code/dotfiles/.zshrc"
+    },
+    {
+      "label": "💻 Update Mac: zshrc",
+      "detail": "Copy zsh configuration from dotfiles repo to local machine",
+      "group": "build",
+      "type": "shell",
+      "command": "cp ~/Code/dotfiles/.zshrc ~/.zshrc"
     }
   ]
 }
