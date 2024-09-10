@@ -34,7 +34,7 @@ Copy git configuration
 
 ```zsh
 cp ~/Code/dotfiles/.gitconfig ~/.gitconfig
-cp ~/Code/dotfiles/.gitignore ~/.gitignore
+cp ~/Code/dotfiles/.gitignore_global ~/.gitignore_global
 ```
 
 (There's a VS Code task to do this in [tasks.json](.vscode/tasks.json): **💻 Update Mac: git**)
