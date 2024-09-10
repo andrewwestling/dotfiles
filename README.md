@@ -64,7 +64,7 @@ sudo softwareupdate --install-rosetta
 Install Homebrew
 
 ```zsh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 Get `brew` in the PATH for now:
