@@ -1,6 +1,4 @@
 tap "homebrew/bundle"
-tap "homebrew/cask-drivers"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 brew "gh"
 brew "git"
@@ -9,6 +7,7 @@ brew "node"
 brew "nvm"
 brew "yarn"
 brew "zsh-git-prompt"
+cask "1password"
 cask "1password-cli"
 cask "docker"
 cask "github"
@@ -19,9 +18,12 @@ cask "obsidian"
 cask "raycast"
 cask "spotify"
 cask "visual-studio-code"
-mas "GIPHY CAPTURE", id: 668208984
+mas "GarageBand", id: 682658836
 mas "Hand Mirror", id: 1502839586
-mas "Plinky Mini", id: 6473683112
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 vscode "aaron-bond.better-comments"
 vscode "achil.vscode-javascript-repl"
 vscode "amodio.tsl-problem-matcher"
@@ -59,7 +61,6 @@ vscode "ms-vscode.cpptools"
 vscode "ms-vscode.test-adapter-converter"
 vscode "ms-vscode.vscode-serial-monitor"
 vscode "ms-vsliveshare.vsliveshare"
-vscode "ms-vsliveshare.vsliveshare-pack"
 vscode "prisma.prisma"
 vscode "richie5um2.vscode-sort-json"
 vscode "rioj7.command-variable"
