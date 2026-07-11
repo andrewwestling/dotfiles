@@ -4,19 +4,15 @@ These are my configuration files and notes for setting up a new Mac.
 
 Do the following, in this order:
 
-1. [Clone this repo](#clone-this-repo)
-1. [Install `oh-my-zsh`](#oh-my-zsh)
-1. [Install Rosetta 2](#rosetta-2) (for Apple Silicon Macs)
-1. [Install Homebrew and packages](#homebrew)
+1. [Clone this repo and run install.sh](#clone-this-repo-and-run-installsh)
 1. [Set computer name](#computer-name)
 1. [Set up 1Password](#1password)
 1. [Sign into iCloud](#icloud)
 1. [Sign into Fastmail](#fastmail)
 1. [Install Mac App Store apps](#mac-app-store)
 1. [Set up SSH](#ssh)
-1. [Set up Node](#node)
 
-## Clone this repo
+## Clone this repo and run install.sh
 
 Run git once so macOS will try to install command line tools:
 
@@ -30,54 +26,15 @@ Make directory and clone
 mkdir ~/Code && git clone https://github.com/expandrew/dotfiles ~/Code/dotfiles
 ```
 
-Copy git configuration
+Run the install script. This installs Homebrew (if needed), Rosetta 2 (on Apple Silicon), symlinks `.zshrc`/`.gitconfig`/`.gitignore_global` into `~`, installs oh-my-zsh, runs `brew bundle`, and sets up nvm + Node:
 
 ```zsh
-cp ~/Code/dotfiles/.gitconfig ~/.gitconfig
-cp ~/Code/dotfiles/.gitignore_global ~/.gitignore_global
+cd ~/Code/dotfiles && ./install.sh
 ```
 
-(There's a VS Code task to do this in [tasks.json](.vscode/tasks.json): **💻 Update Mac: git**)
+It's safe to re-run — it skips anything already installed/linked, and backs up (rather than overwrites) any pre-existing dotfiles it would otherwise clobber.
 
-## oh-my-zsh
-
-```zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Copy zsh configuration
-
-```zsh
-cp ~/Code/dotfiles/.zshrc ~/.zshrc
-```
-
-(There's a VS Code task to do this in [tasks.json](.vscode/tasks.json): **💻 Update Mac: zshrc**)
-
-## Rosetta 2
-
-```zsh
-sudo softwareupdate --install-rosetta
-```
-
-## Homebrew
-
-Install Homebrew
-
-```zsh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-Get `brew` in the PATH for now:
-
-```zsh
-eval "$(/opt/homebrew/bin/brew shellenv)"
-```
-
-Install everything from Brewfile, except Mac App Store apps - `mas` won't work yet, because I haven't signed into iCloud at this point - this has a dependency on 1Password step to get the password, so we'll re-run `brew bundle` again below after 1Password and iCloud are set up.
-
-```zsh
-cd ~/code/dotfiles && brew bundle
-```
+Mac App Store apps (`mas` entries in the Brewfile) won't install yet — that needs iCloud sign-in first, so `brew bundle` gets re-run later in the [Mac App Store](#mac-app-store) step below.
 
 ### Multi-user setup
 
@@ -115,7 +72,7 @@ Usually I can resolve it by changing ownership to the current user for the Homeb
 This is how I update the Brewfile when I install/uninstall something:
 
 ```zsh
-% cd ~/code/dotfiles && brew bundle dump -f
+% cd ~/Code/dotfiles && brew bundle dump -f
 # Then commit the changes to this repo, etc.
 ```
 
@@ -165,7 +122,7 @@ Once it's created, download the profile with the link it provides, and open Syst
 After setting up 1Password and iCloud above, run the Homebrew install step again to install Mac App Store apps.
 
 ```zsh
-cd ~/code/dotfiles && brew bundle # The `mas` steps should complete now that we're signed into iCloud
+cd ~/Code/dotfiles && brew bundle # The `mas` steps should complete now that we're signed into iCloud
 ```
 
 ## SSH
@@ -174,17 +131,3 @@ Enable the 1Password [SSH Agent](https://developer.1password.com/docs/ssh/agent/
 
 - Open the 1Password app and choose **1Password > Settings** from the menu bar, then select **Developer**.
 - Select **Set Up SSH Agent**
-
-## Node
-
-Install [nvm](https://github.com/nvm-sh/nvm):
-
-```zsh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-```
-
-Close and reopen the terminal, then install the lastest available version of Node:
-
-```zsh
-nvm install node
-```
