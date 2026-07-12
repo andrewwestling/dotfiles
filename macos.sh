@@ -27,11 +27,12 @@ echo "==> Trackpad: disable natural scrolling, set tracking speed"
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 defaults write NSGlobalDomain com.apple.trackpad.scaling -float 0.875
 
-echo "==> Keyboard: Caps Lock -> No Action (per connected keyboard)"
-# System Settings stores this per keyboard as vendorid-productid; detect and map all.
+echo "==> Keyboard: Caps Lock -> No Action (Apple keyboards only)"
+# System Settings stores this per keyboard as vendorid-productid.
+# Apple vendor IDs: 0x5ac (internal keyboard), 0x4c (Magic Keyboard).
 # Src 30064771129 = Caps Lock, Dst 30064771072 = No Action.
 hidutil list --matching '{"DeviceUsagePage":1,"DeviceUsage":6}' 2>/dev/null \
-  | awk '$1 ~ /^0x/ {print $1"-"$2}' | sort -u | while read -r ids; do
+  | awk '$1 == "0x5ac" || $1 == "0x4c" {print $1"-"$2}' | sort -u | while read -r ids; do
   vid=$((${ids%-*})) pid=$((${ids#*-}))
   defaults -currentHost write -g "com.apple.keyboard.modifiermapping.${vid}-${pid}-0" -array \
     '<dict><key>HIDKeyboardModifierMappingDst</key><integer>30064771072</integer><key>HIDKeyboardModifierMappingSrc</key><integer>30064771129</integer></dict>'
