@@ -2,7 +2,6 @@ tap "tidbyt/tidbyt"
 brew "argon2"
 brew "awscli"
 brew "docker", link: false
-brew "dockutil"
 brew "exiftool"
 brew "ffmpeg"
 brew "flyctl"

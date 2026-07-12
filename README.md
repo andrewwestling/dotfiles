@@ -53,14 +53,6 @@ Secrets and machine-specific bits never go in this repo:
 - `~/.zshrc.local` — sourced by `.zshrc`; holds `CURSOR_API_KEY`, `OBSIDIAN_API_KEY` (used by the obsidian MCP server via `${VAR}` expansion in `agents/claude/mcp.json`), and machine-specific aliases
 - `~/.gitconfig.local` — included by `.gitconfig`; gh writes its credential helpers here (`gh auth login` then `gh auth setup-git`)
 
-### macOS defaults
-
-Optionally run [`macos.sh`](macos.sh) for system preferences (key repeat, Finder, Dock, screenshot location):
-
-```zsh
-./macos.sh
-```
-
 ### Brewfile
 
 <details>
