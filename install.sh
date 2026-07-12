@@ -5,6 +5,11 @@ DOTFILES_DIR="$(cd "$(dirname "${(%):-%x}")" && pwd)"
 
 echo "==> Using dotfiles at $DOTFILES_DIR"
 
+# Ask for the sudo password once up front and keep it alive until the script
+# exits, so brew's cask/mas steps don't each prompt for it.
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" 2>/dev/null || exit; done &
+
 # 1. Xcode Command Line Tools
 if ! xcode-select -p >/dev/null 2>&1; then
   echo "==> Installing Xcode Command Line Tools..."
