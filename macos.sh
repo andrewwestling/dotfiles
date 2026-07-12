@@ -49,6 +49,9 @@ hidutil list --matching '{"DeviceUsagePage":1,"DeviceUsage":6}' 2>/dev/null \
   echo "    mapped keyboard ${vid}-${pid}"
 done
 
+echo "==> Finder: add home directory to sidebar Favorites"
+swift "$(dirname "$0")/bin/add-sidebar-favorite.swift" "$HOME" 2>/dev/null || echo "    (failed; drag ~ into the sidebar manually)"
+
 echo "==> Dock: replace default icons with my layout"
 # Requires dockutil (in the Brewfile). Apps not installed yet are skipped.
 if command -v dockutil >/dev/null 2>&1; then
