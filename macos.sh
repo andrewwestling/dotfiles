@@ -23,6 +23,11 @@ echo "==> Screenshots: save to ~/Desktop/Screenshots"
 mkdir -p "$HOME/Desktop/Screenshots"
 defaults write com.apple.screencapture location -string "$HOME/Desktop/Screenshots"
 
+echo "==> Accessibility: reduce motion"
+# Note: the universalaccess domain is protected; if this errors, grant the
+# terminal Full Disk Access or set it in System Settings > Accessibility > Display.
+defaults write com.apple.universalaccess reduceMotion -bool true || true
+
 echo "==> Trackpad: disable natural scrolling, set tracking speed"
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 defaults write NSGlobalDomain com.apple.trackpad.scaling -float 0.875
