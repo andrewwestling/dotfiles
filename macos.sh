@@ -65,6 +65,7 @@ if command -v dockutil >/dev/null 2>&1; then
     "/Applications/GitHub Desktop.app"
     "/Applications/Obsidian.app"
     "/Applications/Spotify.app"
+    "/System/Applications/VoiceMemos.app"
   )
   dockutil --remove all --no-restart >/dev/null
   for app in "${dock_apps[@]}"; do
