@@ -13,6 +13,11 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
 
+echo "==> Finder: show hard drives on the desktop"
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+
 echo "==> Finder: search current folder by default"
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
