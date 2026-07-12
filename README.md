@@ -23,7 +23,7 @@ git
 Make directory and clone
 
 ```zsh
-mkdir ~/Code && git clone https://github.com/expandrew/dotfiles ~/Code/dotfiles
+mkdir ~/Code && git clone https://github.com/andrewwestling/dotfiles ~/Code/dotfiles
 ```
 
 Run the install script. This installs Homebrew (if needed), Rosetta 2 (on Apple Silicon), symlinks `.zshrc`/`.gitconfig`/`.gitignore_global` into `~`, installs oh-my-zsh, runs `brew bundle`, and sets up nvm + Node:
@@ -32,37 +32,9 @@ Run the install script. This installs Homebrew (if needed), Rosetta 2 (on Apple 
 cd ~/Code/dotfiles && ./install.sh
 ```
 
-It's safe to re-run — it skips anything already installed/linked, and backs up (rather than overwrites) any pre-existing dotfiles it would otherwise clobber.
+It's safe to re-run; it skips anything already installed/linked, and backs up (rather than overwrites) any pre-existing dotfiles it would otherwise clobber.
 
-Mac App Store apps (`mas` entries in the Brewfile) won't install yet — that needs iCloud sign-in first, so `brew bundle` gets re-run later in the [Mac App Store](#mac-app-store) step below.
-
-### Multi-user setup
-
-<details>
-<summary>Details for using Homebrew with multiple accounts</summary>
-
-If there are multiple user accounts on the same Mac, I need to follow a few extra steps:
-
-1. Open System Preferences > Users & Groups
-1. Create a new group called `brew`; add all the users to it
-1. Run these steps:
-
-```zsh
-% sudo chgrp -R brew $(brew --prefix) # Change group to brew for Homebrew
-% sudo chmod -R g+w $(brew --prefix) # Allow group members to write inside this directory
-% brew doctor # Make sure everything is good
-```
-
-Even with this "shared group" setup, I still run into permissions issues sometimes when running `brew bundle`.
-
-Usually I can resolve it by changing ownership to the current user for the Homebrew folder:
-
-```zsh
-% sudo chown -R $USER $(brew --prefix)
-% brew bundle # Try installing again
-```
-
-</details>
+Mac App Store apps (`mas` entries in the Brewfile) won't install yet, that needs iCloud sign-in first, so `brew bundle` gets re-run later in the [Mac App Store](#mac-app-store) step below.
 
 ### Brewfile
 
