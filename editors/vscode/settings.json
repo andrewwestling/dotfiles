@@ -1,0 +1,15 @@
+{
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Monokai",
+  "security.promptForLocalFileProtocolHandling": false,
+  "git.autofetch": true,
+  "claudeCode.preferredLocation": "panel",
+  "terminal.integrated.tabs.enabled": false,
+  "diffEditor.renderSideBySide": false,
+  "git.openRepositoryInParentFolders": "never",
+  "typescript.experimental.useTsgo": true,
+  "git.replaceTagsWhenPull": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+}

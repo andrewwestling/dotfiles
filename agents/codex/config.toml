@@ -1,0 +1,140 @@
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+approval_policy = "on-request"
+approvals_reviewer = "guardian_subagent"
+sandbox_mode = "workspace-write"
+
+notify = ["/Users/amw/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+
+[marketplaces.openai-bundled]
+last_updated = "2026-07-06T22:40:57Z"
+source_type = "local"
+source = "/Users/amw/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-06-04T21:12:23Z"
+source_type = "local"
+source = "/Users/amw/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."linear@openai-curated"]
+enabled = true
+
+[projects."/Users/amw/Code/bso-opal"]
+trust_level = "trusted"
+
+[projects."/Users/amw/Code/bso-members"]
+trust_level = "trusted"
+
+[projects."/Users/amw/Library/Application Support/com.conductor.app/bin"]
+trust_level = "trusted"
+
+[projects."/Users/amw/Code/opal"]
+trust_level = "trusted"
+
+[projects."/Users/amw/Code/curt"]
+trust_level = "trusted"
+
+[projects."/Users/amw/Code/filters"]
+trust_level = "trusted"
+
+[projects."/Users/amw/Code/filters-v1"]
+trust_level = "trusted"
+
+[projects."/Users/amw/Documents/mlem.fm"]
+trust_level = "trusted"
+
+[projects."/Users/amw/Code/Upbow"]
+trust_level = "trusted"
+
+[projects."/Users/amw/Code/mcwestling.com"]
+trust_level = "trusted"
+
+[projects."/Users/amw/Code/mcwestling/ops"]
+trust_level = "trusted"
+
+[projects."/Users/amw/Code/mcwestling/marty"]
+trust_level = "trusted"
+
+[projects."/Users/amw/Code/mcwestling/agents"]
+trust_level = "trusted"
+
+[desktop]
+usePointerCursors = false
+preventSleepWhileRunning = true
+keepRemoteControlAwakeWhilePluggedIn = true
+appearanceDarkCodeThemeId = "linear"
+appearanceLightCodeThemeId = "linear"
+
+[desktop.open-in-target-preferences]
+global = "vscode"
+
+[desktop.open-in-target-preferences.perPath]
+"/Users/amw/Code/bso-opal" = "vscode"
+"/Users/amw/Desktop/BSO/2025-2026 Mid-Season Survey/Insights" = "fileManager"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#606acc"
+contrast = 60
+ink = "#e3e4e6"
+opaqueWindows = true
+surface = "#0f0f11"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+ui = "Inter"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#69c967"
+diffRemoved = "#ff7e78"
+skill = "#c2a1ff"
+
+[desktop.appearanceLightChromeTheme]
+accent = "#5e6ad2"
+contrast = 45
+ink = "#1b1b1b"
+opaqueWindows = true
+surface = "#fcfcfd"
+
+[desktop.appearanceLightChromeTheme.fonts]
+ui = "Inter"
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#52a450"
+diffRemoved = "#c94446"
+skill = "#8160d8"
+
+[features]
+js_repl = false
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/Codex.app/Contents/Resources/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = ""
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/amw/.codex"
+CODEX_HOME = "/Users/amw/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "4946b004b23af02244ece97240aceb8d123475207fa6a6fc399486bd7086049f"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.602.71036"
+CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 1

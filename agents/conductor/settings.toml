@@ -1,0 +1,17 @@
+"$schema" = "https://conductor.build/schemas/settings.schema.json"
+claude_code_executable_path = "/Users/amw/.local/bin/claude"
+codex_executable_path = "/Users/amw/.local/bin/codex"
+opencode_executable_path = "/Users/amw/.opencode/bin/opencode"
+
+[git]
+branch_prefix_type = "none"
+delete_branch_on_archive = false
+
+[models]
+default = "cursor:auto"
+default_plan_mode = true
+review = "gpt-5.5"
+
+[models.codex]
+default_thinking_level = "high"
+review_thinking_level = "xhigh"

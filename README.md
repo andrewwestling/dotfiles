@@ -26,31 +26,51 @@ Make directory and clone
 mkdir ~/Code && git clone https://github.com/andrewwestling/dotfiles ~/Code/dotfiles
 ```
 
-Run the install script. This installs Homebrew (if needed), Rosetta 2 (on Apple Silicon), symlinks `.zshrc`/`.gitconfig`/`.gitignore_global` into `~`, installs oh-my-zsh, runs `brew bundle`, and sets up nvm + Node:
+Run the install script:
 
 ```zsh
 cd ~/Code/dotfiles && ./install.sh
 ```
 
+This installs Homebrew (if needed) and Rosetta 2 (on Apple Silicon), then:
+
+- Symlinks `.zshrc`/`.gitconfig`/`.gitignore_global` into `~`
+- Symlinks coding agent configs from [`agents/`](agents/): Claude Code (`~/.claude/settings.json`, `~/.claude/mcp.json`), Codex (`~/.codex/config.toml`, `AGENTS.md`), Conductor (`~/.conductor/settings.toml`)
+- Symlinks editor configs from [`editors/`](editors/): Cursor and VS Code `settings.json`/`keybindings.json`
+- Creates stub `~/.zshrc.local` and `~/.gitconfig.local` for machine-local secrets (see below)
+- Installs oh-my-zsh, runs `brew bundle` (trusting the `tidbyt/tidbyt` tap first), sets up nvm + Node
+- Installs global npm CLIs (copilot, railway, stripe, vercel)
+- Restores agent skills from [`agents/skill-lock.json`](agents/skill-lock.json) via the [`skills` CLI](https://github.com/vercel-labs/skills) (`npx skills update -g -y`)
+
 It's safe to re-run; it skips anything already installed/linked, and backs up (rather than overwrites) any pre-existing dotfiles it would otherwise clobber.
 
 Mac App Store apps (`mas` entries in the Brewfile) won't install yet, that needs iCloud sign-in first, so `brew bundle` gets re-run later in the [Mac App Store](#mac-app-store) step below.
+
+### Secrets
+
+Secrets and machine-specific bits never go in this repo:
+
+- `~/.zshrc.local` — sourced by `.zshrc`; holds `CURSOR_API_KEY`, `OBSIDIAN_API_KEY` (used by the obsidian MCP server via `${VAR}` expansion in `agents/claude/mcp.json`), and machine-specific aliases
+- `~/.gitconfig.local` — included by `.gitconfig`; gh writes its credential helpers here (`gh auth login` then `gh auth setup-git`)
+
+### macOS defaults
+
+Optionally run [`macos.sh`](macos.sh) for system preferences (key repeat, Finder, Dock, screenshot location):
+
+```zsh
+./macos.sh
+```
 
 ### Brewfile
 
 <details>
 <summary>Details for updating Brewfile</summary>
 
-This is how I update the Brewfile when I install/uninstall something:
+The Brewfile is hand-curated (top-level packages only, no transitive deps). When I install/uninstall something, I add or remove the line by hand and commit.
 
-```zsh
-% cd ~/Code/dotfiles && brew bundle dump -f
-# Then commit the changes to this repo, etc.
-```
+Avoid `brew bundle dump -f` — it overwrites the curated file with every installed formula (including dependency noise) and clobbers the vscode section.
 
-I just do this periodically and commit it, it's not automated but the command handles the file for me so I don't have to handwrite it
-
-(There's a VS Code task to do this in [tasks.json](.vscode/tasks.json): **📝 Update Brewfile**)
+To find installed things that aren't in the Brewfile yet: `brew leaves` (formulas) and `brew list --cask`.
 
 </details>
 
