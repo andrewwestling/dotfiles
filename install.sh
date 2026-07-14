@@ -62,6 +62,7 @@ link_file() {
 }
 
 # Shell + git
+link_file ".zshenv" "$HOME/.zshenv"
 link_file ".zshrc" "$HOME/.zshrc"
 link_file ".gitconfig" "$HOME/.gitconfig"
 link_file ".gitignore_global" "$HOME/.gitignore_global"
@@ -101,7 +102,9 @@ fi
 # 6. oh-my-zsh
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
   echo "==> Installing oh-my-zsh..."
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  # KEEP_ZSHRC=yes stops the installer from backing up and replacing our
+  # already-symlinked ~/.zshrc with its stock template.
+  KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 else
   echo "==> oh-my-zsh already installed."
 fi
@@ -123,6 +126,7 @@ export NVM_DIR="$HOME/.nvm"
 if command -v nvm >/dev/null 2>&1; then
   echo "==> Installing latest Node via nvm..."
   nvm install node
+  nvm alias default node
 fi
 
 # 9. Global npm CLIs
@@ -154,7 +158,6 @@ cat <<'EOF'
      (needs iCloud sign-in first for `mas` to work)
   6. Set up the 1Password SSH Agent (1Password > Settings > Developer)
   7. Fill in ~/.zshrc.local (API keys) and run `gh auth login` + `gh auth setup-git`
-  8. Optionally run ./macos.sh for macOS defaults
 
 See README.md for details on each step.
 EOF

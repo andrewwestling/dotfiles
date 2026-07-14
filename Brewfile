@@ -1,3 +1,5 @@
+tap "anomalyco/tap"
+tap "darrylmorley/whatcable"
 tap "tidbyt/tidbyt", trusted: true
 # Password hashing library and CLI utility
 brew "argon2"
@@ -35,6 +37,8 @@ brew "p7zip"
 brew "pandoc"
 # Port of pdftk in java
 brew "pdftk-java"
+# Fast, disk space efficient package manager
+brew "pnpm"
 # Object-relational database system
 brew "postgresql@18"
 # Cross-platform application and UI framework
@@ -53,6 +57,8 @@ brew "xcodegen"
 brew "yarn"
 # Informative git prompt for zsh
 brew "zsh-git-prompt"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode", trusted: true
 # App runtime and UX toolkit for pixel-based apps.
 brew "tidbyt/tidbyt/pixlet", trusted: true
 # Password manager that keeps all passwords secure behind one password
@@ -101,6 +107,8 @@ cask "slack"
 cask "spotify"
 # Open-source code editor
 cask "visual-studio-code"
+# Menu bar app for USB-C cable diagnostics
+cask "darrylmorley/whatcable/whatcable", trusted: true
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Hand Mirror", id: 1502839586
@@ -115,3 +123,7 @@ vscode "ms-vscode-remote.remote-containers"
 vscode "ms-vscode.vscode-typescript-next"
 vscode "typescriptteam.native-preview"
 vscode "yzane.markdown-pdf"
+npm "@github/copilot"
+npm "@railway/cli"
+npm "@stripe/cli"
+npm "vercel"
