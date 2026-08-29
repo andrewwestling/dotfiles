@@ -1,21 +1,22 @@
+# Codex baseline config.
+#
+# This is a hand-curated STARTING POINT, not a live mirror. Codex (and the
+# ChatGPT desktop app) rewrite ~/.codex/config.toml constantly — adding machine
+# paths, project trust entries, generated MCP servers, browser client hashes,
+# app version numbers, etc. install.sh therefore COPIES this file into place
+# only when ~/.codex/config.toml is absent; it does not symlink it. Keep only
+# portable preferences here.
+
 model = "gpt-5.6-sol"
 model_reasoning_effort = "medium"
 approval_policy = "on-request"
 approvals_reviewer = "guardian_subagent"
 sandbox_mode = "workspace-write"
 
-notify = ["/Users/amw/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+[features]
+js_repl = false
 
-[marketplaces.openai-bundled]
-last_updated = "2026-07-13T17:45:28Z"
-source_type = "local"
-source = "/Users/amw/.codex/.tmp/bundled-marketplaces/openai-bundled"
-
-[marketplaces.openai-primary-runtime]
-last_updated = "2026-07-13T17:45:25Z"
-source_type = "local"
-source = "/Users/amw/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
-
+# Codex plugin enablement (portable; the marketplace source paths Codex adds are not)
 [plugins."documents@openai-primary-runtime"]
 enabled = true
 
@@ -49,63 +50,17 @@ enabled = true
 [plugins."browser@openai-bundled"]
 enabled = true
 
-[projects."/Users/amw/Code/bso-opal"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Code/bso-members"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Library/Application Support/com.conductor.app/bin"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Code/opal"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Code/curt"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Code/filters"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Code/filters-v1"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Documents/mlem.fm"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Code/Upbow"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Code/mcwestling.com"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Code/mcwestling/ops"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Code/mcwestling/marty"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Code/mcwestling/agents"]
-trust_level = "trusted"
-
-[projects."/Users/amw/Code/dotfiles"]
-trust_level = "trusted"
-
 [desktop]
 usePointerCursors = false
 preventSleepWhileRunning = true
 keepRemoteControlAwakeWhilePluggedIn = true
 appearanceDarkCodeThemeId = "linear"
 appearanceLightCodeThemeId = "linear"
-conversationDetailMode = "STEPS_COMMANDS"
+conversationDetailMode = "STEPS_PROSE"
 ambient-suggestions-enabled = true
 
 [desktop.open-in-target-preferences]
 global = "vscode"
-
-[desktop.open-in-target-preferences.perPath]
-"/Users/amw/Code/bso-opal" = "vscode"
-"/Users/amw/Desktop/BSO/2025-2026 Mid-Season Survey/Insights" = "fileManager"
 
 [desktop.appearanceDarkChromeTheme]
 accent = "#606acc"
@@ -136,36 +91,3 @@ ui = "Inter"
 diffAdded = "#52a450"
 diffRemoved = "#c94446"
 skill = "#8160d8"
-
-[features]
-js_repl = false
-
-[mcp_servers.node_repl]
-args = []
-command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
-startup_timeout_sec = 120
-
-[mcp_servers.node_repl.env]
-NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
-NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
-NODE_REPL_TRUSTED_CODE_PATHS = "/Users/amw/.codex"
-CODEX_HOME = "/Users/amw/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,e2cad16d8d9f60f09c9f0951ec7dfdd9e8f59dedd06045c0b6827dc8fa8322f0"
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
-NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
-BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.707.62119"
-CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
-
-[mcp_servers.computer-use]
-command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
-args = ["mcp"]
-cwd = "."
-enabled = false
-
-[tui.model_availability_nux]
-"gpt-5.5" = 1
-"gpt-5.6-sol" = 1
