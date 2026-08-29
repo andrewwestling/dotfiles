@@ -11,6 +11,7 @@ Do the following, in this order:
 1. [Sign into Fastmail](#fastmail)
 1. [Install Mac App Store apps](#mac-app-store)
 1. [Set up SSH](#ssh)
+1. [Apply macOS system settings](#macos-system-settings)
 
 ## Clone this repo and run install.sh
 
@@ -34,15 +35,34 @@ cd ~/Code/dotfiles && ./install.sh
 
 This installs Homebrew (if needed) and Rosetta 2 (on Apple Silicon), then:
 
-- Symlinks `.zshrc`/`.gitconfig`/`.gitignore_global` into `~`
-- Symlinks coding agent configs from [`agents/`](agents/): Claude Code (`~/.claude/settings.json`, `~/.claude/mcp.json`), Codex (`~/.codex/config.toml`, `AGENTS.md`), Conductor (`~/.conductor/settings.toml`)
-- Symlinks editor configs from [`editors/`](editors/): Cursor and VS Code `settings.json`/`keybindings.json`
+- Symlinks `.zshenv`/`.zshrc`/`.gitconfig`/`.gitignore_global` into `~`
+- Symlinks coding agent configs from [`agents/`](agents/): Claude Code (`~/.claude/settings.json`, `~/.claude/mcp.json`, `~/.claude/CLAUDE.md`), Codex `AGENTS.md`, Conductor (`~/.conductor/settings.toml`)
+- Copies a **baseline** `~/.codex/config.toml` only if none exists — Codex rewrites that file constantly (project trust, generated MCP servers, app paths), so it's not symlinked and the repo copy is a hand-curated starting point, not a mirror
+- Symlinks editor configs from [`editors/`](editors/): Cursor + VS Code `settings.json`/`keybindings.json`, and Cursor's `~/.cursor/mcp.json`
+- Symlinks `~/.config/gh/config.yml` (gh CLI aliases/prefs; `hosts.yml` and auth stay out of git)
 - Creates stub `~/.zshrc.local` and `~/.gitconfig.local` for machine-local secrets (see below)
 - Installs oh-my-zsh, runs `brew bundle` (trusting the `tidbyt/tidbyt` tap first), sets up nvm + Node
-- Installs global npm CLIs (copilot, railway, stripe, vercel)
+- Installs `vercel` globally via npm; installs the **Railway CLI** via its standalone script (`curl -fsSL https://railway.com/install.sh | sh`). The Stripe CLI comes from the `stripe/stripe-cli/stripe` brew formula
+- Installs Cursor extensions (`anysphere.remote-containers`, `anysphere.remote-ssh`) — `brew bundle` only covers VS Code extensions
 - Restores agent skills from [`agents/skill-lock.json`](agents/skill-lock.json) via the [`skills` CLI](https://github.com/vercel-labs/skills) (`npx skills update -g -y`)
 
-It's safe to re-run; it skips anything already installed/linked, and backs up (rather than overwrites) any pre-existing dotfiles it would otherwise clobber.
+### Re-running to update an existing machine
+
+`./install.sh` is idempotent **and reconciling** — re-run it any time to pull the
+latest repo state onto a machine that's already set up:
+
+- New `Brewfile` entries get installed (`brew bundle` runs every time). Packages
+  that are installed but *no longer* in the Brewfile are only **reported**, never
+  removed — run `brew bundle cleanup --force` yourself if you want them gone.
+- Symlinks that an app has replaced with its own real file are backed up to
+  `*.bak` and re-linked.
+- `~/.agents/.skill-lock.json` is overwritten from the repo copy (the repo is the
+  source of truth), printing the added/removed skills, before `skills update`.
+- New Cursor extensions are installed.
+- The run ends with a **summary** of what it changed, skipped, backed up, and
+  what needs a human.
+
+Pre-existing dotfiles it would clobber are backed up (`*.bak`), never overwritten.
 
 Mac App Store apps (`mas` entries in the Brewfile) won't install yet, that needs iCloud sign-in first, so `brew bundle` gets re-run later in the [Mac App Store](#mac-app-store) step below.
 
@@ -62,7 +82,9 @@ The Brewfile is hand-curated (top-level packages only, no transitive deps). When
 
 Avoid `brew bundle dump -f` — it overwrites the curated file with every installed formula (including dependency noise) and clobbers the vscode section.
 
-To find installed things that aren't in the Brewfile yet: `brew leaves` (formulas) and `brew list --cask`.
+To find installed things that aren't in the Brewfile yet: `brew leaves` (formulas) and `brew list --cask`. `install.sh` also prints a `brew bundle cleanup` report of installed-but-untracked packages on every run.
+
+If `brew leaves` shows orphaned dependencies you don't want (packages nothing depends on anymore), clear them with `brew autoremove`.
 
 </details>
 
@@ -115,3 +137,14 @@ Enable the 1Password [SSH Agent](https://developer.1password.com/docs/ssh/agent/
 
 - Open the 1Password app and choose **1Password > Settings** from the menu bar, then select **Developer**.
 - Select **Set Up SSH Agent**
+
+## macOS system settings
+
+Work through [`macos-checklist.md`](macos-checklist.md) — a click-through list of
+the System Settings I change on a fresh Mac (Dock, keyboard repeat, text
+substitutions, trackpad, Finder), plus **Spotlight search results**, which are
+captured as a plist ([`macos/com.apple.Spotlight.plist`](macos/com.apple.Spotlight.plist))
+and applied with `defaults import`.
+
+There's deliberately no settings script — a previous `macos.sh` was removed
+because scripted `defaults write` values didn't reliably apply.
