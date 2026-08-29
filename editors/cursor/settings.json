@@ -13,5 +13,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cursor.composer.shouldChimeAfterChatFinishes": true,
-  "cursor.general.reduceTransparency": true
+  "cursor.general.reduceTransparency": true,
+  "editor.accessibilitySupport": "on",
+  "cursor.composer.queueMessageDefaultBehavior": "steer"
 }

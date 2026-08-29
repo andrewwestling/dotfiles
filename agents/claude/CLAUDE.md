@@ -1,5 +1,3 @@
-Ask lots of clarifying questions when something is unclear
-
 ## Linear workflow
 
 When picking up work from a Linear issue:

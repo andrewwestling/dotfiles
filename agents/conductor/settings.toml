@@ -1,6 +1,5 @@
 "$schema" = "https://conductor.build/schemas/settings.schema.json"
-claude_code_executable_path = "/Users/amw/.local/bin/claude"
-codex_executable_path = "/Users/amw/.local/bin/codex"
+codex_provider = "default"
 opencode_executable_path = "/Users/amw/.opencode/bin/opencode"
 
 [git]
@@ -8,10 +7,14 @@ branch_prefix_type = "none"
 delete_branch_on_archive = false
 
 [models]
-default = "cursor:auto"
+default = "gpt-5.6-sol"
 default_plan_mode = true
-review = "gpt-5.5"
+review = "gpt-5.6-sol"
+
+[models.claude_code]
+personality = "concise"
+review_effort_level = "medium"
 
 [models.codex]
-default_thinking_level = "high"
-review_thinking_level = "xhigh"
+default_thinking_level = "medium"
+review_thinking_level = "high"
