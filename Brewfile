@@ -1,5 +1,6 @@
 tap "anomalyco/tap"
 tap "darrylmorley/whatcable"
+tap "stripe/stripe-cli"
 tap "tidbyt/tidbyt", trusted: true
 # Password hashing library and CLI utility
 brew "argon2"
@@ -49,6 +50,8 @@ brew "rclone"
 brew "redis"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Command-line tool to interact with Stripe
+brew "stripe/stripe-cli/stripe"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Generate your Xcode project from a spec file and your folder structure
@@ -69,6 +72,8 @@ cask "1password-cli"
 cask "bartender"
 # Web browser focusing on privacy
 cask "brave-browser"
+# OpenAI's ChatGPT desktop app
+cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
@@ -107,6 +112,8 @@ cask "slack"
 cask "spotify"
 # Open-source code editor
 cask "visual-studio-code"
+# Voice-to-text dictation with AI-powered auto-editing
+cask "wispr-flow"
 # Menu bar app for USB-C cable diagnostics
 cask "darrylmorley/whatcable/whatcable", trusted: true
 # Video communication and virtual meeting platform
@@ -123,7 +130,6 @@ vscode "ms-vscode-remote.remote-containers"
 vscode "ms-vscode.vscode-typescript-next"
 vscode "typescriptteam.native-preview"
 vscode "yzane.markdown-pdf"
-npm "@github/copilot"
-npm "@railway/cli"
-npm "@stripe/cli"
+# Railway CLI is installed via its standalone script in install.sh (not npm).
+# Stripe CLI is the `stripe/stripe-cli/stripe` formula above (not npm).
 npm "vercel"
