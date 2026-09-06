@@ -54,8 +54,6 @@ brew "ripgrep"
 brew "stripe/stripe-cli/stripe"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
-# Easiest, most secure way to use WireGuard and 2FA
-brew "tailscale"
 # Generate your Xcode project from a spec file and your folder structure
 brew "xcodegen"
 # JavaScript package manager
