@@ -54,6 +54,8 @@ brew "ripgrep"
 brew "stripe/stripe-cli/stripe"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Easiest, most secure way to use WireGuard and 2FA
+brew "tailscale"
 # Generate your Xcode project from a spec file and your folder structure
 brew "xcodegen"
 # JavaScript package manager
@@ -110,6 +112,8 @@ cask "rectangle"
 cask "slack"
 # Music streaming service
 cask "spotify"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
 # Open-source code editor
 cask "visual-studio-code"
 # Voice-to-text dictation with AI-powered auto-editing
