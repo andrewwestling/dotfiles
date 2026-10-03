@@ -339,14 +339,13 @@
       "updatedAt": "2026-08-07T23:09:42.613Z"
     },
     "wayfinder": {
-      "source": "mattpocock/skills",
+      "source": "mcwestling/skills",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/wayfinder/SKILL.md",
-      "skillFolderHash": "8ec0462658381bd1606d3f9db14ffc67df6a2a43",
-      "pluginName": "mattpocock-skills",
-      "installedAt": "2026-07-11T15:24:30.228Z",
-      "updatedAt": "2026-08-19T12:20:49.423Z"
+      "sourceUrl": "https://github.com/mcwestling/skills.git",
+      "skillPath": "skills/wayfinder/SKILL.md",
+      "skillFolderHash": "d753b43217a42e89dd76edb85182c3a8692c596a",
+      "installedAt": "2026-10-03T12:47:04.637Z",
+      "updatedAt": "2026-10-03T12:47:04.637Z"
     },
     "resolving-merge-conflicts": {
       "source": "mattpocock/skills",
