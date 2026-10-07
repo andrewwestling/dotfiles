@@ -37,11 +37,12 @@ This installs Homebrew (if needed) and Rosetta 2 (on Apple Silicon), then:
 
 - Symlinks `.zshenv`/`.zshrc`/`.gitconfig`/`.gitignore_global` into `~`
 - Symlinks coding agent configs from [`agents/`](agents/): Claude Code (`~/.claude/settings.json`, `~/.claude/mcp.json`, `~/.claude/CLAUDE.md`), Codex `AGENTS.md`, Conductor (`~/.conductor/settings.toml`)
+- Keeps `autoMode.environment` (private org details for Claude's auto mode) out of git: a clean/smudge filter ([`agents/claude/automode-filter.sh`](agents/claude/automode-filter.sh)) strips it on commit and restores it on checkout from `~/.claude/automode-environment.json`, which lives only on the machine. Copy that file to a new machine yourself
 - Copies a **baseline** `~/.codex/config.toml` only if none exists — Codex rewrites that file constantly (project trust, generated MCP servers, app paths), so it's not symlinked and the repo copy is a hand-curated starting point, not a mirror
 - Symlinks editor configs from [`editors/`](editors/): Cursor + VS Code `settings.json`/`keybindings.json`, and Cursor's `~/.cursor/mcp.json`
 - Symlinks `~/.config/gh/config.yml` (gh CLI aliases/prefs; `hosts.yml` and auth stay out of git)
 - Creates stub `~/.zshrc.local` and `~/.gitconfig.local` for machine-local secrets (see below)
-- Installs oh-my-zsh, runs `brew bundle` (trusting the `tidbyt/tidbyt` tap first), sets up nvm + Node
+- Installs oh-my-zsh, runs `brew bundle` (trusting the `tidbyt/tidbyt` and `stablyai/orca` taps first, and adopting a DMG-installed Orca.app), sets up nvm + Node
 - Installs `vercel` globally via npm; installs the **Railway CLI** via its standalone script (`curl -fsSL https://railway.com/install.sh | sh`). The Stripe CLI comes from the `stripe/stripe-cli/stripe` brew formula
 - Installs Cursor extensions (`anysphere.remote-containers`, `anysphere.remote-ssh`) — `brew bundle` only covers VS Code extensions
 - Restores agent skills from [`agents/skill-lock.json`](agents/skill-lock.json) via the [`skills` CLI](https://github.com/vercel-labs/skills) (`npx skills update -g -y`)

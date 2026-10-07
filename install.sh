@@ -111,6 +111,16 @@ copy_if_absent() {
   CHANGED+=("copied baseline $dest")
 }
 
+# Keep the private autoMode.environment block in ~/.claude/settings.json out of
+# this public repo (see agents/claude/automode-filter.sh). Configure the filter
+# before symlinking so git never sees the unfiltered file.
+git -C "$DOTFILES_DIR" config filter.claude-automode.clean "agents/claude/automode-filter.sh clean"
+git -C "$DOTFILES_DIR" config filter.claude-automode.smudge "agents/claude/automode-filter.sh smudge"
+git -C "$DOTFILES_DIR" config filter.claude-automode.required true
+if [[ ! -s "$HOME/.claude/automode-environment.json" ]]; then
+  WARNINGS+=("Claude auto mode: restore ~/.claude/automode-environment.json (private, not in git), then run: git -C $DOTFILES_DIR checkout -- agents/claude/settings.json")
+fi
+
 # Shell + git
 link_file ".zshenv" "$HOME/.zshenv"
 link_file ".zshrc" "$HOME/.zshrc"
