@@ -3,6 +3,17 @@ set -euo pipefail
 
 DOTFILES_DIR="$(cd "$(dirname "${(%):-%x}")" && pwd)"
 
+# Every symlink below points into $DOTFILES_DIR. From a linked worktree (Orca,
+# Conductor, `git worktree add`) that would leave ~/.zshrc, agent settings, etc.
+# dangling once the worktree is removed, so only run from the main checkout.
+GIT_DIR_ABS="$(git -C "$DOTFILES_DIR" rev-parse --absolute-git-dir 2>/dev/null || true)"
+GIT_COMMON_DIR="$(git -C "$DOTFILES_DIR" rev-parse --path-format=absolute --git-common-dir 2>/dev/null || true)"
+if [[ -n "$GIT_DIR_ABS" && "$GIT_DIR_ABS" != "$GIT_COMMON_DIR" ]]; then
+  echo "!! Refusing to run from a git worktree: $DOTFILES_DIR" >&2
+  echo "   Run it from the main checkout instead: ${GIT_COMMON_DIR%/.git}/install.sh" >&2
+  exit 1
+fi
+
 echo "==> Using dotfiles at $DOTFILES_DIR"
 
 # This script is idempotent AND reconciling: re-running it on an already
