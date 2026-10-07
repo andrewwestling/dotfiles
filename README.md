@@ -33,6 +33,8 @@ Run the install script:
 cd ~/Code/dotfiles && ./install.sh
 ```
 
+Always run it from the main checkout. It refuses to run from a git worktree (Orca, Conductor, `git worktree add`), because the symlinks it creates point at the directory it runs from and would break once the worktree is deleted.
+
 This installs Homebrew (if needed) and Rosetta 2 (on Apple Silicon), then:
 
 - Symlinks `.zshenv`/`.zshrc`/`.gitconfig`/`.gitignore_global` into `~`
