@@ -3,13 +3,15 @@ codex_provider = "default"
 opencode_executable_path = "/Users/amw/.opencode/bin/opencode"
 
 [git]
-branch_prefix_type = "none"
+branch_prefix = "conductor/"
+branch_prefix_type = "custom"
 delete_branch_on_archive = false
 
 [models]
 default = "gpt-5.6-sol"
 default_plan_mode = true
-review = "gpt-5.6-sol"
+review = "grok-4.6"
+review_fast_mode = false
 
 [models.claude_code]
 personality = "concise"

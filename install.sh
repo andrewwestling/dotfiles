@@ -172,6 +172,15 @@ fi
 # 7. Homebrew packages
 echo "==> Trusting third-party taps..."
 brew trust --tap tidbyt/tidbyt >/dev/null 2>&1 || true
+brew trust --tap stablyai/orca >/dev/null 2>&1 || true
+# Orca is often installed from its DMG first; a plain cask install would then
+# abort brew bundle on "App already exists", so adopt the existing app instead.
+if [[ -d /Applications/Orca.app ]] && ! brew list --cask stablyai/orca/orca >/dev/null 2>&1; then
+  echo "==> Adopting existing Orca.app into Homebrew..."
+  brew install --cask --adopt stablyai/orca/orca \
+    && CHANGED+=("adopted existing Orca.app into Homebrew") \
+    || WARNINGS+=("Orca: 'brew install --cask --adopt stablyai/orca/orca' failed")
+fi
 echo "==> Running brew bundle..."
 cd "$DOTFILES_DIR"
 brew bundle
