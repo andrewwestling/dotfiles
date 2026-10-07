@@ -45,6 +45,7 @@ This installs Homebrew (if needed) and Rosetta 2 (on Apple Silicon), then:
 - Installs `vercel` globally via npm; installs the **Railway CLI** via its standalone script (`curl -fsSL https://railway.com/install.sh | sh`). The Stripe CLI comes from the `stripe/stripe-cli/stripe` brew formula
 - Installs Cursor extensions (`anysphere.remote-containers`, `anysphere.remote-ssh`) — `brew bundle` only covers VS Code extensions
 - Restores agent skills from [`agents/skill-lock.json`](agents/skill-lock.json) via the [`skills` CLI](https://github.com/vercel-labs/skills) (`npx skills update -g -y`)
+- Installs [Ponytail](https://github.com/DietrichGebert/ponytail) as a plugin in Claude Code, Codex, Copilot CLI, and OpenCode, and as hooks in Cursor (checkout at `~/.local/share/ponytail`). It's a plugin rather than a lock-file skill because its hooks keep it on every session. Codex needs a one-time `/hooks` trust per machine
 
 ### Re-running to update an existing machine
 

@@ -256,6 +256,45 @@ if command -v npx >/dev/null 2>&1; then
   npx -y skills@latest update -g -y || WARNINGS+=("skills restore failed; re-run 'npx skills update -g -y'")
 fi
 
+# 13. Ponytail (github.com/DietrichGebert/ponytail), always-on in every agent.
+# Ships as a plugin, not a bare skill: its lifecycle hooks inject the ruleset
+# every session, which the skills CLI can't do. Claude Code is also declared in
+# agents/claude/settings.json; the explicit install just makes it immediate.
+echo "==> Installing Ponytail into coding agents..."
+PONYTAIL_REPO="DietrichGebert/ponytail"
+if command -v claude >/dev/null 2>&1; then
+  claude plugin marketplace add "$PONYTAIL_REPO" >/dev/null 2>&1 || true
+  claude plugin install ponytail@ponytail >/dev/null 2>&1 \
+    || WARNINGS+=("Ponytail: 'claude plugin install ponytail@ponytail' failed")
+fi
+if command -v codex >/dev/null 2>&1; then
+  codex plugin marketplace add "$PONYTAIL_REPO" >/dev/null 2>&1 || true
+  codex plugin add ponytail@ponytail >/dev/null 2>&1 \
+    || WARNINGS+=("Ponytail: 'codex plugin add ponytail@ponytail' failed")
+  WARNINGS+=("Ponytail: in Codex, open /hooks and trust ponytail's hooks (one-time per machine)")
+fi
+if command -v copilot >/dev/null 2>&1; then
+  copilot plugin marketplace add "$PONYTAIL_REPO" >/dev/null 2>&1 || true
+  copilot plugin install ponytail@ponytail >/dev/null 2>&1 \
+    || WARNINGS+=("Ponytail: 'copilot plugin install ponytail@ponytail' failed")
+fi
+if command -v opencode >/dev/null 2>&1; then
+  opencode plugin @dietrichgebert/ponytail -g >/dev/null 2>&1 \
+    || WARNINGS+=("Ponytail: 'opencode plugin @dietrichgebert/ponytail -g' failed")
+fi
+# Cursor hooks run node from a checkout, so keep one at a stable path. The
+# installer merges into ~/.cursor/hooks.json and keeps other tools' hooks.
+PONYTAIL_DIR="$HOME/.local/share/ponytail"
+if [[ -d "$PONYTAIL_DIR/.git" ]]; then
+  git -C "$PONYTAIL_DIR" pull -q --ff-only || WARNINGS+=("Ponytail: couldn't update $PONYTAIL_DIR")
+else
+  mkdir -p "$(dirname "$PONYTAIL_DIR")"
+  git clone -q --depth 1 "https://github.com/$PONYTAIL_REPO.git" "$PONYTAIL_DIR"
+fi
+node "$PONYTAIL_DIR/scripts/cursor-hooks.js" install >/dev/null \
+  && CHANGED+=("installed/updated Ponytail (Claude, Codex, Copilot, OpenCode, Cursor hooks)") \
+  || WARNINGS+=("Ponytail: Cursor hooks install failed; run 'node $PONYTAIL_DIR/scripts/cursor-hooks.js install'")
+
 # --- Summary -----------------------------------------------------------------
 echo
 echo "==================== install.sh summary ===================="
