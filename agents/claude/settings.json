@@ -164,13 +164,6 @@
     "frontend-design@claude-plugins-official": false,
     "ponytail@ponytail": true
   },
-  "effortLevel": "medium",
-  "tui": "fullscreen",
-  "theme": "dark",
-  "editorMode": "normal",
-  "autoCompactEnabled": true,
-  "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
   "extraKnownMarketplaces": {
     "ponytail": {
       "source": {
@@ -179,6 +172,13 @@
       }
     }
   },
+  "effortLevel": "medium",
+  "tui": "fullscreen",
+  "theme": "dark",
+  "editorMode": "normal",
+  "autoCompactEnabled": true,
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true,
   "autoMode": {
     "soft_deny": [
       "$defaults",
