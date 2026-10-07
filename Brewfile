@@ -137,4 +137,3 @@ vscode "typescriptteam.native-preview"
 vscode "yzane.markdown-pdf"
 # Railway CLI is installed via its standalone script in install.sh (not npm).
 # Stripe CLI is the `stripe/stripe-cli/stripe` formula above (not npm).
-npm "vercel"
