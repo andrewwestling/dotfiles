@@ -9,7 +9,8 @@
   "model": "sonnet",
   "enabledPlugins": {
     "superpowers@claude-plugins-official": false,
-    "frontend-design@claude-plugins-official": false
+    "frontend-design@claude-plugins-official": false,
+    "ponytail@ponytail": true
   },
   "effortLevel": "medium",
   "tui": "fullscreen",
@@ -17,5 +18,13 @@
   "editorMode": "normal",
   "autoCompactEnabled": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
+  }
 }
