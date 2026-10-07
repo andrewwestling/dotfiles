@@ -1,5 +1,6 @@
 tap "anomalyco/tap"
 tap "darrylmorley/whatcable"
+tap "stablyai/orca"
 tap "stripe/stripe-cli"
 tap "tidbyt/tidbyt", trusted: true
 # Password hashing library and CLI utility
@@ -116,6 +117,8 @@ cask "tailscale-app"
 cask "visual-studio-code"
 # Voice-to-text dictation with AI-powered auto-editing
 cask "wispr-flow"
+# Desktop environment for running fleets of parallel coding agents
+cask "stablyai/orca/orca", trusted: true
 # Menu bar app for USB-C cable diagnostics
 cask "darrylmorley/whatcable/whatcable", trusted: true
 # Video communication and virtual meeting platform
@@ -134,4 +137,3 @@ vscode "typescriptteam.native-preview"
 vscode "yzane.markdown-pdf"
 # Railway CLI is installed via its standalone script in install.sh (not npm).
 # Stripe CLI is the `stripe/stripe-cli/stripe` formula above (not npm).
-npm "vercel"

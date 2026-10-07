@@ -6,11 +6,18 @@
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "sonnet",
   "enabledPlugins": {
     "superpowers@claude-plugins-official": false,
     "frontend-design@claude-plugins-official": false,
     "ponytail@ponytail": true
+  },
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
   },
   "effortLevel": "medium",
   "tui": "fullscreen",
@@ -19,12 +26,11 @@
   "autoCompactEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "extraKnownMarketplaces": {
-    "ponytail": {
-      "source": {
-        "source": "github",
-        "repo": "DietrichGebert/ponytail"
-      }
-    }
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(railway:* deploy* --environment production*)",
+      "Bash(railway:* --environment production*)"
+    ]
   }
 }

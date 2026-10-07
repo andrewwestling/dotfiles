@@ -122,6 +122,18 @@ copy_if_absent() {
   CHANGED+=("copied baseline $dest")
 }
 
+# Keep private autoMode.environment and Orca's generated hooks in
+# ~/.claude/settings.json out of this public repo (see
+# agents/claude/settings-filter.sh). Configure the filter before symlinking so
+# git never sees the unfiltered file.
+git -C "$DOTFILES_DIR" config --remove-section filter.claude-automode 2>/dev/null || true
+git -C "$DOTFILES_DIR" config filter.claude-settings.clean "agents/claude/settings-filter.sh clean"
+git -C "$DOTFILES_DIR" config filter.claude-settings.smudge "agents/claude/settings-filter.sh smudge"
+git -C "$DOTFILES_DIR" config filter.claude-settings.required true
+if [[ ! -s "$HOME/.claude/settings.private.json" ]]; then
+  WARNINGS+=("Claude: restore ~/.claude/settings.private.json (auto mode environment; private, not in git), then run: git -C $DOTFILES_DIR checkout -- agents/claude/settings.json. Orca re-adds its hooks on launch.")
+fi
+
 # Shell + git
 link_file ".zshenv" "$HOME/.zshenv"
 link_file ".zshrc" "$HOME/.zshrc"
@@ -183,6 +195,15 @@ fi
 # 7. Homebrew packages
 echo "==> Trusting third-party taps..."
 brew trust --tap tidbyt/tidbyt >/dev/null 2>&1 || true
+brew trust --tap stablyai/orca >/dev/null 2>&1 || true
+# Orca is often installed from its DMG first; a plain cask install would then
+# abort brew bundle on "App already exists", so adopt the existing app instead.
+if [[ -d /Applications/Orca.app ]] && ! brew list --cask stablyai/orca/orca >/dev/null 2>&1; then
+  echo "==> Adopting existing Orca.app into Homebrew..."
+  brew install --cask --adopt stablyai/orca/orca \
+    && CHANGED+=("adopted existing Orca.app into Homebrew") \
+    || WARNINGS+=("Orca: 'brew install --cask --adopt stablyai/orca/orca' failed")
+fi
 echo "==> Running brew bundle..."
 cd "$DOTFILES_DIR"
 brew bundle
