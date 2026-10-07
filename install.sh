@@ -111,14 +111,16 @@ copy_if_absent() {
   CHANGED+=("copied baseline $dest")
 }
 
-# Keep the private autoMode.environment block in ~/.claude/settings.json out of
-# this public repo (see agents/claude/automode-filter.sh). Configure the filter
-# before symlinking so git never sees the unfiltered file.
-git -C "$DOTFILES_DIR" config filter.claude-automode.clean "agents/claude/automode-filter.sh clean"
-git -C "$DOTFILES_DIR" config filter.claude-automode.smudge "agents/claude/automode-filter.sh smudge"
-git -C "$DOTFILES_DIR" config filter.claude-automode.required true
-if [[ ! -s "$HOME/.claude/automode-environment.json" ]]; then
-  WARNINGS+=("Claude auto mode: restore ~/.claude/automode-environment.json (private, not in git), then run: git -C $DOTFILES_DIR checkout -- agents/claude/settings.json")
+# Keep private autoMode.environment and Orca's generated hooks in
+# ~/.claude/settings.json out of this public repo (see
+# agents/claude/settings-filter.sh). Configure the filter before symlinking so
+# git never sees the unfiltered file.
+git -C "$DOTFILES_DIR" config --remove-section filter.claude-automode 2>/dev/null || true
+git -C "$DOTFILES_DIR" config filter.claude-settings.clean "agents/claude/settings-filter.sh clean"
+git -C "$DOTFILES_DIR" config filter.claude-settings.smudge "agents/claude/settings-filter.sh smudge"
+git -C "$DOTFILES_DIR" config filter.claude-settings.required true
+if [[ ! -s "$HOME/.claude/settings.private.json" ]]; then
+  WARNINGS+=("Claude: restore ~/.claude/settings.private.json (auto mode environment; private, not in git), then run: git -C $DOTFILES_DIR checkout -- agents/claude/settings.json. Orca re-adds its hooks on launch.")
 fi
 
 # Shell + git
