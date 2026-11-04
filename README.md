@@ -47,7 +47,7 @@ This installs Homebrew (if needed) and Rosetta 2 (on Apple Silicon), then:
 - Installs oh-my-zsh, runs `brew bundle` (trusting the `tidbyt/tidbyt` and `stablyai/orca` taps first, and adopting a DMG-installed Orca.app), sets up nvm + Node
 - Installs `vercel` globally via npm; installs the **Railway CLI** via its standalone script (`curl -fsSL https://railway.com/install.sh | sh`). The Stripe CLI comes from the `stripe/stripe-cli/stripe` brew formula
 - Installs Cursor extensions (`anysphere.remote-containers`, `anysphere.remote-ssh`) — `brew bundle` only covers VS Code extensions
-- Restores agent skills from [`agents/skill-lock.json`](agents/skill-lock.json) via the [`skills` CLI](https://github.com/vercel-labs/skills) (`npx skills update -g -y`)
+- Copies a **baseline** `~/.agents/.skill-lock.json` from [`agents/skill-lock.json`](agents/skill-lock.json) only if none exists, then restores agent skills via the [`skills` CLI](https://github.com/vercel-labs/skills) (`npx skills update -g -y`). The CLI rewrites the local lock, so the repo copy is a fresh-machine starting point, not a mirror. To refresh it, copy the local lock over it and commit
 - Installs [Ponytail](https://github.com/DietrichGebert/ponytail) as a plugin in Claude Code, Codex, Copilot CLI, and OpenCode, and as hooks in Cursor (checkout at `~/.local/share/ponytail`). It's a plugin rather than a lock-file skill because its hooks keep it on every session. Codex needs a one-time `/hooks` trust per machine
 
 ### Re-running to update an existing machine
@@ -60,8 +60,8 @@ latest repo state onto a machine that's already set up:
   removed — run `brew bundle cleanup --force` yourself if you want them gone.
 - Symlinks that an app has replaced with its own real file are backed up to
   `*.bak` and re-linked.
-- `~/.agents/.skill-lock.json` is overwritten from the repo copy (the repo is the
-  source of truth), printing the added/removed skills, before `skills update`.
+- An existing `~/.agents/.skill-lock.json` is left alone, and `skills update`
+  brings the installed skills up to date from it.
 - New Cursor extensions are installed.
 - The run ends with a **summary** of what it changed, skipped, backed up, and
   what needs a human.
@@ -69,6 +69,26 @@ latest repo state onto a machine that's already set up:
 Pre-existing dotfiles it would clobber are backed up (`*.bak`), never overwritten.
 
 Mac App Store apps (`mas` entries in the Brewfile) won't install yet, that needs iCloud sign-in first, so `brew bundle` gets re-run later in the [Mac App Store](#mac-app-store) step below.
+
+### What each agent loads
+
+Sessions launched by Orca load the same files as the same agent launched by hand. The table below is the local machine; a Cursor Cloud agent runs on Cursor's machines, so it doesn't read any of these files.
+
+| Source | Claude Code | Codex | Cursor |
+| --- | --- | --- | --- |
+| **Lock-installed skills** | `~/.claude/skills`, symlinks into `~/.agents/skills` | `~/.agents/skills` | `~/.agents/skills` |
+| **Orca-written skills** | Same symlinks | `~/.agents/skills` | `~/.agents/skills` |
+| **Plugins** | Ponytail (`install.sh`), plus `mattpocock-skills`, `linear` and `neon-postgres` installed by hand | Ponytail (`install.sh`), `mattpocock-skills`, and the OpenAI plugins in `~/.codex/config.toml` | Cursor marketplace plugins in `~/.cursor/plugins` (Ponytail is hooks here, not a plugin) |
+| **Built-in skills** | None on disk | `~/.codex/skills/.system` | `~/.cursor/skills-cursor` |
+| **Global instructions** | `~/.claude/CLAUDE.md`, symlinked from [`agents/claude/CLAUDE.md`](agents/claude/CLAUDE.md) | `~/.codex/AGENTS.md`, symlinked from [`agents/codex/AGENTS.md`](agents/codex/AGENTS.md) | User Rules in Cursor's settings, not tracked here |
+| **Repo instructions** | `CLAUDE.md` | `AGENTS.md` | `AGENTS.md`, `.cursor/rules` |
+| **Repo hooks** | `.claude/settings.json` | `.codex/hooks.json`, once the project is trusted | `.cursor/hooks.json` |
+| **Global hooks** | `~/.claude/settings.json`: Orca's, kept out of git by the filter above; Ponytail's come from its plugin | `~/.codex/hooks.json`: Orca's, not tracked here; Ponytail's come from its plugin. New hooks need `/hooks` trust | `~/.cursor/hooks.json`: Ponytail's and Orca's, not tracked here |
+
+- **Lock-installed skills:** everything in [`agents/skill-lock.json`](agents/skill-lock.json), including the `do-*` skills from `mcwestling/factory` and `wayfinder` from `mattpocock/skills`. `wayfinder`, `to-tickets`, `triage`, `implement` and `grill-me` set `disable-model-invocation: true`, so they only run when typed.
+- **Plugin overlap:** the `mattpocock-skills` plugin ships many of the same skills as the lock, namespaced (`mattpocock-skills:tdd` next to `tdd`). The duplication in Claude Code and Codex is deliberate, so don't clean it up.
+- **Orca-written skills:** Orca writes `orca-linear`, `orca-cli`, `orchestration` and `computer-use` into `~/.agents/skills`. They aren't in the lock, so `skills update` doesn't manage them, and every local session sees them, not only Orca-launched ones.
+- **Orca-launched sessions:** these also get `ORCA_*` environment variables and report status through the global hooks above, which call scripts in `~/.orca/agent-hooks`. Orca re-adds its hooks to `~/.claude/settings.json` on launch.
 
 ### Secrets
 
