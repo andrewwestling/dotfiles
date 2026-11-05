@@ -280,9 +280,13 @@ if (!factory) throw new Error('Factory skills hook missing from Claude settings'
 const dir = `${homedir()}/.codex`;
 const file = `${dir}/hooks.json`;
 const config = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : {};
+const before = JSON.stringify(config);
 const entries = (config.hooks ??= {}).SessionStart ??= [];
-if (!entries.some(entry => JSON.stringify(entry) === JSON.stringify(factory))) {
-  entries.push(factory);
+const existing = entries.flatMap(entry => entry.hooks ?? [])
+  .find(hook => hook.command === factory.hooks[0].command);
+if (existing) existing.statusMessage = factory.hooks[0].statusMessage;
+else entries.push(factory);
+if (JSON.stringify(config) !== before) {
   mkdirSync(dir, { recursive: true });
   writeFileSync(file, JSON.stringify(config, null, 2) + '\n');
 }

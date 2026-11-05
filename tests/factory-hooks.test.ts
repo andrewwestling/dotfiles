@@ -14,7 +14,10 @@ test('install merges one factory hook, preserving existing Codex entries', () =>
     mkdirSync(join(home, '.codex'));
     const file = join(home, '.codex/hooks.json');
     const orca = { matcher: 'startup', hooks: [{ type: 'command', command: 'orca-original', timeout: 10 }] };
-    const existing = { extra: 'keep', hooks: { SessionStart: [orca], Stop: [orca] } };
+    const settings = JSON.parse(readFileSync(join(root, 'agents/claude/settings.json'), 'utf8'));
+    const unnamed = settings.hooks.SessionStart.find(entry => entry.hooks.some(hook => hook.command.includes('check-skills.ts')));
+    delete unnamed.hooks[0].statusMessage;
+    const existing = { extra: 'keep', hooks: { SessionStart: [orca, unnamed], Stop: [orca] } };
     writeFileSync(file, JSON.stringify(existing));
     const step = installer.match(/^# Factory skills hook\n([\s\S]*?)^# End factory skills hook/m)?.[1];
     assert.ok(step, 'installer has a testable factory hook step');
@@ -30,6 +33,7 @@ test('install merges one factory hook, preserving existing Codex entries', () =>
     assert.equal(readFileSync(file, 'utf8'), first);
     const result = JSON.parse(first);
     assert.equal(result.hooks.SessionStart.length, 2);
+    assert.equal(result.hooks.SessionStart[1].hooks[0].statusMessage, 'Checking Factory skills');
     assert.deepEqual(result.hooks.SessionStart[0], orca);
     assert.deepEqual(result.hooks.Stop, [orca]);
     assert.equal(result.extra, 'keep');
