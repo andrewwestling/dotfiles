@@ -124,10 +124,12 @@ copy_if_absent() {
 # Keep private autoMode.environment and Orca's generated hooks in
 # ~/.claude/settings.json out of this public repo (see
 # agents/claude/settings-filter.sh). Configure the filter before symlinking so
-# git never sees the unfiltered file.
+# git never sees the unfiltered file. The path must be absolute: git runs filters
+# from the worktree root, and parallel checkout (Orca's worktree add) smudges
+# settings.json before it has written the script there.
 git -C "$DOTFILES_DIR" config --remove-section filter.claude-automode 2>/dev/null || true
-git -C "$DOTFILES_DIR" config filter.claude-settings.clean "agents/claude/settings-filter.sh clean"
-git -C "$DOTFILES_DIR" config filter.claude-settings.smudge "agents/claude/settings-filter.sh smudge"
+git -C "$DOTFILES_DIR" config filter.claude-settings.clean "'$DOTFILES_DIR/agents/claude/settings-filter.sh' clean"
+git -C "$DOTFILES_DIR" config filter.claude-settings.smudge "'$DOTFILES_DIR/agents/claude/settings-filter.sh' smudge"
 git -C "$DOTFILES_DIR" config filter.claude-settings.required true
 if [[ ! -s "$HOME/.claude/settings.private.json" ]]; then
   WARNINGS+=("Claude: restore ~/.claude/settings.private.json (auto mode environment; private, not in git), then run: git -C $DOTFILES_DIR checkout -- agents/claude/settings.json. Orca re-adds its hooks on launch.")
