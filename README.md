@@ -62,6 +62,7 @@ This installs Homebrew (if needed) and Rosetta 2 (on Apple Silicon), then:
 - Installs `vercel` globally via npm; installs the **Railway CLI** via its standalone script (`curl -fsSL https://railway.com/install.sh | sh`). The Stripe CLI comes from the `stripe/stripe-cli/stripe` brew formula
 - Installs Cursor extensions (`anysphere.remote-containers`, `anysphere.remote-ssh`) — `brew bundle` only covers VS Code extensions
 - Copies a **baseline** `~/.agents/.skill-lock.json` from [`agents/skill-lock.json`](agents/skill-lock.json) only if none exists, then restores agent skills via the [`skills` CLI](https://github.com/vercel-labs/skills) (`npx skills update -g -y`). The CLI rewrites the local lock, so the repo copy is a fresh-machine starting point, not a mirror. To refresh it, copy the local lock over it and commit
+- Adds a Factory skills `SessionStart` check to Claude Code and merges the same hook into Codex without replacing existing hooks. Codex needs one-time `/hooks` trust for `check-skills.ts`
 - Installs [Ponytail](https://github.com/DietrichGebert/ponytail) as a plugin in Claude Code, Codex, Copilot CLI, and OpenCode, and as hooks in Cursor (checkout at `~/.local/share/ponytail`). It's a plugin rather than a lock-file skill because its hooks keep it on every session. Codex needs a one-time `/hooks` trust per machine
 
 ### Re-running to update an existing machine
@@ -97,12 +98,16 @@ Sessions launched by Orca load the same files as the same agent launched by hand
 | **Global instructions** | `~/.claude/CLAUDE.md`, symlinked from [`agents/claude/CLAUDE.md`](agents/claude/CLAUDE.md) | `~/.codex/AGENTS.md`, symlinked from [`agents/codex/AGENTS.md`](agents/codex/AGENTS.md) | User Rules in Cursor's settings, not tracked here |
 | **Repo instructions** | `CLAUDE.md` | `AGENTS.md` | `AGENTS.md`, `.cursor/rules` |
 | **Repo hooks** | `.claude/settings.json` | `.codex/hooks.json`, once the project is trusted | `.cursor/hooks.json` |
-| **Global hooks** | `~/.claude/settings.json`: Orca's, kept out of git by the filter above; Ponytail's come from its plugin | `~/.codex/hooks.json`: Orca's, not tracked here; Ponytail's come from its plugin. New hooks need `/hooks` trust | `~/.cursor/hooks.json`: Ponytail's and Orca's, not tracked here |
+| **Global hooks** | `~/.claude/settings.json`: tracked Factory skills check and Orca's hooks (filtered out of git); Ponytail's come from its plugin | `~/.codex/hooks.json`: Factory skills check plus Orca's, not tracked here; Ponytail's come from its plugin. New hooks need `/hooks` trust | `~/.cursor/hooks.json`: Ponytail's and Orca's, not tracked here |
 
 - **Lock-installed skills:** everything in [`agents/skill-lock.json`](agents/skill-lock.json), including the `do-*` skills from `mcwestling/factory` and `wayfinder` from `mattpocock/skills`. `wayfinder`, `to-tickets`, `triage`, `implement` and `grill-me` set `disable-model-invocation: true`, so they only run when typed.
 - **Plugin overlap:** the `mattpocock-skills` plugin ships many of the same skills as the lock, namespaced (`mattpocock-skills:tdd` next to `tdd`). The duplication in Claude Code and Codex is deliberate, so don't clean it up.
 - **Orca-written skills:** Orca writes `orca-linear`, `orca-cli`, `orchestration` and `computer-use` into `~/.agents/skills`. They aren't in the lock, so `skills update` doesn't manage them, and every local session sees them, not only Orca-launched ones.
 - **Orca-launched sessions:** these also get `ORCA_*` environment variables and report status through the global hooks above, which call scripts in `~/.orca/agent-hooks`. Orca re-adds its hooks to `~/.claude/settings.json` on launch.
+
+The Factory hook runs `node ~/.agents/skills/do-factory-setup/check-skills.ts` through zsh, so `.zshenv` loads nvm even in a non-interactive session; it also adds Homebrew’s paths for `gh` and `jq`. It converts a stale-skills warning to `systemMessage` JSON, which [Claude Code](https://code.claude.com/docs/en/hooks#json-output) and [Codex](https://learn.chatgpt.com/docs/hooks#common-output-fields) display to the user. Current skills or a missing checker, Node, or GitHub access produce no warning; the checker bounds its GitHub call to three seconds and the hook has a five-second timeout. `jq` (already in the Brewfile) formats the JSON.
+
+Claude's hook becomes live when the main checkout backing `~/.claude/settings.json` pulls the change. Run `./install.sh` from that checkout to merge Codex's entry, then use `/hooks` in Codex to trust it. Neither agent updates skills automatically.
 
 ### Secrets
 

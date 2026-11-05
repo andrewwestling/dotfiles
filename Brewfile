@@ -27,6 +27,8 @@ brew "gnupg"
 brew "hivemind"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+# JSON processor for agent hooks and the Claude settings git filter
+brew "jq"
 # Mac App Store command-line interface
 brew "mas"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server

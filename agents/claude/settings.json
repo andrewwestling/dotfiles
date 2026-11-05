@@ -41,5 +41,18 @@
       "Bash(railway:* deploy* --environment production*)",
       "Bash(railway:* --environment production*)"
     ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/zsh -c 'export PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"; if command -v node >/dev/null 2>&1 && command -v jq >/dev/null 2>&1 && [ -f \"$HOME/.agents/skills/do-factory-setup/check-skills.ts\" ]; then node \"$HOME/.agents/skills/do-factory-setup/check-skills.ts\" 2>/dev/null | jq -Rs \"if length > 0 then {systemMessage: rtrimstr(\\\"\\n\\\")} else empty end\"; fi; exit 0'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
   }
 }
