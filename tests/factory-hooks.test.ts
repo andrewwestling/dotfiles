@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { resolve, join } from 'node:path';
+import { resolve, join, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
 
 const root = resolve(import.meta.dirname, '..');
@@ -56,11 +56,15 @@ test('hook displays stale skills as JSON and stays silent for current or unavail
       assert.equal(result.stderr, '');
       return result.stdout;
     };
+    // Mirror nvm exposing Node while the launcher supplies only system paths.
+    writeFileSync(join(home, '.zshenv'), `export PATH="${dirname(process.execPath)}:$PATH"\n`);
+    assert.deepEqual(JSON.parse(run('/usr/bin:/bin')), { systemMessage: 'Out of date: do-refine. Run: npx skills update -g -y do-refine' });
     assert.deepEqual(JSON.parse(run()), { systemMessage: 'Out of date: do-refine. Run: npx skills update -g -y do-refine' });
     writeFileSync(checker, '');
     assert.equal(run(), '');
     writeFileSync(checker, 'throw new Error("unavailable")');
     assert.equal(run(), '');
+    rmSync(join(home, '.zshenv'));
     assert.equal(run('/usr/bin:/bin'), '');
     rmSync(checker);
     assert.equal(run(), '');
