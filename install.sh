@@ -268,6 +268,33 @@ if command -v npx >/dev/null 2>&1; then
   npx -y skills@latest update -g -y || WARNINGS+=("skills restore failed; re-run 'npx skills update -g -y'")
 fi
 
+# Factory skills hook
+# Reuse Claude's hook so both agents show the same user-visible warning.
+if node --input-type=module - "$DOTFILES_DIR" <<'NODE'
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { homedir } from 'node:os';
+const settings = JSON.parse(readFileSync(`${process.argv[2]}/agents/claude/settings.json`, 'utf8'));
+const factory = settings.hooks.SessionStart.find(entry =>
+  entry.hooks.some(hook => hook.command?.includes('/do-factory-setup/check-skills.ts')));
+if (!factory) throw new Error('Factory skills hook missing from Claude settings');
+const dir = `${homedir()}/.codex`;
+const file = `${dir}/hooks.json`;
+const config = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : {};
+const entries = (config.hooks ??= {}).SessionStart ??= [];
+if (!entries.some(entry => JSON.stringify(entry) === JSON.stringify(factory))) {
+  entries.push(factory);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(file, JSON.stringify(config, null, 2) + '\n');
+}
+NODE
+then
+  CHANGED+=("merged Factory skills SessionStart hook into ~/.codex/hooks.json")
+  WARNINGS+=("Factory skills: in Codex, open /hooks and trust the new check-skills.ts hook (one-time per machine)")
+else
+  WARNINGS+=("Factory skills: Codex hook merge failed; check ~/.codex/hooks.json and re-run install.sh")
+fi
+# End factory skills hook
+
 # 13. Ponytail (github.com/DietrichGebert/ponytail), always-on in every agent.
 # Ships as a plugin, not a bare skill: its lifecycle hooks inject the ruleset
 # every session, which the skills CLI can't do. Claude Code is also declared in
