@@ -144,7 +144,6 @@ link_file "agents/claude/settings.json" "$HOME/.claude/settings.json"
 link_file "agents/claude/mcp.json" "$HOME/.claude/mcp.json"
 link_file "agents/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 link_file "agents/codex/AGENTS.md" "$HOME/.codex/AGENTS.md"
-link_file "agents/conductor/settings.toml" "$HOME/.conductor/settings.toml"
 # Codex rewrites config.toml constantly (project trust, generated MCP servers,
 # app paths); track only a baseline and let Codex own the live file.
 copy_if_absent "agents/codex/config.toml" "$HOME/.codex/config.toml"
