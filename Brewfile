@@ -81,8 +81,6 @@ cask "claude"
 cask "claude-code"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
-# Claude code parallelisation
-cask "conductor"
 # Write, edit, and chat about your code with AI
 cask "cursor"
 # Voice and text chat software
