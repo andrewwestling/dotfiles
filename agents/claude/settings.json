@@ -6,10 +6,14 @@
   "permissions": {
     "defaultMode": "auto"
   },
+  "model": "opus",
   "enabledPlugins": {
     "superpowers@claude-plugins-official": false,
     "frontend-design@claude-plugins-official": false,
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "linear@anthropic-plugin-directory": true,
+    "neon-postgres@neon": true,
+    "mattpocock-skills@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
@@ -20,8 +24,13 @@
     }
   },
   "effortLevel": "medium",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "medium"
+    }
+  },
   "tui": "fullscreen",
-  "theme": "dark",
+  "theme": "auto",
   "editorMode": "normal",
   "autoCompactEnabled": true,
   "agentPushNotifEnabled": true,
