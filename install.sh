@@ -18,9 +18,8 @@ echo "==> Using dotfiles at $DOTFILES_DIR"
 
 # This script is idempotent AND reconciling: re-running it on an already
 # provisioned machine pulls in anything new (Brewfile entries, Cursor
-# extensions, refreshed skill lock) and repairs symlinks that an app has
-# replaced with a real file. It ends with a summary of what it changed,
-# skipped, and backed up.
+# extensions) and repairs symlinks that an app has replaced with a real file.
+# It ends with a summary of what it changed, skipped, and backed up.
 
 CHANGED=()    # things this run created or repaired
 SKIPPED=()    # things already in the desired state, or deliberately left alone
@@ -259,30 +258,10 @@ else
   WARNINGS+=("'cursor' CLI not on PATH; skipped Cursor extension install (Cursor > Shell Command: Install 'cursor' command)")
 fi
 
-# 12. Agent skills. The repo lock file is the source of truth: overwrite the
-# local one every run so a fresh clone's skill set wins, then let the skills
-# CLI reconcile what's on disk.
-mkdir -p "$HOME/.agents"
-LOCAL_LOCK="$HOME/.agents/.skill-lock.json"
-REPO_LOCK="$DOTFILES_DIR/agents/skill-lock.json"
-if [[ -f "$LOCAL_LOCK" ]] && ! diff -q "$REPO_LOCK" "$LOCAL_LOCK" >/dev/null 2>&1; then
-  echo "==> Updating ~/.agents/.skill-lock.json from repo. Skill changes:"
-  /usr/bin/python3 - "$REPO_LOCK" "$LOCAL_LOCK" <<'PY' || true
-import json, sys
-def names(p):
-    d = json.load(open(p)); s = d.get("skills", d)
-    return set(s.keys()) if isinstance(s, dict) else {x.get("name", str(x)) for x in s}
-repo, local = names(sys.argv[1]), names(sys.argv[2])
-for n in sorted(repo - local): print(f"    + {n}")
-for n in sorted(local - repo): print(f"    - {n}")
-PY
-  cp "$REPO_LOCK" "$LOCAL_LOCK"
-  CHANGED+=("refreshed ~/.agents/.skill-lock.json from repo")
-elif [[ ! -f "$LOCAL_LOCK" ]]; then
-  echo "==> Seeding ~/.agents/.skill-lock.json from repo"
-  cp "$REPO_LOCK" "$LOCAL_LOCK"
-  CHANGED+=("seeded ~/.agents/.skill-lock.json")
-fi
+# 12. Agent skills. The skills CLI rewrites the local lock in place, so the repo
+# copy is only a fresh-machine baseline, not a mirror: seed it when there's no
+# local lock and never overwrite one. Then let the CLI reconcile what's on disk.
+copy_if_absent "agents/skill-lock.json" "$HOME/.agents/.skill-lock.json"
 if command -v npx >/dev/null 2>&1; then
   echo "==> Restoring agent skills from lock file..."
   npx -y skills@latest update -g -y || WARNINGS+=("skills restore failed; re-run 'npx skills update -g -y'")
