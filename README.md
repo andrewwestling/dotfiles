@@ -2,6 +2,20 @@
 
 These are my configuration files and notes for setting up a new Mac.
 
+## What it does
+
+Installs apps and command-line tools, links shell and editor settings, restores coding agent configurations, and provides a checklist for finishing macOS setup.
+
+## Who it's for
+
+This is a personal Mac setup, useful as a reference for anyone maintaining their own dotfiles. Review the settings and app list before using it on another machine.
+
+## Links
+
+- [Installation and setup](#clone-this-repo-and-run-installsh)
+- [macOS settings checklist](macos-checklist.md)
+- [Issue tracker workflow](docs/issue-tracker.md)
+
 Do the following, in this order:
 
 1. [Clone this repo and run install.sh](#clone-this-repo-and-run-installsh)
