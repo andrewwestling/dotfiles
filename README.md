@@ -59,7 +59,7 @@ This installs Homebrew (if needed) and Rosetta 2 (on Apple Silicon), then:
 - Symlinks `~/.config/gh/config.yml` (gh CLI aliases/prefs; `hosts.yml` and auth stay out of git)
 - Creates stub `~/.zshrc.local` and `~/.gitconfig.local` for machine-local secrets (see below)
 - Installs oh-my-zsh, runs `brew bundle` (trusting the `tidbyt/tidbyt` and `stablyai/orca` taps first, and adopting a DMG-installed Orca.app), sets up nvm + Node
-- Installs `vercel` globally via npm; installs the **Railway CLI** via its standalone script (`curl -fsSL https://railway.com/install.sh | sh`). The Stripe CLI comes from the `stripe/stripe-cli/stripe` brew formula
+- Installs the **Railway CLI** via its standalone script (`curl -fsSL https://railway.com/install.sh | sh`). The Stripe CLI comes from the `stripe/stripe-cli/stripe` brew formula
 - Installs Cursor extensions (`anysphere.remote-containers`, `anysphere.remote-ssh`) — `brew bundle` only covers VS Code extensions
 - Copies a **baseline** `~/.agents/.skill-lock.json` from [`agents/skill-lock.json`](agents/skill-lock.json) only if none exists, then restores agent skills via the [`skills` CLI](https://github.com/vercel-labs/skills) (`npx skills update -g -y`). The CLI rewrites the local lock, so the repo copy is a fresh-machine starting point, not a mirror. To refresh it, copy the local lock over it and commit
 - Adds a Factory skills `SessionStart` check to Claude Code and merges the same hook into Codex without replacing existing hooks. Codex needs one-time `/hooks` trust for `check-skills.ts`

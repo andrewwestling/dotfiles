@@ -232,13 +232,7 @@ if command -v nvm >/dev/null 2>&1; then
   nvm alias default node
 fi
 
-# 9. Global npm CLIs (vercel only; railway + stripe come from steps 10 / brew)
-if command -v npm >/dev/null 2>&1; then
-  echo "==> Installing global npm CLIs..."
-  npm install -g vercel
-fi
-
-# 10. Railway CLI (standalone installer — not npm, not brew)
+# 9. Railway CLI (standalone installer — not npm, not brew)
 if ! command -v railway >/dev/null 2>&1 && [[ ! -x "$HOME/.railway/bin/railway" ]]; then
   echo "==> Installing Railway CLI..."
   curl -fsSL https://railway.com/install.sh | sh && CHANGED+=("installed Railway CLI") \
@@ -247,7 +241,7 @@ else
   echo "==> Railway CLI already installed."
 fi
 
-# 11. Cursor extensions (brew bundle handles VS Code extensions, not Cursor's)
+# 10. Cursor extensions (brew bundle handles VS Code extensions, not Cursor's)
 if command -v cursor >/dev/null 2>&1; then
   echo "==> Installing Cursor extensions..."
   for ext in anysphere.remote-containers anysphere.remote-ssh; do
@@ -259,7 +253,7 @@ else
   WARNINGS+=("'cursor' CLI not on PATH; skipped Cursor extension install (Cursor > Shell Command: Install 'cursor' command)")
 fi
 
-# 12. Agent skills. The skills CLI rewrites the local lock in place, so the repo
+# 11. Agent skills. The skills CLI rewrites the local lock in place, so the repo
 # copy is only a fresh-machine baseline, not a mirror: seed it when there's no
 # local lock and never overwrite one. Then let the CLI reconcile what's on disk.
 copy_if_absent "agents/skill-lock.json" "$HOME/.agents/.skill-lock.json"
@@ -299,7 +293,7 @@ else
 fi
 # End factory skills hook
 
-# 13. Ponytail (github.com/DietrichGebert/ponytail), always-on in every agent.
+# 12. Ponytail (github.com/DietrichGebert/ponytail), always-on in every agent.
 # Ships as a plugin, not a bare skill: its lifecycle hooks inject the ruleset
 # every session, which the skills CLI can't do. Claude Code is also declared in
 # agents/claude/settings.json; the explicit install just makes it immediate.
