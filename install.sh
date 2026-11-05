@@ -232,10 +232,10 @@ if command -v nvm >/dev/null 2>&1; then
   nvm alias default node
 fi
 
-# 9. Global npm CLIs (vercel only; railway + stripe come from steps 10 / brew)
+# 9. Global npm CLIs (vercel and neon; railway + stripe come from steps 10 / brew)
 if command -v npm >/dev/null 2>&1; then
   echo "==> Installing global npm CLIs..."
-  npm install -g vercel
+  npm install -g vercel neon
 fi
 
 # 10. Railway CLI (standalone installer — not npm, not brew)
