@@ -26,8 +26,17 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
+# Linear goes through [mcp_servers.linear] only, matching Claude's single
+# connector. The ChatGPT Linear app needs `issue:DO-123` ids and crowds the
+# tool list, so its plugin and app stay off.
 [plugins."linear@openai-curated"]
-enabled = true
+enabled = false
+
+[apps.asdk_app_69a089a326dc8191b32a3f2553f5be2c]
+enabled = false
+
+[mcp_servers.linear]
+url = "https://mcp.linear.app/mcp"
 
 [plugins."visualize@openai-bundled"]
 enabled = true
