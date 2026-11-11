@@ -4,7 +4,11 @@
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "200000"
   },
   "permissions": {
-    "defaultMode": "auto"
+    "defaultMode": "auto",
+    "allow": [
+      "Read(//Users/amw/Code/**)",
+      "Read(//Users/amw/orca/workspaces/**)"
+    ]
   },
   "model": "opus",
   "enabledPlugins": {
