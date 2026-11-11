@@ -275,7 +275,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 const settings = JSON.parse(readFileSync(`${process.argv[2]}/agents/claude/settings.json`, 'utf8'));
 const factory = settings.hooks.SessionStart.find(entry =>
-  entry.hooks.some(hook => hook.command?.includes('/do-factory-setup/check-skills.ts')));
+  entry.hooks.some(hook => hook.command?.includes('/do-repo-setup/check-skills.ts')));
 if (!factory) throw new Error('Factory skills hook missing from Claude settings');
 const dir = `${homedir()}/.codex`;
 const file = `${dir}/hooks.json`;

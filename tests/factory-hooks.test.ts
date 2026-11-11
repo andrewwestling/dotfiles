@@ -44,14 +44,14 @@ test('install merges one factory hook, preserving existing Codex entries', () =>
 test('hook displays stale skills as JSON and stays silent for current or unavailable skills', () => {
   const home = mkdtempSync(join(tmpdir(), 'factory-output-'));
   try {
-    const skill = join(home, '.agents/skills/do-factory-setup');
+    const skill = join(home, '.agents/skills/do-repo-setup');
     mkdirSync(skill, { recursive: true });
     const checker = join(skill, 'check-skills.ts');
     // A fixture at the external checker boundary; the checker itself lives in Factory.
     writeFileSync(checker, 'console.log("Out of date: do-refine. Run: npx skills update -g -y do-refine")');
     const settings = JSON.parse(readFileSync(join(root, 'agents/claude/settings.json'), 'utf8'));
     const command = settings.hooks.SessionStart.flatMap(entry => entry.hooks)
-      .find(hook => hook.command.includes('/do-factory-setup/check-skills.ts')).command;
+      .find(hook => hook.command.includes('/do-repo-setup/check-skills.ts')).command;
     const run = (path = process.env.PATH) => {
       const result = spawnSync('/bin/sh', ['-c', command], {
         env: { ...process.env, HOME: home, ZDOTDIR: home, PATH: path }, encoding: 'utf8', timeout: 6000,
