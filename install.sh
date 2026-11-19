@@ -209,6 +209,23 @@ cd "$DOTFILES_DIR"
 brew bundle
 CHANGED+=("ran brew bundle (installs any new Brewfile entries)")
 
+# Piumosso's worktrees share this server on 54320; 5432 is Opal's Docker
+# Postgres. brew bundle above installs the formula, which creates the config,
+# and keeps the service running; this only moves its port.
+PG_CONF="$(brew --prefix)/var/postgresql@18/postgresql.conf"
+if [[ ! -f "$PG_CONF" ]]; then
+  WARNINGS+=("postgresql@18: $PG_CONF is missing, so its port wasn't set; run 'brew reinstall postgresql@18', then re-run install.sh")
+elif ! grep -q '^port = 54320' "$PG_CONF"; then
+  echo "==> Moving postgresql@18 to port 54320..."
+  # The leading newline keeps the setting on its own line if the file lacks one.
+  printf '\nport = 54320\n' >> "$PG_CONF"
+  CHANGED+=("moved postgresql@18 to port 54320")
+  brew services restart postgresql@18 \
+    || WARNINGS+=("postgresql@18: restart failed; run 'brew services restart postgresql@18' to move it to port 54320")
+else
+  echo "==> postgresql@18 already on port 54320."
+fi
+
 # Report — but never act on — installed packages that are no longer in the
 # Brewfile. Removal is deliberate and manual: `brew bundle cleanup --force`.
 echo "==> Checking for packages not in the Brewfile (report only)..."
