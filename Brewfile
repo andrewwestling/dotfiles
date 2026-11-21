@@ -43,8 +43,8 @@ brew "pandoc"
 brew "pdftk-java"
 # Fast, disk space efficient package manager
 brew "pnpm"
-# Object-relational database system
-brew "postgresql@18"
+# Object-relational database system; install.sh moves it to port 54320
+brew "postgresql@18", restart_service: :changed
 # Cross-platform application and UI framework
 brew "qt"
 # Rsync for cloud storage
