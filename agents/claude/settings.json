@@ -58,6 +58,19 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "grep -qi dotenvx && { echo \"Blocked by user hook: never run dotenvx; it decrypts env files. Ask the user instead.\" >&2; exit 2; }; exit 0",
+            "timeout": 5,
+            "onFailure": "block"
+          }
+        ]
+      }
     ]
   }
 }
